@@ -10,7 +10,7 @@
 | Disciplina | Programação Orientada a Objetos |
 | Professor | [A definir] |
 | Instituição | [A definir] |
-| Product Owner | André |
+| Product Owner | André Neves |
 | Equipe | Ver seção 9 |
 | Data de início | 29/09/2026 |
 | Previsão de término | [A definir] |
@@ -74,7 +74,7 @@ Detalhamento em [stakeholders.md](stakeholders.md).
 
 | Integrante | Papel |
 |---|---|
-| André | Product Owner |
+| André Neves | Product Owner |
 | [Nome] | Scrum Master |
 | [Nome] | Tech Lead |
 | [Nome] | Back-end |
@@ -115,6 +115,6 @@ Detalhamento em [stakeholders.md](stakeholders.md).
 
 | Nome | Papel | Data | Assinatura |
 |---|---|---|---|
-| André | Product Owner | | |
+| André Neves | Product Owner | | |
 | [Nome] | Scrum Master | | |
 | [Nome] | Professor / Cliente | | |

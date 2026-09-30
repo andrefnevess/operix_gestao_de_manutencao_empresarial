@@ -10,4 +10,4 @@ Cada reunião gera um arquivo próprio, seguindo o modelo [ATA-000-modelo.md](AT
 
 | Ata | Data | Assunto |
 |---|---|---|
-| [ATA-001](ATA-001-reuniao-inicial.md) | 29/09/2026 | Reunião inicial |
+| [ATA-001](ATA-001-reuniao-inicial.md) | 29/09/2026 | Definição de projeto e ideias de software |

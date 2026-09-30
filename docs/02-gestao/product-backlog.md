@@ -23,4 +23,4 @@ Mantido pelo Product Owner. A versão operacional fica no GitHub Projects; este 
 
 ## Critérios de aceitação
 
-Os critérios de cada história são detalhados em [product-owner/backlog](../../product-owner/backlog) e na Issue correspondente.
+Os critérios de cada história são detalhados em [product-owner/backlog](../../tech-lead/product-owner/backlog) e na Issue correspondente.

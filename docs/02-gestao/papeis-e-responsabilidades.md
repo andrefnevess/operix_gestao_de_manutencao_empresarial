@@ -12,7 +12,7 @@ No Scrum, o Product Owner não é o chefe da equipe. Cada papel tem responsabili
 
 | Papel | Integrante | Responsabilidades |
 |---|---|---|
-| Product Owner | André | Visão do produto, gestão e priorização do backlog, escrita de histórias, aceite das entregas, interface com cliente e professor |
+| Product Owner | André Neves | Visão do produto, gestão e priorização do backlog, escrita de histórias, aceite das entregas, interface com cliente e professor |
 | Scrum Master | [Nome] | Facilitação dos eventos Scrum, remoção de impedimentos, acompanhamento do quadro, registro das atas |
 | Tech Lead | [Nome] | Direcionamento técnico, arquitetura, padrões de código, revisão de Pull Requests, ADRs |
 | Back-end | [Nome] | API, modelo de domínio orientado a objetos, regras de negócio e persistência |

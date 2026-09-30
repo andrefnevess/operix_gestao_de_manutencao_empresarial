@@ -11,7 +11,7 @@ Google Meet / Presencial
 
 ## Participantes
 
-- André — Product Owner
+- André Neves — Product Owner
 - [Nome] — Scrum Master
 - [Nome] — Tech Lead
 - [Nome] — Back-end

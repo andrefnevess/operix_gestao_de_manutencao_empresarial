@@ -71,7 +71,7 @@ O projeto adota **Scrum**, com sprints curtas, backlog priorizado pelo Product O
 
 | Integrante | Papel |
 |---|---|
-| André | Product Owner |
+| André Neves | Product Owner |
 | [Nome] | Scrum Master |
 | [Nome] | Tech Lead |
 | [Nome] | Desenvolvedor(a) Back-end |
@@ -100,7 +100,8 @@ Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](d
 ├── backend/                 API e regras de negócio (Java)
 ├── devops/                  Docker, CI/CD e infraestrutura
 ├── tester/                  Planos, casos, evidências e relatórios de teste
-└── product-owner/           Backlog e documentos de produto
+└── tech-lead/              Gerenciamento do projeto
+    └── product-owner/       Backlog e documentos de produto
 ```
 
 ## Como Executar

@@ -21,7 +21,7 @@ Para **empresas que precisam controlar a manutenção de seus ativos**, que **so
 
 ## Personas
 
-Detalhamento em [product-owner/documentos](../../product-owner/documentos).
+Detalhamento em [product-owner/documentos](../../tech-lead/product-owner/documentos).
 
 - **Gestor de manutenção:** acompanha indicadores e prioriza ordens de serviço;
 - **Técnico:** executa ordens e registra as intervenções;

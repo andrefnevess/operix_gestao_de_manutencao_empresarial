@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|
 | Cliente | [A definir] | Valida o produto | Solução útil para o negócio | Alta | Sprint Review |
 | Professor | [A definir] | Avaliador | Qualidade técnica e metodológica | Alta | Entregas e apresentações |
-| Product Owner | André | Dono do produto | Valor entregue e priorização | Alta | Plannings, Reviews, Issues |
+| Product Owner | André Neves | Dono do produto | Valor entregue e priorização | Alta | Plannings, Reviews, Issues |
 | Scrum Master | [Nome] | Facilitador | Fluidez do processo | Média | Dailies, Retrospectivas |
 | Tech Lead | [Nome] | Direção técnica | Qualidade da arquitetura | Alta | PRs, ADRs, Discussions |
 | Desenvolvedores | [Nomes] | Construção | Clareza dos requisitos | Média | Issues, PRs, Dailies |

@@ -1,73 +1,62 @@
-# ATA 001 — Reunião Inicial
+# ATA 001 — Definição de Projeto e Ideias de Software
 
-> Status: a revisar pela equipe. Complementar com o que foi efetivamente discutido.
+| Item | Descrição |
+|---|---|
+| Tipo | Reunião de equipe (Daily Meeting) |
+| Data | 29/09/2026 |
+| Horário | 19:00 – 20:50 |
+| Participantes | Todos os integrantes presentes |
+| Product Owner | André Neves |
+| Scrum Master | A definir |
 
-## Data
-29/09/2026
+## 1. Discussão de ideias e propostas
 
-## Horário
-[A definir]
+O grupo analisou diversas propostas de sistemas e aplicativos para solucionar problemas específicos:
 
-## Local
-[Google Meet / Presencial]
+| Proposta | Descrição |
+|---|---|
+| Validade de Produtos e Estoque | Automação do controle de validade de produtos (entradas e saídas em estoque) e acompanhamento de lotes para evitar que vencimentos passem despercebidos |
+| Plataforma Fornecedor x Cliente | Sistema para facilitar cotações, solicitações e relacionamento/negociação entre compradores e fornecedores de suprimentos |
+| Gestão de Rentabilidade de Produtos | Ferramenta para precificação e cálculo da margem de lucro real por produto vendido (custo vs. preço de venda) |
+| Gestão de Manutenção Empresarial | Controle de equipamentos parados, histórico de reparos, manutenções preventivas e corretivas e ordens de serviço (OS) para empresas, escolas ou indústrias |
+| Controle de Equipamentos Emprestados | Mapeamento e rastreabilidade de patrimônio interno emprestado entre setores ou pessoas |
+| Comparador de Preços para Compras | Comparação de preços, prazos e condições entre fornecedores para otimizar compras empresariais |
+| Gestão de Pequenas Obras | Controle de materiais, etapas e custos para evitar desvios em construções de pequeno porte |
+| Retenção de Alunos em Academias | Registro de frequência e alerta sobre risco de evasão de alunos |
+| Gestão de Achados e Perdidos | Controle de itens perdidos em instituições. Discussão breve; ideia descartada por falta de viabilidade comercial/monetização |
 
-## Participantes
+## 2. Matriz de decisão e avaliação
 
-- André — Product Owner
-- [Nome] — Scrum Master
-- [Nome] — Tech Lead
-- [Nome] — Back-end
-- [Nome] — Front-end
-- [Nome] — DevOps
-- [Nome] — Tester / QA
+Para afunilar as propostas, o grupo aplicou os seguintes critérios:
 
-## Pauta
+- Dor real do cliente;
+- Potencial de monetização;
+- Alinhamento com Programação Orientada a Objetos (POO);
+- Viabilidade de escopo para MVP;
+- Complexidade de regras de negócio.
 
-1. Definição do problema
-2. Discussão das soluções
-3. Definição da equipe e dos papéis
-4. Organização do repositório
+Opções finalistas avaliadas:
 
-## Discussões
+1. Controle de Estoque e Desperdício (Restaurantes/Comércio);
+2. Gestão de Manutenção Empresarial;
+3. Gestão de Contratos / Licenças.
 
-### 1. Definição do problema
-Falta de controle centralizado da manutenção em empresas (ativos, ordens de serviço e preventivas).
+## 3. Decisão final
 
-### 2. Discussão das soluções
-Desenvolvimento de uma aplicação web de gestão de manutenção: Operix.
+**Ideia escolhida:** Gestão de Manutenção Empresarial — sistema focado no cadastro de equipamentos, chamados de manutenção, ordens de serviço e alertas preventivos/corretivos.
 
-### 3. Definição da equipe
-Definidos os papéis Scrum e as áreas técnicas. André assume o papel de Product Owner.
+**Justificativa:** apresenta o melhor equilíbrio entre potencial comercial, complexidade técnica adequada para o projeto acadêmico e excelente aderência aos conceitos de POO, com classes como `Equipamento`, `Chamado`, `OrdemServico`, `Manutencao` e `Usuario`.
 
-### 4. Organização do repositório
-O GitHub será o centro de gestão do projeto (código, documentação, Issues, Discussions e Projects).
+## 4. Encaminhamentos
 
-## Decisões
+| Encaminhamento | Responsável | Prazo | Status |
+|---|---|---|---|
+| Trocar o nome do projeto, provisoriamente chamado de "Manutenciana", por um nome mais profissional | Equipe | [A definir] | Pendente |
+| Mapear as atribuições de cada integrante (Back-end, Front-end, Tester, DevOps e Tech Lead) | Equipe | [A definir] | Pendente — ver [atribuições da equipe](../../../tech-lead/atribuicoes-da-equipe.md) |
+| Definir o Scrum Master | Equipe | [A definir] | Pendente |
 
-- Projeto: Operix — Gestão de Manutenção Empresarial
-- Metodologia: Scrum
-- André atua como Product Owner
-- Repositório GitHub como fonte oficial do projeto
+## 5. Próxima reunião
 
-## Pendências
-
-- [ ] Definir Scrum Master e Tech Lead
-- [ ] Definir framework do front-end
-- [ ] Definir banco de dados (ADR-002)
-- [ ] Concluir o TAP
-- [ ] Habilitar Discussions e criar o quadro no GitHub Projects
-- [ ] Criar protótipo das telas principais
-
-## Responsáveis
-
-| Atividade | Responsável | Prazo |
-|---|---|---|
-| Concluir TAP e visão do produto | André | [A definir] |
-| Arquitetura de solução | Tech Lead | [A definir] |
-| Configurar quadro e Discussions | Scrum Master | [A definir] |
-
-## Próxima reunião
-
-- Data:
-- Horário:
-- Pauta:
+- Data: [A definir]
+- Horário: [A definir]
+- Pauta: [A definir]
