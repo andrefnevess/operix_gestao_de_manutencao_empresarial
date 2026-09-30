@@ -9,7 +9,7 @@
 | Nome do projeto | Operix — Gestão de Manutenção Empresarial |
 | Disciplina | Programação Orientada a Objetos |
 | Professor | Rondineli Seba |
-| Instituição | [A definir] |
+| Instituição | Centro Universitário Dom Bosco — UNDB |
 | Product Owner / Tech Lead | André Neves |
 | Scrum Master | Luíza Quintanilha |
 | Equipe | Ver seção 9 |

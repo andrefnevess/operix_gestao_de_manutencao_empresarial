@@ -1,6 +1,6 @@
 # Operix — Gestão de Manutenção Empresarial
 
-Sistema para planejamento, execução e acompanhamento de manutenções em ambientes empresariais, desenvolvido como projeto da disciplina de Programação Orientada a Objetos (POO).
+Sistema para planejamento, execução e acompanhamento de manutenções em ambientes empresariais, desenvolvido como projeto da disciplina de Programação Orientada a Objetos (POO) do Centro Universitário Dom Bosco — UNDB, sob orientação do professor Rondineli Seba.
 
 > Status do projeto: **Sprint 0 — Iniciação e planejamento**
 
