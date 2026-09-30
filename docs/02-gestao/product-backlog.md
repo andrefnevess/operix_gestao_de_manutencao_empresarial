@@ -10,17 +10,15 @@ Mantido pelo Product Owner. A versão operacional fica no GitHub Projects; este 
 
 | ID | História | Prioridade | Status | Sprint |
 |---|---|---|---|---|
-| US01 | Como usuário, quero fazer login, para acessar as funcionalidades do meu perfil | Alta | To Do | Sprint 1 |
-| US02 | Como administrador, quero cadastrar usuários e perfis, para controlar o acesso ao sistema | Alta | To Do | Sprint 1 |
-| US03 | Como gestor, quero cadastrar ativos, para manter o inventário de equipamentos | Alta | To Do | Sprint 1 |
-| US04 | Como gestor, quero cadastrar técnicos e suas especialidades, para atribuir ordens corretamente | Alta | To Do | Sprint 2 |
-| US05 | Como solicitante, quero abrir uma ordem de serviço, para reportar um problema em um ativo | Alta | To Do | Sprint 2 |
-| US06 | Como gestor, quero atribuir uma ordem de serviço a um técnico, para organizar a execução | Alta | To Do | Sprint 2 |
-| US07 | Como técnico, quero registrar a execução e encerrar a ordem, para documentar o serviço realizado | Alta | To Do | Sprint 3 |
-| US08 | Como gestor, quero criar planos de manutenção preventiva, para evitar falhas | Média | Backlog | Sprint 3 |
-| US09 | Como gestor, quero consultar o histórico de um ativo, para apoiar decisões | Média | Backlog | Sprint 4 |
-| US10 | Como gestor, quero visualizar relatórios de ordens, para acompanhar o desempenho | Baixa | Backlog | Sprint 4 |
+| UH01 | Como usuário, quero acessar o sistema com e-mail e senha, para utilizar as funcionalidades permitidas ao meu perfil | Alta | To Do | Sprint 1 |
+| UH02 | Como administrador, quero cadastrar, editar e inativar usuários, definindo seus perfis, para controlar quem acessa o sistema e o que cada pessoa pode fazer | Alta | To Do | Sprint 1 |
+| UH03 | Como gestor, quero cadastrar e manter os equipamentos da empresa, para ter o inventário de tudo o que precisa de manutenção | Alta | To Do | Sprint 1 |
+| UH04 | Como solicitante, quero abrir um chamado informando o problema de um equipamento, para que a equipe de manutenção seja avisada e resolva o problema | Alta | To Do | Sprint 2 |
+| UH05 | Como gestor, quero gerar uma ordem de serviço a partir de um chamado e atribuí-la a um técnico, para organizar e distribuir o trabalho da equipe de manutenção | Alta | To Do | Sprint 2 |
+| UH06 | Como técnico, quero registrar a execução da manutenção e encerrar a ordem de serviço, para documentar o serviço realizado e manter o histórico do equipamento | Alta | Backlog | Sprint 3 |
+| UH07 | Como gestor, quero criar planos de manutenção preventiva com periodicidade e receber alertas, para evitar falhas e paradas inesperadas dos equipamentos | Média | Backlog | Sprint 3 |
+| UH08 | Como gestor, quero consultar o histórico de manutenções de cada equipamento e indicadores gerais, para tomar decisões sobre reparo, substituição e prioridades | Média | Backlog | Sprint 4 |
 
 ## Critérios de aceitação
 
-Os critérios de cada história são detalhados em [product-owner/backlog](../../tech-lead/product-owner/backlog) e na Issue correspondente.
+Cada história possui 6 critérios de aceite, detalhados em [product-owner/backlog](../../tech-lead/product-owner/backlog) e na Issue correspondente.

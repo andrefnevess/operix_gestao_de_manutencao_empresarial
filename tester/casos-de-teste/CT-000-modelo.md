@@ -3,7 +3,7 @@
 | Campo | Valor |
 |---|---|
 | ID | CT-NNN |
-| Requisito / História | RF / US |
+| Requisito / História | RF / UH / CA |
 | Objetivo | |
 | Pré-condições | |
 | Dados de teste | |
