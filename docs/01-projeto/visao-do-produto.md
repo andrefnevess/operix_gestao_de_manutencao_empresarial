@@ -4,7 +4,7 @@
 
 ## Declaração de visão
 
-O Operix tem como finalidade solucionar a falta de controle da manutenção em empresas por meio de uma plataforma web centralizada de ativos e ordens de serviço, permitindo que gestores reduzam falhas inesperadas e tomem decisões com base no histórico real dos equipamentos.
+O Operix tem como finalidade solucionar a falta de controle da manutenção em empresas por meio de uma plataforma centralizada de ativos e ordens de serviço, permitindo que gestores reduzam falhas inesperadas e tomem decisões com base no histórico real dos equipamentos.
 
 ## Problema, Público, Solução e Benefício
 
@@ -12,7 +12,7 @@ O Operix tem como finalidade solucionar a falta de controle da manutenção em e
 |---|---|
 | Problema | Manutenção controlada de forma dispersa, sem histórico e sem planejamento preventivo |
 | Público | Gestores de manutenção, técnicos e solicitantes |
-| Solução | Aplicação web para cadastro de ativos, ordens de serviço e planos preventivos |
+| Solução | Aplicação (plataforma [A DEFINIR]) para cadastro de ativos, ordens de serviço e planos preventivos |
 | Benefício | Rastreabilidade, redução de paradas, previsibilidade e indicadores para gestão |
 
 ## Modelo de posicionamento

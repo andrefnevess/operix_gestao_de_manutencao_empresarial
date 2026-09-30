@@ -1,28 +1,8 @@
-# Java / Maven / Gradle
-target/
-build/
-*.class
-*.jar
-*.war
-*.log
-.gradle/
-out/
+# Este arquivo será complementado quando as tecnologias forem definidas [A DEFINIR]
 
-# Node / Front-end
-node_modules/
-dist/
-.next/
-coverage/
-npm-debug.log*
-yarn-error.log*
-
-# IDEs
+# IDEs e editores
 .idea/
-*.iml
 .vscode/
-.settings/
-.project
-.classpath
 *.swp
 
 # Sistema operacional
@@ -34,6 +14,8 @@ Thumbs.db
 .env.*
 !.env.example
 *.pem
+*.key
 
-# Docker
-docker-data/
+# Logs e arquivos temporários
+*.log
+tmp/

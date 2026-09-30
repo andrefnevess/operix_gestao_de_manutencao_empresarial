@@ -6,8 +6,8 @@
 |---|---|
 | Escopo | Funcionalidades da sprint vigente |
 | Responsável | José Arrais — Tester / QA |
-| Ambiente | Local (Docker) e demonstração |
-| Ferramentas | JUnit, [ferramenta de testes de API a definir] |
+| Ambiente | Local e demonstração ([A DEFINIR]) |
+| Ferramentas | [A DEFINIR] |
 
 ## Critérios de entrada
 

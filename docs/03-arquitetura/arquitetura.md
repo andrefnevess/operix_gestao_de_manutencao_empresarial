@@ -1,41 +1,28 @@
 # Arquitetura
 
-> Status: em elaboração. Campos marcados com `[A definir]` devem ser preenchidos pela equipe.
+> Status: pendente. A arquitetura será definida após a escolha das tecnologias de back-end, front-end e banco de dados, e registrada em [decisões técnicas](decisoes-tecnicas).
 
 ## Visão geral
 
-O Operix segue uma arquitetura cliente-servidor em camadas, com separação clara entre interface, regras de negócio e persistência.
+[A DEFINIR]
 
-```
-[ Navegador ] --HTTP/JSON--> [ API REST (Java) ] --JPA--> [ Banco relacional ]
-```
+## Princípios que a equipe pretende seguir
 
-## Princípios
-
-- Separação de responsabilidades por camadas;
-- Modelo de domínio orientado a objetos, com regras de negócio nas classes de domínio e serviços, nunca nos controllers;
+- Separação de responsabilidades (interface, regras de negócio e persistência);
+- Regras de negócio concentradas no domínio, e não na camada de interface;
 - Princípios SOLID;
-- Baixo acoplamento via interfaces;
-- Configuração externa por variáveis de ambiente.
-
-## Camadas do back-end
-
-| Camada | Pacote | Responsabilidade |
-|---|---|---|
-| Apresentação | `controller` | Receber requisições e devolver respostas |
-| Transferência | `dto` | Objetos de entrada e saída da API |
-| Aplicação | `service` | Orquestração e regras de negócio |
-| Domínio | `model` | Entidades e comportamento do domínio |
-| Persistência | `repository` | Acesso a dados |
-| Infraestrutura | `config`, `exception` | Configurações e tratamento de erros |
+- Baixo acoplamento entre componentes;
+- Configurações sensíveis fora do código-fonte.
 
 ## Aplicação de POO no domínio
 
+Classes identificadas na [ATA-001](../05-reunioes/atas/ATA-001-reuniao-inicial.md): `Equipamento`, `Chamado`, `OrdemServico`, `Manutencao` e `Usuario`.
+
 | Conceito | Aplicação prevista |
 |---|---|
-| Encapsulamento | Atributos privados e alterações de estado por métodos de negócio (ex.: `ordem.iniciar()`, `ordem.concluir()`) |
-| Herança | `Usuario` como base para `Gestor`, `Tecnico` e `Solicitante`; `Manutencao` como base para `ManutencaoPreventiva` e `ManutencaoCorretiva` |
-| Polimorfismo | Cálculo de prazo e prioridade específico para cada tipo de manutenção |
-| Abstração | Classes abstratas e interfaces para serviços e repositórios |
+| Encapsulamento | Atributos privados e mudanças de estado por métodos de negócio (ex.: `ordemServico.iniciar()`, `ordemServico.concluir()`) |
+| Herança | Ex.: `Manutencao` como base para `ManutencaoPreventiva` e `ManutencaoCorretiva` |
+| Polimorfismo | Ex.: comportamento específico de cada tipo de manutenção (prazos, alertas) |
+| Abstração | Classes abstratas e interfaces para os serviços do domínio |
 
-Documentos relacionados: [arquitetura-de-solucao.md](arquitetura-de-solucao.md), [diagramas](diagramas), [decisões técnicas](decisoes-tecnicas).
+A modelagem detalhada será feita no diagrama de classes ([diagramas](diagramas)).

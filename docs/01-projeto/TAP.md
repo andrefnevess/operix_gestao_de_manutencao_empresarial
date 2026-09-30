@@ -26,13 +26,13 @@ Ausência de um controle centralizado de ativos, ordens de serviço e manutenç�
 
 ## 4. Objetivo geral
 
-Desenvolver uma aplicação web para gestão de manutenção empresarial, com cadastro de ativos, controle de ordens de serviço e planejamento de manutenções preventivas.
+Desenvolver uma aplicação para gestão de manutenção empresarial, com cadastro de ativos, controle de ordens de serviço e planejamento de manutenções preventivas.
 
 ## 5. Objetivos específicos
 
-- Desenvolver uma aplicação web funcional;
-- Implementar o back-end em Java aplicando os pilares de POO (encapsulamento, herança, polimorfismo e abstração);
-- Persistir os dados em banco relacional;
+- Desenvolver uma aplicação funcional (plataforma [A DEFINIR]);
+- Implementar o back-end em linguagem orientada a objetos ([A DEFINIR]), aplicando os pilares de POO (encapsulamento, herança, polimorfismo e abstração);
+- Persistir os dados em banco de dados ([A DEFINIR]);
 - Implementar testes automatizados;
 - Utilizar controle de versão com Git e GitHub;
 - Implementar pipeline de CI/CD;
@@ -91,7 +91,7 @@ Detalhamento em [stakeholders.md](stakeholders.md).
 ## 11. Restrições
 
 - Prazo definido pelo calendário acadêmico;
-- Back-end obrigatoriamente em linguagem orientada a objetos (Java);
+- Back-end obrigatoriamente em linguagem orientada a objetos (linguagem [A DEFINIR]);
 - Uso de ferramentas gratuitas ou com licença acadêmica.
 
 ## 12. Riscos iniciais

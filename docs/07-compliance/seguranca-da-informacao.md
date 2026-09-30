@@ -16,7 +16,7 @@ Aplica-se a todos os integrantes da equipe, ao repositório no GitHub, aos ambie
 |---|---|
 | Confidencialidade | Repositório privado; segredos fora do código; acesso por perfil na aplicação |
 | Integridade | Alterações somente via Pull Request revisado; histórico de commits preservado |
-| Disponibilidade | Código versionado no GitHub; banco de dados reproduzível via scripts e Docker |
+| Disponibilidade | Código e documentação versionados no GitHub; estrutura do banco de dados reproduzível por scripts versionados |
 | Menor privilégio | Cada pessoa e cada perfil do sistema acessa apenas o necessário |
 
 ## 4. Controle de acesso ao repositório
@@ -40,8 +40,8 @@ Aplica-se a todos os integrantes da equipe, ao repositório no GitHub, aos ambie
 | Risco (OWASP Top 10) | Controle adotado |
 |---|---|
 | Quebra de controle de acesso | Autorização por perfil verificada no back-end em cada endpoint |
-| Falhas criptográficas | Senhas com hash BCrypt; comunicação via HTTPS no ambiente de demonstração |
-| Injeção (SQL e outras) | Uso de JPA com consultas parametrizadas; validação de entradas |
+| Falhas criptográficas | Senhas armazenadas apenas como hash seguro (algoritmo [A DEFINIR]); comunicação criptografada no ambiente de demonstração |
+| Injeção (SQL e outras) | Consultas parametrizadas e validação de todas as entradas |
 | Design inseguro | Regras de negócio revisadas pelo Tech Lead e documentadas |
 | Configuração incorreta | Perfis de configuração separados por ambiente; mensagens de erro sem detalhes internos |
 | Componentes vulneráveis | Dependências atualizadas e verificadas pelo Dependabot |

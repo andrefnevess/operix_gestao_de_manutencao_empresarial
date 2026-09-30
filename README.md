@@ -14,16 +14,16 @@ Muitas empresas controlam a manutenção por planilhas, papel ou comunicação i
 
 ## Objetivo
 
-Desenvolver uma aplicação web que permita registrar ativos, abrir e acompanhar ordens de serviço, programar manutenções preventivas e consultar indicadores, aplicando os fundamentos de POO e boas práticas de engenharia de software.
+Desenvolver uma aplicação que permita registrar ativos, abrir e acompanhar ordens de serviço, programar manutenções preventivas e consultar indicadores, aplicando os fundamentos de POO e boas práticas de engenharia de software.
 
 ## Solução Proposta
 
-Aplicação web composta por:
+Sistema composto por:
 
-- **Back-end** em Java, responsável pelas regras de negócio, persistência e API REST;
-- **Front-end** web para operação pelos usuários;
-- **Banco de dados relacional** para armazenamento das informações;
-- **Pipeline de CI/CD** para build e testes automatizados.
+- **Back-end**, responsável pelas regras de negócio e pela persistência dos dados — tecnologia [A DEFINIR];
+- **Front-end**, interface de operação pelos usuários — tecnologia [A DEFINIR];
+- **Banco de dados** para armazenamento das informações — tecnologia [A DEFINIR];
+- **Automação de build, testes e entrega (CI/CD)** — ferramenta [A DEFINIR].
 
 Detalhes em [docs/01-projeto/visao-do-produto.md](docs/01-projeto/visao-do-produto.md).
 
@@ -49,19 +49,19 @@ Detalhes em [docs/01-projeto/visao-do-produto.md](docs/01-projeto/visao-do-produ
 
 | Camada | Tecnologia | Status |
 |---|---|---|
-| Back-end | Java + Spring Boot | Proposta |
-| Front-end | [A definir] | A definir |
-| Banco de dados | PostgreSQL | Proposta |
-| Testes | JUnit | Proposta |
-| Containers | Docker | Proposta |
-| CI/CD | GitHub Actions | Proposta |
-| Gestão | GitHub Projects, Issues e Discussions | Em uso |
+| Back-end | [A DEFINIR] | Em discussão |
+| Front-end | [A DEFINIR] | Em discussão |
+| Banco de dados | [A DEFINIR] | Em discussão |
+| Testes | [A DEFINIR] | Em discussão |
+| Infraestrutura / ambientes | [A DEFINIR] | Em discussão |
+| CI/CD | [A DEFINIR] | Em discussão |
+| Versionamento e gestão | Git, GitHub (Issues, Pull Requests, Projects e Discussions) | Definido |
 
 As decisões técnicas são registradas em [docs/03-arquitetura/decisoes-tecnicas](docs/03-arquitetura/decisoes-tecnicas).
 
 ## Arquitetura
 
-Arquitetura em camadas (cliente web, API REST, serviços de domínio, persistência). Ver [docs/03-arquitetura/arquitetura-de-solucao.md](docs/03-arquitetura/arquitetura-de-solucao.md).
+A arquitetura será definida após a escolha das tecnologias [A DEFINIR]. Ver [docs/03-arquitetura/arquitetura-de-solucao.md](docs/03-arquitetura/arquitetura-de-solucao.md).
 
 ## Metodologia
 
@@ -96,9 +96,9 @@ Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](d
 │   ├── 05-reunioes/         Atas e registro de decisões
 │   ├── 06-encerramento/     Termo de Encerramento do Projeto (TEP)
 │   └── 07-compliance/       Segurança da informação, LGPD, licenças e direitos autorais
-├── frontend/                Aplicação web
-├── backend/                 API e regras de negócio (Java)
-├── devops/                  Docker, CI/CD e infraestrutura
+├── frontend/                Interface com o usuário
+├── backend/                 Regras de negócio e persistência
+├── devops/                  Ambientes, CI/CD e infraestrutura
 ├── tester/                  Planos, casos, evidências e relatórios de teste
 └── tech-lead/              Gerenciamento do projeto
     └── product-owner/       Backlog e documentos de produto
@@ -108,12 +108,7 @@ Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](d
 
 > Em elaboração. As instruções serão adicionadas quando o primeiro incremento estiver disponível.
 
-Pré-requisitos previstos: Java 21, Maven, Node.js (se aplicável ao front-end), Docker.
-
-```bash
-# previsto
-docker compose -f devops/docker/docker-compose.yml up
-```
+Pré-requisitos: [A DEFINIR], de acordo com as tecnologias escolhidas.
 
 ## Status do Projeto
 
@@ -123,7 +118,8 @@ docker compose -f devops/docker/docker-compose.yml up
 | Definição da equipe | Concluída |
 | Termo de Abertura (TAP) | Em elaboração |
 | Visão do produto e escopo | Em elaboração |
-| Arquitetura de solução | Em elaboração |
+| Definição das tecnologias | Pendente |
+| Arquitetura de solução | Pendente |
 | Desenvolvimento | Não iniciado |
 | Termo de Encerramento (TEP) | Não iniciado |
 

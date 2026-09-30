@@ -1,13 +1,15 @@
 # Padrões de Código
 
-> Status: em elaboração pelo Tech Lead.
+> Status: em elaboração pelo Tech Lead. As convenções específicas de linguagem serão definidas após a escolha das tecnologias.
 
-## Java (back-end)
+## Convenções de código
 
-- Classes em `PascalCase`, métodos e atributos em `camelCase`, constantes em `UPPER_SNAKE_CASE`;
-- Atributos privados, acesso por métodos (encapsulamento);
-- Regras de negócio em `service` e nas entidades de domínio, nunca em `controller`;
-- Pacotes em minúsculas: `br.com.operix.<camada>`.
+[A DEFINIR] — de acordo com a linguagem adotada. Diretrizes gerais:
+
+- Nomes claros e em português, seguindo a convenção da linguagem escolhida;
+- Encapsulamento: atributos privados e acesso por métodos;
+- Regras de negócio separadas da interface com o usuário;
+- Código revisado antes de ser integrado.
 
 ## Branches e commits
 

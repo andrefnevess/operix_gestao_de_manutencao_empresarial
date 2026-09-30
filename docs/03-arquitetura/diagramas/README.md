@@ -8,4 +8,4 @@
 | `banco-de-dados.png` | Modelo entidade-relacionamento | Pendente |
 | `sequencia-login.png` | Sequência do fluxo de login | Pendente |
 
-Sempre versionar também o arquivo-fonte editável (`.drawio`, `.puml` ou similar).
+Sempre versionar também o arquivo-fonte editável (ferramenta de diagramação [A DEFINIR]).

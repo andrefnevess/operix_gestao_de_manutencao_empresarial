@@ -1,12 +1,11 @@
 # CI/CD
 
-Pipeline previsto (GitHub Actions):
+Ferramenta de pipeline: [A DEFINIR].
+
+## Etapas previstas
 
 | Etapa | Gatilho | Ação |
 |---|---|---|
-| Build | Pull Request e push na `main` | Compilar back-end e front-end |
-| Testes | Pull Request e push na `main` | Executar testes automatizados |
-| Análise | Pull Request | Verificação de padrões de código [opcional] |
-| Deploy | Push na `main` | Publicação em ambiente de demonstração [a definir] |
-
-Arquivo de referência: `pipeline.yml` (a criar).
+| Build | Pull Request e integração na `main` | Compilar o back-end e o front-end |
+| Testes | Pull Request e integração na `main` | Executar os testes automatizados |
+| Entrega | Integração na `main` | Publicação em ambiente de demonstração [A DEFINIR] |

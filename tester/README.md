@@ -11,7 +11,7 @@ Estratégia, planejamento, execução e evidências de testes.
 
 ## Tipos de teste
 
-- Unitários (back-end, JUnit);
+- Unitários (ferramenta [A DEFINIR]);
 - Integração (API);
 - Funcionais / sistema (manuais, baseados nos casos de teste);
 - Aceitação (validação dos critérios das histórias com o PO).

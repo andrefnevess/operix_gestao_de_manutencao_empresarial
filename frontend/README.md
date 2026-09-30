@@ -1,25 +1,24 @@
 # Front-end
 
-Interface web do Operix.
+Interface do Operix com o usuário.
 
-> Status: não iniciado. Framework a definir em ADR.
+> Status: não iniciado. Tecnologia pendente de decisão (ADR-002).
 
-## Framework
+## Responsável
 
-[A definir]
+Luíza Quintanilha.
 
-## Estrutura prevista
+## Tecnologias
 
-```
-frontend/
-├── public/        Arquivos estáticos
-├── src/
-│   ├── components/  Componentes reutilizáveis
-│   ├── pages/       Telas (login, ativos, ordens, preventivas, relatórios)
-│   ├── services/    Integração com a API
-│   └── styles/      Estilos globais
-└── tests/         Testes do front-end
-```
+| Item | Definição |
+|---|---|
+| Plataforma (web / mobile) | [A DEFINIR] |
+| Linguagem / framework | [A DEFINIR] |
+| Testes | [A DEFINIR] |
+
+## Estrutura de pastas
+
+[A DEFINIR] — será documentada após a escolha da tecnologia.
 
 ## Páginas previstas
 
@@ -27,8 +26,8 @@ Login, Painel, Ativos, Técnicos, Ordens de Serviço, Planos Preventivos, Histó
 
 ## Integração com a API
 
-Consumo da API REST do back-end; URL base configurada por variável de ambiente.
+Forma de comunicação com o back-end: [A DEFINIR].
 
 ## Como executar
 
-Em elaboração.
+[A DEFINIR]

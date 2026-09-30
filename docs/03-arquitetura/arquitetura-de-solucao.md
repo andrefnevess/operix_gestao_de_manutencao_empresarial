@@ -1,38 +1,39 @@
 # Arquitetura de Solução
 
-> Status: em elaboração. Campos marcados com `[A definir]` devem ser preenchidos pela equipe.
+> Status: pendente. Os componentes e tecnologias serão definidos pela equipe e registrados em [decisões técnicas](decisoes-tecnicas).
 
 ## Contexto
 
-| Ator / Sistema | Interação com o Operix |
+| Ator | Interação com o Operix |
 |---|---|
-| Solicitante | Abre ordens de serviço |
-| Técnico | Executa e registra ordens |
-| Gestor | Gerencia ativos, planos preventivos e acompanha relatórios |
+| Solicitante | Abre chamados de manutenção |
+| Técnico | Executa e registra ordens de serviço |
+| Gestor | Gerencia equipamentos, planos preventivos e acompanha relatórios |
 | Administrador | Gerencia usuários e perfis |
 
 ## Componentes
 
-| Componente | Tecnologia (proposta) | Responsabilidade |
+| Componente | Tecnologia | Responsabilidade |
 |---|---|---|
-| Front-end | [A definir] | Interface web |
-| API | Java 21 + Spring Boot | Regras de negócio e endpoints REST |
-| Banco de dados | PostgreSQL | Persistência |
-| Containers | Docker / Docker Compose | Padronização de ambientes |
-| CI/CD | GitHub Actions | Build, testes e entrega |
+| Front-end | [A DEFINIR] | Interface com o usuário |
+| Back-end | [A DEFINIR] | Regras de negócio |
+| Banco de dados | [A DEFINIR] | Persistência |
+| Ambientes | [A DEFINIR] | Padronização dos ambientes de desenvolvimento e demonstração |
+| CI/CD | [A DEFINIR] | Build, testes e entrega |
 
 ## Modelo de domínio inicial
 
-| Entidade | Principais atributos |
-|---|---|
-| Usuario | id, nome, email, senha (hash), perfil, ativo |
-| Ativo | id, codigo, nome, tipo, localizacao, fabricante, status |
-| Tecnico | id, usuario, especialidades |
-| OrdemDeServico | id, ativo, solicitante, tecnico, descricao, prioridade, status, datas |
-| PlanoPreventivo | id, ativo, descricao, periodicidade, proximaExecucao |
-| RegistroManutencao | id, ordem, descricao, dataExecucao, tempoGasto |
+Baseado nas classes identificadas na [ATA-001](../05-reunioes/atas/ATA-001-reuniao-inicial.md). Atributos a detalhar.
 
-## Ciclo de vida da Ordem de Serviço
+| Classe | Responsabilidade |
+|---|---|
+| Usuario | Pessoa que acessa o sistema, com um perfil de acesso |
+| Equipamento | Bem que recebe manutenção (máquina, instalação, dispositivo) |
+| Chamado | Solicitação de manutenção aberta por um usuário |
+| OrdemServico | Execução planejada do atendimento de um chamado ou de uma preventiva |
+| Manutencao | Registro da intervenção realizada (preventiva ou corretiva) |
+
+## Ciclo de vida da Ordem de Serviço (proposta)
 
 ```
 ABERTA -> ATRIBUIDA -> EM_EXECUCAO -> CONCLUIDA
@@ -42,8 +43,4 @@ ABERTA -> ATRIBUIDA -> EM_EXECUCAO -> CONCLUIDA
 
 ## Fluxo de entrega
 
-Código -> Commit -> Pull Request -> Testes -> Build -> Deploy
-
-## Diagramas
-
-Os diagramas (contexto, componentes, classes, banco de dados e sequência) ficam em [diagramas](diagramas).
+Código -> Commit -> Pull Request -> Revisão -> Testes -> Integração na `main`

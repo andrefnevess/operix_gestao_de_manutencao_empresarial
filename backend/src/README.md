@@ -1,3 +1,3 @@
 # src
 
-Código-fonte do back-end (Java).
+Código-fonte do back-end (linguagem [A DEFINIR]).

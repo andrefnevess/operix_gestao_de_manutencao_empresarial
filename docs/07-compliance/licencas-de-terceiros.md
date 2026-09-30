@@ -2,23 +2,23 @@
 
 Inventário das bibliotecas e ferramentas utilizadas. Atualizar sempre que uma dependência for adicionada, removida ou tiver a versão alterada.
 
-> As licenças devem ser confirmadas na página oficial de cada projeto no momento da adoção.
+> As tecnologias do projeto ainda não foram definidas. A tabela será preenchida à medida que as decisões forem registradas em [decisões técnicas](../03-arquitetura/decisoes-tecnicas).
 
 | Componente | Uso no projeto | Licença | Situação |
 |---|---|---|---|
-| OpenJDK (Java 21) | Plataforma de execução do back-end | GPL v2 com Classpath Exception | Proposto |
-| Spring Boot | Framework do back-end | Apache 2.0 | Proposto |
-| Maven | Build e dependências | Apache 2.0 | Proposto |
-| PostgreSQL | Banco de dados | PostgreSQL License | Proposto |
-| JUnit 5 | Testes automatizados | EPL 2.0 | Proposto |
-| Docker Engine | Containers | Apache 2.0 | Proposto |
-| Framework do front-end | Interface web | [A definir] | A definir |
+| Git | Controle de versão | GPL v2 (ferramenta, não incorporada ao produto) | Em uso |
+| GitHub | Hospedagem do repositório e gestão | Termos de serviço do GitHub | Em uso |
+| Linguagem / framework do back-end | Back-end | [A DEFINIR] | A definir |
+| Tecnologia do front-end | Front-end | [A DEFINIR] | A definir |
+| Banco de dados | Persistência | [A DEFINIR] | A definir |
+| Ferramentas de teste | Testes | [A DEFINIR] | A definir |
+| Ferramentas de ambiente e CI/CD | DevOps | [A DEFINIR] | A definir |
 
 ## Compatibilidade
 
 | Licença | Compatível com o uso no projeto | Observação |
 |---|---|---|
 | MIT, BSD, Apache 2.0 | Sim | Manter avisos de copyright |
-| EPL 2.0 | Sim, como dependência | Não modificar e redistribuir o código da biblioteca sem avaliar |
+| EPL, MPL | Sim, como dependência | Não modificar e redistribuir o código da biblioteca sem avaliar |
 | GPL | Avaliar caso a caso | Pode exigir que o projeto adote a mesma licença |
 | Sem licença declarada | Não | Sem licença, não há permissão de uso |

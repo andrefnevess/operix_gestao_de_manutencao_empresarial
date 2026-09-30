@@ -1,9 +1,5 @@
-# Docker
+# Containers
 
-Arquivos previstos:
+> Status: [A DEFINIR]. O uso de containers e a ferramenta adotada ainda não foram decididos.
 
-| Arquivo | Descrição |
-|---|---|
-| `Dockerfile.backend` | Imagem da API |
-| `Dockerfile.frontend` | Imagem do front-end |
-| `docker-compose.yml` | Orquestração local (API, front-end e banco) |
+Caso adotado, esta pasta conterá os arquivos de configuração dos containers do back-end, do front-end e do banco de dados.

@@ -1,15 +1,12 @@
 # Ambientes
 
-| Ambiente | Finalidade | Hospedagem |
+| Ambiente | Finalidade | Hospedagem / ferramenta |
 |---|---|---|
-| Local | Desenvolvimento | Docker Compose na máquina do desenvolvedor |
-| Demonstração | Apresentações e validação | [A definir] |
+| Local | Desenvolvimento | [A DEFINIR] |
+| Demonstração | Apresentações e validação | [A DEFINIR] |
 
-## Variáveis de ambiente
+## Configurações sensíveis
 
-| Variável | Descrição |
-|---|---|
-| `DB_URL` | URL de conexão com o banco |
-| `DB_USER` | Usuário do banco |
-| `DB_PASSWORD` | Senha do banco (nunca versionar) |
-| `API_URL` | URL da API usada pelo front-end |
+Senhas, chaves e endereços de conexão ficam em variáveis de ambiente e nunca são versionados. Ver [política de segurança](../../docs/07-compliance/seguranca-da-informacao.md).
+
+As variáveis necessárias serão listadas após a definição das tecnologias [A DEFINIR].
