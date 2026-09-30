@@ -52,8 +52,8 @@ Opções finalistas avaliadas:
 | Encaminhamento | Responsável | Prazo | Status |
 |---|---|---|---|
 | Trocar o nome do projeto, provisoriamente chamado de "Manutenciana", por um nome mais profissional | Equipe | [A definir] | Pendente |
-| Mapear as atribuições de cada integrante (Back-end, Front-end, Tester, DevOps e Tech Lead) | Equipe | [A definir] | Pendente — ver [atribuições da equipe](../../../tech-lead/atribuicoes-da-equipe.md) |
-| Definir o Scrum Master | Equipe | [A definir] | Pendente |
+| Mapear as atribuições de cada integrante (Back-end, Front-end, Tester, DevOps e Tech Lead) | Equipe | 30/09/2026 | Concluído — ver [atribuições da equipe](../../../tech-lead/atribuicoes-da-equipe.md) |
+| Definir o Scrum Master | Equipe | 30/09/2026 | Concluído — Luíza Quintanilha |
 
 ## 5. Próxima reunião
 

@@ -28,7 +28,7 @@ Conversas, ideias e alinhamentos que não são tarefas. Categorias:
 | Bugs | Discussão inicial antes de abrir Issue |
 | DevOps | Ambiente, pipeline e infraestrutura |
 | Testes | Estratégia e qualidade |
-| Scrum | Processo e cerimônias |
+| Scrum | Processo e cerimônias do Scrumban |
 | Ideias | Sugestões de melhoria do produto |
 
 ## Issues

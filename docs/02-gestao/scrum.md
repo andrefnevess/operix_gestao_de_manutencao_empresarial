@@ -1,6 +1,11 @@
-# Metodologia Scrum
+# Metodologia Scrumban
 
-O projeto é conduzido com Scrum, framework ágil baseado em ciclos curtos (sprints), inspeção e adaptação contínuas.
+O projeto é conduzido com **Scrumban**, que combina a estrutura do Scrum (papéis, sprints e cerimônias) com as práticas do Kanban (quadro visual, fluxo contínuo e limite de trabalho em andamento).
+
+| Origem | Práticas adotadas |
+|---|---|
+| Scrum | Papéis (PO, Scrum Master, Desenvolvedores), sprints, Planning, Daily, Review e Retrospectiva |
+| Kanban | Quadro visual no GitHub Projects, fluxo contínuo, limite de WIP, políticas explícitas de cada coluna |
 
 ## Sprint
 
@@ -39,6 +44,16 @@ Backlog → To Do → In Progress → Review → Testing → Done
 | Review | Pull Request aberto aguardando revisão |
 | Testing | Em validação pelo QA |
 | Done | Atende à Definition of Done |
+
+### Limite de trabalho em andamento (WIP)
+
+| Coluna | Limite sugerido |
+|---|---|
+| In Progress | 1 item por desenvolvedor |
+| Review | 4 itens |
+| Testing | 3 itens |
+
+Quando uma coluna atinge o limite, a equipe prioriza concluir os itens em andamento antes de puxar novos.
 
 ## Definition of Ready (DoR)
 

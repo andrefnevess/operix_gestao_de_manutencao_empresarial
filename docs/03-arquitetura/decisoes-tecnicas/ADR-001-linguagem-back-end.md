@@ -4,7 +4,7 @@
 |---|---|
 | Status | Proposta |
 | Data | 30/09/2026 |
-| Responsável | Tech Lead |
+| Responsável | André Neves (Tech Lead) |
 
 ## Contexto
 

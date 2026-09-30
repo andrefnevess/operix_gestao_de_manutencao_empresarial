@@ -11,13 +11,13 @@ Google Meet / Presencial
 
 ## Participantes
 
-- André Neves — Product Owner
-- [Nome] — Scrum Master
-- [Nome] — Tech Lead
-- [Nome] — Back-end
-- [Nome] — Front-end
-- [Nome] — DevOps
-- [Nome] — Tester / QA
+- André Neves — Product Owner / Tech Lead
+- Luíza Quintanilha — Scrum Master / Front-end
+- David Rafael — DevOps
+- Gerardo Mota — Back-end
+- Matheus Oliveira — Back-end
+- José Arrais — Tester / QA
+- Rondineli Seba — Professor
 
 ## Pauta
 

@@ -8,9 +8,10 @@
 |---|---|
 | Nome do projeto | Operix — Gestão de Manutenção Empresarial |
 | Disciplina | Programação Orientada a Objetos |
-| Professor | [A definir] |
+| Professor | Rondineli Seba |
 | Instituição | [A definir] |
-| Product Owner | André Neves |
+| Product Owner / Tech Lead | André Neves |
+| Scrum Master | Luíza Quintanilha |
 | Equipe | Ver seção 9 |
 | Data de início | 29/09/2026 |
 | Previsão de término | [A definir] |
@@ -36,7 +37,7 @@ Desenvolver uma aplicação web para gestão de manutenção empresarial, com ca
 - Utilizar controle de versão com Git e GitHub;
 - Implementar pipeline de CI/CD;
 - Documentar requisitos, arquitetura e decisões técnicas;
-- Conduzir o projeto com Scrum.
+- Conduzir o projeto com Scrumban.
 
 ## 6. Escopo inicial
 
@@ -72,21 +73,20 @@ Detalhamento em [stakeholders.md](stakeholders.md).
 
 ## 9. Equipe
 
-| Integrante | Papel |
-|---|---|
-| André Neves | Product Owner |
-| [Nome] | Scrum Master |
-| [Nome] | Tech Lead |
-| [Nome] | Back-end |
-| [Nome] | Front-end |
-| [Nome] | DevOps |
-| [Nome] | Tester / QA |
+| Integrante | Função técnica | Papel no Scrumban |
+|---|---|---|
+| André Neves | Tech Lead | Product Owner |
+| Luíza Quintanilha | Front-end | Scrum Master |
+| David Rafael | DevOps | Desenvolvedor |
+| Gerardo Mota | Back-end | Desenvolvedor |
+| Matheus Oliveira | Back-end | Desenvolvedor |
+| José Arrais | Tester / QA | Desenvolvedor |
 
 ## 10. Premissas
 
 - Todos os integrantes terão disponibilidade semanal para as atividades e cerimônias;
 - O GitHub será a fonte oficial de código, documentação e gestão;
-- O professor atuará como cliente/stakeholder nas validações.
+- O professor Rondineli Seba atuará como cliente/stakeholder nas validações.
 
 ## 11. Restrições
 
@@ -115,6 +115,6 @@ Detalhamento em [stakeholders.md](stakeholders.md).
 
 | Nome | Papel | Data | Assinatura |
 |---|---|---|---|
-| André Neves | Product Owner | | |
-| [Nome] | Scrum Master | | |
-| [Nome] | Professor / Cliente | | |
+| André Neves | Product Owner / Tech Lead | | |
+| Luíza Quintanilha | Scrum Master | | |
+| Rondineli Seba | Professor / Cliente | | |

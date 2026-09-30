@@ -65,19 +65,18 @@ Arquitetura em camadas (cliente web, API REST, serviços de domínio, persistên
 
 ## Metodologia
 
-O projeto adota **Scrum**, com sprints curtas, backlog priorizado pelo Product Owner e cerimônias documentadas. Ver [docs/02-gestao/scrum.md](docs/02-gestao/scrum.md).
+O projeto adota **Scrumban** (Scrum combinado com Kanban), com sprints curtas, quadro Kanban com fluxo contínuo, backlog priorizado pelo Product Owner e cerimônias documentadas. Ver [docs/02-gestao/scrum.md](docs/02-gestao/scrum.md).
 
 ## Equipe
 
-| Integrante | Papel |
-|---|---|
-| André Neves | Product Owner |
-| [Nome] | Scrum Master |
-| [Nome] | Tech Lead |
-| [Nome] | Desenvolvedor(a) Back-end |
-| [Nome] | Desenvolvedor(a) Front-end |
-| [Nome] | DevOps |
-| [Nome] | Tester / QA |
+| Integrante | Função técnica | Papel no Scrumban |
+|---|---|---|
+| André Neves | Tech Lead | Product Owner |
+| Luíza Quintanilha | Front-end | Scrum Master |
+| David Rafael | DevOps | Desenvolvedor |
+| Gerardo Mota | Back-end | Desenvolvedor |
+| Matheus Oliveira | Back-end | Desenvolvedor |
+| José Arrais | Tester / QA | Desenvolvedor |
 
 Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](docs/02-gestao/papeis-e-responsabilidades.md).
 
@@ -120,6 +119,7 @@ docker compose -f devops/docker/docker-compose.yml up
 | Entrega | Situação |
 |---|---|
 | Estrutura do repositório | Concluída |
+| Definição da equipe | Concluída |
 | Termo de Abertura (TAP) | Em elaboração |
 | Visão do produto e escopo | Em elaboração |
 | Arquitetura de solução | Em elaboração |
