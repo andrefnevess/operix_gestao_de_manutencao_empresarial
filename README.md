@@ -94,7 +94,8 @@ Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](d
 │   ├── 03-arquitetura/      Arquitetura, diagramas e decisões técnicas (ADRs)
 │   ├── 04-requisitos/       Requisitos funcionais e não funcionais, casos de uso, regras
 │   ├── 05-reunioes/         Atas e registro de decisões
-│   └── 06-encerramento/     Termo de Encerramento do Projeto (TEP)
+│   ├── 06-encerramento/     Termo de Encerramento do Projeto (TEP)
+│   └── 07-compliance/       Segurança da informação, LGPD, licenças e direitos autorais
 ├── frontend/                Aplicação web
 ├── backend/                 API e regras de negócio (Java)
 ├── devops/                  Docker, CI/CD e infraestrutura
@@ -137,3 +138,5 @@ Ver [docs/02-gestao/roadmap.md](docs/02-gestao/roadmap.md).
 ## Licença
 
 Distribuído sob a licença MIT. Ver [LICENSE](LICENSE).
+
+Questões de segurança da informação, proteção de dados (LGPD), licenças de terceiros e direitos autorais estão em [docs/07-compliance](docs/07-compliance).

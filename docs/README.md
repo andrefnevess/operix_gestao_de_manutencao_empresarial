@@ -8,6 +8,7 @@
 | [04-requisitos](04-requisitos) | [Funcionais](04-requisitos/requisitos-funcionais.md), [Não funcionais](04-requisitos/requisitos-nao-funcionais.md), [Casos de uso](04-requisitos/casos-de-uso.md), [Regras de negócio](04-requisitos/regras-de-negocio.md) |
 | [05-reunioes](05-reunioes) | [Atas](05-reunioes/atas), [Decisões](05-reunioes/decisoes) |
 | [06-encerramento](06-encerramento) | [TEP](06-encerramento/TEP.md) |
+| [07-compliance](07-compliance) | [Segurança da informação](07-compliance/seguranca-da-informacao.md), [LGPD](07-compliance/lgpd-protecao-de-dados.md), [Licença e direitos autorais](07-compliance/licenca-e-direitos-autorais.md), [Licenças de terceiros](07-compliance/licencas-de-terceiros.md), [Integridade acadêmica](07-compliance/integridade-academica-e-conduta.md), [Checklist](07-compliance/checklist-de-conformidade.md) |
 
 ## Convenções
 
