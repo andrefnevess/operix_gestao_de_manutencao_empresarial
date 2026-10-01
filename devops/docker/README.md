@@ -1,5 +1,9 @@
-# Containers
+# Docker
 
-> Status: [A DEFINIR]. O uso de containers e a ferramenta adotada ainda não foram decididos.
+Arquivos previstos:
 
-Caso adotado, esta pasta conterá os arquivos de configuração dos containers do back-end, do front-end e do banco de dados.
+| Arquivo | Descrição |
+|---|---|
+| `Dockerfile.backend` | Imagem da API NestJS |
+| `Dockerfile.frontend` | Imagem da aplicação React |
+| `docker-compose.yml` | Sobe localmente a API, o front-end e o PostgreSQL |

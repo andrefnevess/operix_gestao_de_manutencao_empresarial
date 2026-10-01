@@ -11,8 +11,8 @@ Estratégia, planejamento, execução e evidências de testes.
 
 ## Tipos de teste
 
-- Unitários (ferramenta [A DEFINIR]);
-- Integração (API);
+- Unitários (Jest);
+- Integração e API (Supertest; consulta aos endpoints pelo Swagger);
 - Funcionais / sistema (manuais, baseados nos casos de teste);
 - Aceitação (validação dos critérios das histórias com o PO).
 

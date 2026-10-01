@@ -2,20 +2,27 @@
 
 Ambientes, automação de build/testes/entrega e infraestrutura.
 
-> Status: ferramentas pendentes de decisão (ADR-005).
-
 ## Responsável
 
 David Rafael.
 
+## Tecnologias
+
+| Item | Tecnologia | Decisão |
+|---|---|---|
+| Containers | Docker + Docker Compose | [ADR-005](../docs/03-arquitetura/decisoes-tecnicas/ADR-005-ambientes-e-ci-cd.md) |
+| CI/CD | GitHub Actions | [ADR-005](../docs/03-arquitetura/decisoes-tecnicas/ADR-005-ambientes-e-ci-cd.md) |
+
 ## Fluxo de entrega
 
-Código -> Commit -> Pull Request -> Revisão -> Testes -> Integração na `main` -> Entrega
+Código -> Commit -> Pull Request -> GitHub Actions (build + testes) -> Revisão -> Integração na `main` -> Imagens Docker
 
 ## Estrutura
 
 | Pasta | Conteúdo |
 |---|---|
-| [docker](docker) | Configuração de containers, caso a equipe adote essa abordagem [A DEFINIR] |
-| [ci-cd](ci-cd) | Definição e documentação do pipeline |
+| [docker](docker) | Dockerfiles e `docker-compose.yml` |
+| [ci-cd](ci-cd) | Documentação do pipeline |
 | [infraestrutura](infraestrutura) | Descrição dos ambientes |
+
+> Para o GitHub Actions executar, os arquivos do pipeline devem ficar em `.github/workflows/`. Esta pasta mantém a documentação.

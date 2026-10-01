@@ -14,16 +14,17 @@ Muitas empresas controlam a manutenção por planilhas, papel ou comunicação i
 
 ## Objetivo
 
-Desenvolver uma aplicação que permita registrar ativos, abrir e acompanhar ordens de serviço, programar manutenções preventivas e consultar indicadores, aplicando os fundamentos de POO e boas práticas de engenharia de software.
+Desenvolver uma aplicação web que permita registrar ativos, abrir e acompanhar ordens de serviço, programar manutenções preventivas e consultar indicadores, aplicando os fundamentos de POO e boas práticas de engenharia de software.
 
 ## Solução Proposta
 
 Sistema composto por:
 
-- **Back-end**, responsável pelas regras de negócio e pela persistência dos dados — tecnologia [A DEFINIR];
-- **Front-end**, interface de operação pelos usuários — tecnologia [A DEFINIR];
-- **Banco de dados** para armazenamento das informações — tecnologia [A DEFINIR];
-- **Automação de build, testes e entrega (CI/CD)** — ferramenta [A DEFINIR].
+- **Back-end** em TypeScript com NestJS, responsável pelas regras de negócio e pela API, documentada com Swagger/OpenAPI;
+- **Front-end** web em React com Tailwind CSS;
+- **Banco de dados** PostgreSQL, acessado pelo ORM Prisma;
+- **Testes** com Jest e Supertest;
+- **Ambientes e CI/CD** com Docker e GitHub Actions.
 
 Detalhes em [docs/01-projeto/visao-do-produto.md](docs/01-projeto/visao-do-produto.md).
 
@@ -47,21 +48,22 @@ Detalhes em [docs/01-projeto/visao-do-produto.md](docs/01-projeto/visao-do-produ
 
 ## Tecnologias
 
-| Camada | Tecnologia | Status |
+| Área | Tecnologia | Motivo |
 |---|---|---|
-| Back-end | [A DEFINIR] | Em discussão |
-| Front-end | [A DEFINIR] | Em discussão |
-| Banco de dados | [A DEFINIR] | Em discussão |
-| Testes | [A DEFINIR] | Em discussão |
-| Infraestrutura / ambientes | [A DEFINIR] | Em discussão |
-| CI/CD | [A DEFINIR] | Em discussão |
-| Versionamento e gestão | Git, GitHub (Issues, Pull Requests, Projects e Discussions) | Definido |
+| Back-end | TypeScript + NestJS | Estrutura modular, orientação a objetos e APIs bem organizadas |
+| Front-end | React + Tailwind CSS | Interface rápida e componentizada |
+| Banco de dados | PostgreSQL | Relacional, robusto e adequado para regras de negócio |
+| ORM | Prisma | Facilita a modelagem e o acesso ao PostgreSQL |
+| Testes | Jest + Supertest | Testes unitários e testes de API |
+| DevOps | Docker + GitHub Actions | CI/CD e ambientes reproduzíveis |
+| Documentação da API | Swagger / OpenAPI | Facilita testar e apresentar a API |
+| Versionamento | Git + GitHub | Código, Issues, Pull Requests e documentação |
 
 As decisões técnicas são registradas em [docs/03-arquitetura/decisoes-tecnicas](docs/03-arquitetura/decisoes-tecnicas).
 
 ## Arquitetura
 
-A arquitetura será definida após a escolha das tecnologias [A DEFINIR]. Ver [docs/03-arquitetura/arquitetura-de-solucao.md](docs/03-arquitetura/arquitetura-de-solucao.md).
+Aplicação web em três camadas: front-end React consumindo uma API REST em NestJS, que persiste os dados no PostgreSQL por meio do Prisma. Ver [docs/03-arquitetura/arquitetura-de-solucao.md](docs/03-arquitetura/arquitetura-de-solucao.md).
 
 ## Metodologia
 
@@ -96,9 +98,9 @@ Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](d
 │   ├── 05-reunioes/         Atas e registro de decisões
 │   ├── 06-encerramento/     Termo de Encerramento do Projeto (TEP)
 │   └── 07-compliance/       Segurança da informação, LGPD, licenças e direitos autorais
-├── frontend/                Interface com o usuário
-├── backend/                 Regras de negócio e persistência
-├── devops/                  Ambientes, CI/CD e infraestrutura
+├── frontend/                Aplicação web React + Tailwind CSS
+├── backend/                 API NestJS (TypeScript), Prisma e PostgreSQL
+├── devops/                  Docker, GitHub Actions e infraestrutura
 ├── tester/                  Planos, casos, evidências e relatórios de teste
 └── tech-lead/              Gerenciamento do projeto
     └── product-owner/       Backlog e documentos de produto
@@ -108,7 +110,16 @@ Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](d
 
 > Em elaboração. As instruções serão adicionadas quando o primeiro incremento estiver disponível.
 
-Pré-requisitos: [A DEFINIR], de acordo com as tecnologias escolhidas.
+Pré-requisitos: Node.js (versão LTS), Docker e Docker Compose, Git.
+
+```bash
+# previsto — os arquivos serão criados na Sprint 1
+git clone https://github.com/andrefnevess/operix_gestao_de_manutencao_empresarial.git
+cd operix_gestao_de_manutencao_empresarial
+docker compose -f devops/docker/docker-compose.yml up
+```
+
+Após a subida, a documentação da API ficará disponível no Swagger (endereço a ser informado).
 
 ## Status do Projeto
 
@@ -118,8 +129,8 @@ Pré-requisitos: [A DEFINIR], de acordo com as tecnologias escolhidas.
 | Definição da equipe | Concluída |
 | Termo de Abertura (TAP) | Em elaboração |
 | Visão do produto e escopo | Em elaboração |
-| Definição das tecnologias | Pendente |
-| Arquitetura de solução | Pendente |
+| Definição das tecnologias | Concluída |
+| Arquitetura de solução | Em elaboração |
 | Desenvolvimento | Não iniciado |
 | Termo de Encerramento (TEP) | Não iniciado |
 

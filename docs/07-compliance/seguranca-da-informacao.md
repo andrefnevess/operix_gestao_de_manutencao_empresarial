@@ -16,7 +16,7 @@ Aplica-se a todos os integrantes da equipe, ao repositório no GitHub, aos ambie
 |---|---|
 | Confidencialidade | Repositório privado; segredos fora do código; acesso por perfil na aplicação |
 | Integridade | Alterações somente via Pull Request revisado; histórico de commits preservado |
-| Disponibilidade | Código e documentação versionados no GitHub; estrutura do banco de dados reproduzível por scripts versionados |
+| Disponibilidade | Código e documentação versionados no GitHub; banco de dados reproduzível pelas migrations do Prisma e pelo Docker |
 | Menor privilégio | Cada pessoa e cada perfil do sistema acessa apenas o necessário |
 
 ## 4. Controle de acesso ao repositório
@@ -32,7 +32,7 @@ Aplica-se a todos os integrantes da equipe, ao repositório no GitHub, aos ambie
 - Senhas, tokens, chaves de API e strings de conexão **nunca** são versionados;
 - Configurações sensíveis ficam em variáveis de ambiente e em arquivos `.env`, que estão no `.gitignore`;
 - O repositório mantém apenas um `.env.example` com nomes de variáveis e valores fictícios;
-- No pipeline, segredos ficam em **GitHub Secrets**;
+- No pipeline do GitHub Actions, segredos ficam em **GitHub Secrets**;
 - Se um segredo for exposto em um commit, ele deve ser **revogado e trocado imediatamente**; apagar o commit não é suficiente.
 
 ## 6. Desenvolvimento seguro
@@ -41,7 +41,7 @@ Aplica-se a todos os integrantes da equipe, ao repositório no GitHub, aos ambie
 |---|---|
 | Quebra de controle de acesso | Autorização por perfil verificada no back-end em cada endpoint |
 | Falhas criptográficas | Senhas armazenadas apenas como hash seguro (algoritmo [A DEFINIR]); comunicação criptografada no ambiente de demonstração |
-| Injeção (SQL e outras) | Consultas parametrizadas e validação de todas as entradas |
+| Injeção (SQL e outras) | Acesso ao banco pelo Prisma (consultas parametrizadas) e validação das entradas nos DTOs do NestJS |
 | Design inseguro | Regras de negócio revisadas pelo Tech Lead e documentadas |
 | Configuração incorreta | Perfis de configuração separados por ambiente; mensagens de erro sem detalhes internos |
 | Componentes vulneráveis | Dependências atualizadas e verificadas pelo Dependabot |

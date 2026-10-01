@@ -1,4 +1,23 @@
-# Este arquivo será complementado quando as tecnologias forem definidas [A DEFINIR]
+# Dependências (Node.js)
+node_modules/
+
+# Builds
+dist/
+build/
+
+# Testes
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
 
 # IDEs e editores
 .idea/
@@ -9,13 +28,5 @@
 .DS_Store
 Thumbs.db
 
-# Variáveis de ambiente e segredos
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-
-# Logs e arquivos temporários
-*.log
+# Arquivos temporários
 tmp/

@@ -1,6 +1,6 @@
 # Arquitetura de Solução
 
-> Status: pendente. Os componentes e tecnologias serão definidos pela equipe e registrados em [decisões técnicas](decisoes-tecnicas).
+> Status: em elaboração. Tecnologias definidas em 30/09/2026 e registradas em [decisões técnicas](decisoes-tecnicas).
 
 ## Contexto
 
@@ -15,11 +15,15 @@
 
 | Componente | Tecnologia | Responsabilidade |
 |---|---|---|
-| Front-end | [A DEFINIR] | Interface com o usuário |
-| Back-end | [A DEFINIR] | Regras de negócio |
-| Banco de dados | [A DEFINIR] | Persistência |
-| Ambientes | [A DEFINIR] | Padronização dos ambientes de desenvolvimento e demonstração |
-| CI/CD | [A DEFINIR] | Build, testes e entrega |
+| Front-end | React + Tailwind CSS | Interface web com o usuário |
+| Back-end | TypeScript + NestJS | API REST e regras de negócio |
+| ORM | Prisma | Modelagem e acesso ao banco de dados, migrations |
+| Banco de dados | PostgreSQL | Persistência |
+| Documentação da API | Swagger / OpenAPI | Documentação interativa dos endpoints |
+| Testes | Jest + Supertest | Testes unitários e testes de API |
+| Ambientes | Docker | Padronização dos ambientes de desenvolvimento e demonstração |
+| CI/CD | GitHub Actions | Build, testes e entrega a cada Pull Request |
+| Versionamento | Git + GitHub | Código, Issues, Pull Requests e documentação |
 
 ## Modelo de domínio inicial
 
@@ -43,4 +47,4 @@ ABERTA -> ATRIBUIDA -> EM_EXECUCAO -> CONCLUIDA
 
 ## Fluxo de entrega
 
-Código -> Commit -> Pull Request -> Revisão -> Testes -> Integração na `main`
+Código -> Commit -> Pull Request -> GitHub Actions (build + testes Jest/Supertest) -> Revisão -> Integração na `main` -> Imagens Docker

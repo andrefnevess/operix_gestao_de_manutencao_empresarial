@@ -10,6 +10,8 @@
 | RNF04 | Desempenho | Operações comuns respondem em até 2 segundos em condições normais |
 | RNF05 | Manutenibilidade | Código organizado em camadas e seguindo princípios de POO e SOLID |
 | RNF06 | Testabilidade | Regras de negócio cobertas por testes unitários |
-| RNF07 | Portabilidade | Ambiente de execução padronizado e reproduzível (ferramenta [A DEFINIR]) |
+| RNF07 | Portabilidade | Ambiente de execução padronizado e reproduzível com Docker |
 | RNF08 | Versionamento | Código versionado no GitHub com integração via Pull Request |
 | RNF09 | Disponibilidade | Pipeline de CI executa build e testes a cada Pull Request |
+| RNF10 | Documentação | Todos os endpoints da API documentados com Swagger/OpenAPI |
+| RNF11 | Compatibilidade | Interface web compatível com as versões atuais dos principais navegadores |

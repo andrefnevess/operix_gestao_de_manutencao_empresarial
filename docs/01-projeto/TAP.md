@@ -26,17 +26,17 @@ Ausência de um controle centralizado de ativos, ordens de serviço e manutenç�
 
 ## 4. Objetivo geral
 
-Desenvolver uma aplicação para gestão de manutenção empresarial, com cadastro de ativos, controle de ordens de serviço e planejamento de manutenções preventivas.
+Desenvolver uma aplicação web para gestão de manutenção empresarial, com cadastro de ativos, controle de ordens de serviço e planejamento de manutenções preventivas.
 
 ## 5. Objetivos específicos
 
-- Desenvolver uma aplicação funcional (plataforma [A DEFINIR]);
-- Implementar o back-end em linguagem orientada a objetos ([A DEFINIR]), aplicando os pilares de POO (encapsulamento, herança, polimorfismo e abstração);
-- Persistir os dados em banco de dados ([A DEFINIR]);
-- Implementar testes automatizados;
+- Desenvolver uma aplicação web funcional (React + Tailwind CSS);
+- Implementar o back-end em TypeScript com NestJS, aplicando os pilares de POO (encapsulamento, herança, polimorfismo e abstração);
+- Persistir os dados em PostgreSQL, com acesso pelo ORM Prisma;
+- Implementar testes automatizados com Jest e Supertest;
 - Utilizar controle de versão com Git e GitHub;
-- Implementar pipeline de CI/CD;
-- Documentar requisitos, arquitetura e decisões técnicas;
+- Implementar pipeline de CI/CD com GitHub Actions e ambientes com Docker;
+- Documentar requisitos, arquitetura, decisões técnicas e a API (Swagger/OpenAPI);
 - Conduzir o projeto com Scrumban.
 
 ## 6. Escopo inicial
@@ -91,7 +91,7 @@ Detalhamento em [stakeholders.md](stakeholders.md).
 ## 11. Restrições
 
 - Prazo definido pelo calendário acadêmico;
-- Back-end obrigatoriamente em linguagem orientada a objetos (linguagem [A DEFINIR]);
+- Back-end obrigatoriamente orientado a objetos (TypeScript com NestJS);
 - Uso de ferramentas gratuitas ou com licença acadêmica.
 
 ## 12. Riscos iniciais

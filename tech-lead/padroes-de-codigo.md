@@ -1,15 +1,32 @@
 # Padrões de Código
 
-> Status: em elaboração pelo Tech Lead. As convenções específicas de linguagem serão definidas após a escolha das tecnologias.
+> Status: em elaboração pelo Tech Lead.
 
-## Convenções de código
+## TypeScript (back-end e, se adotado, front-end)
 
-[A DEFINIR] — de acordo com a linguagem adotada. Diretrizes gerais:
+- Classes, interfaces e tipos em `PascalCase`; variáveis, funções e métodos em `camelCase`; constantes em `UPPER_SNAKE_CASE`;
+- Nomes de arquivos em `kebab-case` (ex.: `ordens-servico.service.ts`);
+- Tipagem explícita; evitar `any`;
+- Atributos `private` ou `protected` e alteração de estado por métodos de negócio (encapsulamento).
 
-- Nomes claros e em português, seguindo a convenção da linguagem escolhida;
-- Encapsulamento: atributos privados e acesso por métodos;
-- Regras de negócio separadas da interface com o usuário;
-- Código revisado antes de ser integrado.
+## NestJS (back-end)
+
+- Um módulo por área de negócio;
+- Controllers apenas recebem requisições e delegam; regras de negócio ficam em services e classes de domínio;
+- Validação de entrada nos DTOs;
+- Endpoints documentados com os decorators do Swagger;
+- Acesso ao banco somente por meio do Prisma.
+
+## React (front-end)
+
+- Componentes em `PascalCase`, um componente por arquivo;
+- Estilização com classes do Tailwind CSS;
+- Chamadas à API concentradas em `src/services`.
+
+## Testes
+
+- Testes unitários junto ao código (`*.spec.ts`), com Jest;
+- Testes de API em `backend/tests`, com Supertest.
 
 ## Branches e commits
 
@@ -17,5 +34,5 @@ Ver [plano de comunicação](../docs/02-gestao/comunicacao.md).
 
 ## Revisão de código
 
-- Todo Pull Request precisa de ao menos uma aprovação;
+- Todo Pull Request precisa de ao menos uma aprovação e do pipeline do GitHub Actions aprovado;
 - O revisor verifica legibilidade, aplicação de POO, testes e aderência aos padrões.
