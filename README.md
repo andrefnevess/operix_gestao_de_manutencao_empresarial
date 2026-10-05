@@ -69,6 +69,21 @@ Aplicação web em três camadas: front-end React consumindo uma API REST em Nes
 
 O projeto adota **Scrumban** (Scrum combinado com Kanban), com sprints curtas, quadro Kanban com fluxo contínuo, backlog priorizado pelo Product Owner e cerimônias documentadas. Ver [docs/02-gestao/scrum.md](docs/02-gestao/scrum.md).
 
+### Planejamento (Kanban no Trello)
+
+O cronograma de entregas da disciplina e as tarefas de cada área estão no quadro Kanban do Trello, organizado por entrega, com prazos, responsáveis e etiquetas por área:
+
+**[Operix — Cronograma de Entregas (POO)](https://trello.com/invite/b/6ac3fc61d92f5af90dc6a42b/ATTI36b7432fdf85cc9b1265efb84ec1d44a7DE01C50/operix-cronograma-de-entregas-poo)**
+
+| Entrega | Data |
+|---|---|
+| Apresentação + Imersão | 30/09 (concluída) |
+| Modelo de domínio | 07/10 e 14/10 |
+| Board + Incubators | 21/10 |
+| MVP integrado | 04/11 |
+| F3 — Projeto e Resultados | 11/11 |
+| Paper final + Prova S1 | 18 a 25/11 |
+
 ## Equipe
 
 | Integrante | Função técnica | Papel no Scrumban |
