@@ -9,7 +9,7 @@
 | David Rafael | DevOps | Desenvolvedor | Ambientes, containers e pipeline de CI/CD |
 | Gerardo Mota | Back-end | Desenvolvedor | API, domínio orientado a objetos e persistência |
 | Matheus Oliveira | Back-end | Desenvolvedor | API, domínio orientado a objetos e persistência |
-| José Arrais | Tester / QA | Desenvolvedor | Planejamento e execução de testes, evidências e relatórios |
+| José Arraes | Tester / QA | Desenvolvedor | Planejamento e execução de testes, evidências e relatórios |
 
 ## Professor
 

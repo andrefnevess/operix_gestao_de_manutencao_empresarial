@@ -30,5 +30,5 @@ Documentos de conformidade legal, segurança da informação, proteção de dado
 |---|---|
 | Segurança no código e revisão | André Neves (Tech Lead) |
 | Segurança de ambientes, segredos e pipeline | David Rafael (DevOps) |
-| Testes de segurança | José Arrais (Tester) |
+| Testes de segurança | José Arraes (Tester) |
 | Acompanhamento do checklist por sprint | Luíza Quintanilha (Scrum Master) |

@@ -93,7 +93,7 @@ O cronograma de entregas da disciplina e as tarefas de cada área estão no quad
 | David Rafael | DevOps | Desenvolvedor |
 | Gerardo Mota | Back-end | Desenvolvedor |
 | Matheus Oliveira | Back-end | Desenvolvedor |
-| José Arrais | Tester / QA | Desenvolvedor |
+| José Arraes | Tester / QA | Desenvolvedor |
 
 Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](docs/02-gestao/papeis-e-responsabilidades.md).
 

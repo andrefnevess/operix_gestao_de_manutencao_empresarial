@@ -80,7 +80,7 @@ Detalhamento em [stakeholders.md](stakeholders.md).
 | David Rafael | DevOps | Desenvolvedor |
 | Gerardo Mota | Back-end | Desenvolvedor |
 | Matheus Oliveira | Back-end | Desenvolvedor |
-| José Arrais | Tester / QA | Desenvolvedor |
+| José Arraes | Tester / QA | Desenvolvedor |
 
 ## 10. Premissas
 

@@ -34,7 +34,7 @@ Para evitar conflito de responsabilidades:
 | Back-end | Gerardo Mota, Matheus Oliveira | API, modelo de domínio orientado a objetos, regras de negócio e persistência |
 | Front-end | Luíza Quintanilha | Interface, experiência do usuário e integração com a API |
 | DevOps | David Rafael | Ambientes, containers, pipeline de CI/CD e infraestrutura |
-| Tester / QA | José Arrais | Estratégia de testes, casos de teste, execução, evidências e relatórios |
+| Tester / QA | José Arraes | Estratégia de testes, casos de teste, execução, evidências e relatórios |
 
 ## Matriz RACI
 

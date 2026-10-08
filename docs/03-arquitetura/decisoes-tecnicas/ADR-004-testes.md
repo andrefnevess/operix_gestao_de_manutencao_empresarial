@@ -4,7 +4,7 @@
 |---|---|
 | Status | Aceita |
 | Data | 30/09/2026 |
-| Responsável | André Neves (Tech Lead) e José Arrais (Tester) |
+| Responsável | André Neves (Tech Lead) e José Arraes (Tester) |
 
 ## Contexto
 

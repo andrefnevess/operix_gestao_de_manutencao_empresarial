@@ -5,7 +5,7 @@
 | Item | Descrição |
 |---|---|
 | Escopo | Funcionalidades da sprint vigente |
-| Responsável | José Arrais — Tester / QA |
+| Responsável | José Arraes — Tester / QA |
 | Ambiente | Local (Docker Compose) e demonstração |
 | Ferramentas | Jest (unitários), Supertest (API), Swagger (consulta e testes exploratórios da API), GitHub Actions (execução automática) |
 

@@ -156,4 +156,4 @@ Formato: *Como* **[perfil]**, *quero* **[ação]**, *para* **[benefício]**.
 ## Observações
 
 - As histórias seguem as classes identificadas na ATA-001: `Usuario`, `Equipamento`, `Chamado`, `OrdemServico` e `Manutencao`;
-- Critérios de aceite são validados pelo Tester (José Arrais) e aceitos pelo Product Owner.
+- Critérios de aceite são validados pelo Tester (José Arraes) e aceitos pelo Product Owner.

@@ -16,7 +16,7 @@ Google Meet / Presencial
 - David Rafael — DevOps
 - Gerardo Mota — Back-end
 - Matheus Oliveira — Back-end
-- José Arrais — Tester / QA
+- José Arraes — Tester / QA
 - Rondineli Seba — Professor
 
 ## Pauta

@@ -4,7 +4,7 @@
 
 ## 1. Autoria
 
-O Operix é uma obra coletiva desenvolvida por **André Neves, Luíza Quintanilha, David Rafael, Gerardo Mota, Matheus Oliveira e José Arrais**, como projeto da disciplina de Programação Orientada a Objetos do Centro Universitário Dom Bosco — UNDB, sob orientação do professor Rondineli Seba.
+O Operix é uma obra coletiva desenvolvida por **André Neves, Luíza Quintanilha, David Rafael, Gerardo Mota, Matheus Oliveira e José Arraes**, como projeto da disciplina de Programação Orientada a Objetos do Centro Universitário Dom Bosco — UNDB, sob orientação do professor Rondineli Seba.
 
 A autoria de cada contribuição é registrada no histórico de commits do Git.
 
