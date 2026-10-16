@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+/*STATUS ORDEM DE SERVICO*/
+enum StatusOrdemServico {
+  ABERTA
+  ATRIBUIDA
+  EM_ANDAMENTO
+  CONCLUIDA
+  CANCELADA
+}
+
+enum PrioridadeOrdem {
+  BAIXA
+  MEDIA
+  ALTA
+  CRITICA
+}
+
+/*STATUS*/
+enum StatusAtivo {
+  DISPONIVEL
+  EM_MANUTENCAO
+  INATIVO
+}
+
+
+/*ATIVO*/
+model Ativo {
+  id Int @id @default(autoincrement())
+  codigo String @unique
+  nome String
+  localizacao String
+  status StatusAtivo @default(DISPONIVEL)
+  criadoEm DateTime @default(now())
+  ordens OrdemServico[]
+  planos PlanoManutencao[]
+}
+
+
+/*TECNICO*/
+  model Tecnico {
+  id Int @id @default(autoincrement())
+  nome String
+  matricula String @unique
+  telefone String?
+  ordens OrdemServico[]
+  historico HistoricoIntervencao[]
+}
+
+
+/*ORDEM DE SERVICO*/
+model OrdemServico {
+  id Int @id @default(autoincrement())
+  titulo String
+  descricao String
+  status StatusOrdemServico @default(ABERTA)
+  prioridade PrioridadeOrdem @default(MEDIA)
+  ativoId Int
+  ativo Ativo @relation(fields: [ativoId], references: [id])
+  tecnicoId Int?
+  tecnico Tecnico? @relation(fields: [tecnicoId], references: [id])
+  criadoEm DateTime @default(now())
+  historico HistoricoIntervencao[]
+}
+
+model PlanoManutencao {
+  id Int @id @default(autoincrement())
+  nome String
+  ativoId Int
+  ativo Ativo @relation(fields: [ativoId], references: [id])
+  periodicidadeDias Int
+  proximaExecucao DateTime
+}
+
+model HistoricoIntervencao {
+  id Int@id @default(autoincrement())
+  descricao String
+  dataExecucao DateTime 
+  ordemServico OrdemServico @relation(fields: [ordemServicoId], references: [id])
+  ordemServicoId Int
+  tecnico Tecnico @relation(fields: [tecnicoId], references: [id])
+  tecnicoId Int
+}
