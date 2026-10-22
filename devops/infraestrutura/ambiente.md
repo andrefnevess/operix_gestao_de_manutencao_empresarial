@@ -1,17 +1,21 @@
 # Ambientes
 
-| Ambiente | Finalidade | Hospedagem / ferramenta |
+| Ambiente | Finalidade | Como sobe |
 |---|---|---|
-| Local | Desenvolvimento | Docker Compose (API, front-end e PostgreSQL) |
-| Demonstração | Apresentações e validação | [A DEFINIR] |
+| Local sem banco | Desenvolvimento rápido do front-end e testes | API com `PERSISTENCIA=memoria` (`npm run start:dev` no back-end) |
+| Local completo | Desenvolvimento e testes integrados | `docker compose -f devops/docker/docker-compose.yml up --build` |
+| Demonstração | Apresentações e validação (F3) | [A DEFINIR] |
 
-## Variáveis de ambiente previstas
+## Variáveis de ambiente
 
-| Variável | Uso |
-|---|---|
-| `DATABASE_URL` | Conexão do Prisma com o PostgreSQL |
-| `JWT_SECRET` ou equivalente | Assinatura das sessões de autenticação |
-| `PORT` | Porta da API |
-| `VITE_API_URL` ou equivalente | Endereço da API usado pelo front-end |
+| Variável | Onde | Uso |
+|---|---|---|
+| `PERSISTENCIA` | API | `memoria` (sem banco) ou `prisma` (PostgreSQL) |
+| `DATABASE_URL` | API | Conexão do Prisma com o PostgreSQL |
+| `JWT_SECRET` | API | Assinatura dos tokens de login (obrigatório em produção) |
+| `SENHA_EXEMPLO` | API | Senha dos usuários de exemplo (somente desenvolvimento) |
+| `PORT` | API | Porta da API (padrão 3000) |
+| `CORS_ORIGIN` | API | Origens autorizadas a chamar a API |
+| `API_URL` | Front-end | Endereço da API para onde o Next.js encaminha `/api` (padrão `http://localhost:3000`, lido no build) |
 
-Senhas, chaves e endereços de conexão ficam em variáveis de ambiente e nunca são versionados. Ver [política de segurança](../../docs/07-compliance/seguranca-da-informacao.md).
+Modelos: [`backend/.env.example`](../../backend/.env.example) e [`frontend/.env.example`](../../frontend/.env.example). Os arquivos `.env` reais nunca são versionados.

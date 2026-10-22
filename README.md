@@ -6,7 +6,7 @@ Sistema para planejamento, execução e acompanhamento de manutenções em ambie
 
 ## Sobre o Projeto
 
-O Operix centraliza o controle de ativos (equipamentos, máquinas e instalações), ordens de serviço e planos de manutenção preventiva e corretiva, oferecendo rastreabilidade e histórico das intervenções realizadas.
+O Operix centraliza o controle de equipamentos (máquinas, instalações e dispositivos), chamados, ordens de serviço e planos de manutenção preventiva e corretiva, oferecendo rastreabilidade e histórico das intervenções realizadas.
 
 ## Problema
 
@@ -14,7 +14,7 @@ Muitas empresas controlam a manutenção por planilhas, papel ou comunicação i
 
 ## Objetivo
 
-Desenvolver uma aplicação web que permita registrar ativos, abrir e acompanhar ordens de serviço, programar manutenções preventivas e consultar indicadores, aplicando os fundamentos de POO e boas práticas de engenharia de software.
+Desenvolver uma aplicação web que permita registrar equipamentos, abrir chamados, acompanhar ordens de serviço, programar manutenções preventivas e consultar indicadores, aplicando os fundamentos de POO e boas práticas de engenharia de software.
 
 ## Solução Proposta
 
@@ -36,22 +36,24 @@ Detalhes em [docs/01-projeto/visao-do-produto.md](docs/01-projeto/visao-do-produ
 
 ## Funcionalidades Principais
 
-| Módulo | Descrição |
-|---|---|
-| Autenticação | Login e controle de acesso por perfil |
-| Ativos | Cadastro de equipamentos, localização e dados técnicos |
-| Ordens de Serviço | Abertura, atribuição, execução e encerramento |
-| Manutenção Preventiva | Planos com periodicidade e geração de ordens |
-| Técnicos | Cadastro de técnicos e especialidades |
-| Histórico | Registro das intervenções por ativo |
-| Relatórios | Indicadores básicos (ordens abertas, atrasadas, concluídas) |
+| Módulo | Descrição | História |
+|---|---|---|
+| Autenticação | Login e controle de acesso por perfil | UH01 |
+| Usuários e perfis | Administrador, Gestor, Técnico e Solicitante | UH02 |
+| Equipamentos | Cadastro com código, tipo, localização e status | UH03 |
+| Chamados | Solicitante reporta o problema e acompanha o status | UH04 |
+| Ordens de serviço | Geração, atribuição, execução e encerramento | UH05, UH06 |
+| Manutenção preventiva | Planos por periodicidade com alertas | UH07 |
+| Histórico e indicadores | Histórico por equipamento e painel gerencial | UH08 |
+
+Modelo de domínio: [docs/03-arquitetura/modelo-de-dominio.md](docs/03-arquitetura/modelo-de-dominio.md).
 
 ## Tecnologias
 
 | Área | Tecnologia | Motivo |
 |---|---|---|
 | Back-end | TypeScript + NestJS | Estrutura modular, orientação a objetos e APIs bem organizadas |
-| Front-end | React + Tailwind CSS | Interface rápida e componentizada |
+| Front-end | Next.js (React) + Tailwind CSS | Interface rápida e componentizada |
 | Banco de dados | PostgreSQL | Relacional, robusto e adequado para regras de negócio |
 | ORM | Prisma | Facilita a modelagem e o acesso ao PostgreSQL |
 | Testes | Jest + Supertest | Testes unitários e testes de API |
@@ -113,7 +115,7 @@ Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](d
 │   ├── 05-reunioes/         Atas e registro de decisões
 │   ├── 06-encerramento/     Termo de Encerramento do Projeto (TEP)
 │   └── 07-compliance/       Segurança da informação, LGPD, licenças e direitos autorais
-├── frontend/                Aplicação web React + Tailwind CSS
+├── frontend/                Aplicação web Next.js (React) + Tailwind CSS
 ├── backend/                 API NestJS (TypeScript), Prisma e PostgreSQL
 ├── devops/                  Docker, GitHub Actions e infraestrutura
 ├── tester/                  Planos, casos, evidências e relatórios de teste
@@ -123,30 +125,35 @@ Responsabilidades detalhadas em [docs/02-gestao/papeis-e-responsabilidades.md](d
 
 ## Como Executar
 
-> Em elaboração. As instruções serão adicionadas quando o primeiro incremento estiver disponível.
-
-Pré-requisitos: Node.js (versão LTS), Docker e Docker Compose, Git.
+**Opção 1 — tudo com Docker** (na raiz do repositório):
 
 ```bash
-# previsto — os arquivos serão criados na Sprint 1
-git clone https://github.com/andrefnevess/operix_gestao_de_manutencao_empresarial.git
-cd operix_gestao_de_manutencao_empresarial
-docker compose -f devops/docker/docker-compose.yml up
+docker compose -f devops/docker/docker-compose.yml up --build
 ```
 
-Após a subida, a documentação da API ficará disponível no Swagger (endereço a ser informado).
+Front-end em http://localhost:8080 · API em http://localhost:3000/api · Swagger em http://localhost:3000/api/docs
+
+**Opção 2 — sem Docker e sem banco** (Node.js 20+):
+
+```bash
+cd backend && npm install && cp .env.example .env && npm run start:dev
+# em outro terminal
+cd frontend && npm install && npm run dev
+```
+
+Front-end em http://localhost:3001. Usuários de exemplo: `admin@`, `gestor@`, `tecnico@` e `solicitante@operix.local`, com a senha definida em `SENHA_EXEMPLO` (veja [backend/README.md](backend/README.md)).
 
 ## Status do Projeto
 
 | Entrega | Situação |
 |---|---|
-| Estrutura do repositório | Concluída |
-| Definição da equipe | Concluída |
-| Termo de Abertura (TAP) | Em elaboração |
-| Visão do produto e escopo | Em elaboração |
-| Definição das tecnologias | Concluída |
-| Arquitetura de solução | Em elaboração |
-| Desenvolvimento | Não iniciado |
+| Estrutura do repositório e documentação de projeto | Concluída |
+| Definição da equipe e das tecnologias | Concluída |
+| Modelo de domínio (diagramas, regras e classes) | Concluído — [modelo de domínio](docs/03-arquitetura/modelo-de-dominio.md) |
+| UH01 a UH03 (login, usuários, equipamentos): API, telas e testes | Concluídas, em revisão |
+| Ambiente Docker e pipeline de CI | Concluídos |
+| UH04 a UH07 (MVP integrado — 04/11) | Em andamento |
+| UH08 e F3 (11/11) | Planejada |
 | Termo de Encerramento (TEP) | Não iniciado |
 
 ## Roadmap

@@ -1,0 +1,51 @@
+# Ambiente local completo do Operix.
+# Uso (na raiz do repositório): docker compose -f devops/docker/docker-compose.yml up --build
+# Front-end: http://localhost:8080 · API: http://localhost:3000/api · Swagger: http://localhost:3000/api/docs
+name: operix
+
+services:
+  banco:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: operix
+      POSTGRES_PASSWORD: operix
+      POSTGRES_DB: operix
+    ports:
+      - "5432:5432"
+    volumes:
+      - dados-banco:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U operix -d operix"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ../../backend
+      dockerfile: ../devops/docker/Dockerfile.backend
+    environment:
+      PERSISTENCIA: prisma
+      DATABASE_URL: postgresql://operix:operix@banco:5432/operix
+      JWT_SECRET: ${JWT_SECRET:-troque-este-valor}
+      SENHA_EXEMPLO: ${SENHA_EXEMPLO:-operix-dev}
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      banco:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ../../frontend
+      dockerfile: ../devops/docker/Dockerfile.frontend
+      args:
+        API_URL: http://api:3000
+    ports:
+      - "8080:3000"
+    depends_on:
+      - api
+
+volumes:
+  dados-banco:

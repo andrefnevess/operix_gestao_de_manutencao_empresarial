@@ -1,50 +1,65 @@
 # Front-end
 
-Aplicação web do Operix.
+Aplicação web do Operix em **Next.js (React) + Tailwind CSS** (TypeScript), integrada à API do back-end.
 
 ## Responsável
 
 Luíza Quintanilha.
 
-## Tecnologias
+## Situação
 
-| Item | Tecnologia | Decisão |
-|---|---|---|
-| Plataforma | Web | [ADR-002](../docs/03-arquitetura/decisoes-tecnicas/ADR-002-front-end.md) |
-| Biblioteca de interface | React | [ADR-002](../docs/03-arquitetura/decisoes-tecnicas/ADR-002-front-end.md) |
-| Estilização | Tailwind CSS | [ADR-002](../docs/03-arquitetura/decisoes-tecnicas/ADR-002-front-end.md) |
-| Linguagem | [A DEFINIR] — TypeScript recomendado, para manter o mesmo padrão do back-end | — |
-| Testes | Jest | [ADR-004](../docs/03-arquitetura/decisoes-tecnicas/ADR-004-testes.md) |
-
-## Estrutura prevista
-
-```
-frontend/
-├── public/          Arquivos estáticos
-├── src/
-│   ├── components/  Componentes reutilizáveis
-│   ├── pages/       Telas
-│   ├── services/    Comunicação com a API
-│   └── styles/      Configuração do Tailwind e estilos globais
-└── tests/           Testes do front-end
-```
-
-## Páginas previstas
-
-| Página | História |
+| Entrega | Situação |
 |---|---|
-| Login | UH01 |
-| Usuários | UH02 |
-| Equipamentos | UH03 |
-| Chamados | UH04 |
-| Ordens de serviço | UH05, UH06 |
-| Manutenção preventiva | UH07 |
-| Histórico e painel de indicadores | UH08 |
-
-## Integração com a API
-
-Comunicação HTTP/JSON com a API REST do back-end. Os endpoints e formatos de dados seguem a documentação Swagger/OpenAPI. O endereço da API é configurado por variável de ambiente.
+| UH01 — Tela de login | Concluída, integrada à API |
+| UH02 — Telas de usuários (lista, cadastro, edição, inativação) | Concluída, integrada à API |
+| UH03 — Telas de equipamentos (lista com busca, cadastro, edição, inativação) | Concluída, integrada à API |
+| Wireframes de chamados e ordens de serviço (Sprint 2) | Concluído — [docs/wireframes](docs/wireframes) |
+| UH04 a UH08 | Sprint 2 e Sprint 3 |
 
 ## Como executar
 
-Instruções serão adicionadas na Sprint 1.
+Pré-requisitos: Node.js 20 ou superior e a API rodando (veja o [README do back-end](../backend/README.md)).
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Acesse http://localhost:3001 e entre com um dos usuários de exemplo do back-end (por exemplo, `gestor@operix.local`).
+
+## Telas
+
+| Tela | Rota | Quem acessa | História |
+|---|---|---|---|
+| Login | `/login` | Todos | UH01 |
+| Equipamentos | `/equipamentos` | Todos os perfis (consulta) | UH03 |
+| Novo e editar equipamento | `/equipamentos/novo`, `/equipamentos/[id]` | Gestor | UH03 |
+| Usuários | `/usuarios` | Administrador | UH02 |
+| Novo e editar usuário | `/usuarios/novo`, `/usuarios/[id]` | Administrador | UH02 |
+
+Capturas das telas em [docs/telas](docs/telas).
+
+## Estrutura
+
+```
+frontend/
+├── next.config.ts          Configuração do Next.js (encaminha /api para a API)
+├── src/
+│   ├── app/                Rotas (App Router) e estilos globais
+│   │   ├── login/          Tela de login
+│   │   └── (sistema)/      Telas que exigem login: equipamentos e usuários
+│   ├── components/         Layout, controle de acesso, formulários e componentes reutilizáveis
+│   └── services/           Comunicação com a API (api.ts) e sessão do usuário (sessao.tsx)
+├── docs/
+│   ├── telas/              Capturas das telas implementadas
+│   └── wireframes/         Wireframes das próximas telas
+└── tests/                  Testes do front-end (a implementar)
+```
+
+## Integração com a API
+
+- As chamadas ficam centralizadas em `src/services/api.ts`, com os mesmos formatos da documentação Swagger (`/api/docs`).
+- O Next.js encaminha `/api` para a API (`API_URL`, padrão `http://localhost:3000`).
+- O token de login fica em `sessionStorage` e é enviado no cabeçalho `Authorization`.
+- O front-end esconde o que o perfil não pode fazer, mas quem garante as permissões é sempre o back-end.

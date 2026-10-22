@@ -1,0 +1,168 @@
+// Modelo de dados do Operix (PostgreSQL + Prisma).
+// Espelha o modelo de domínio em docs/03-arquitetura/modelo-de-dominio.md.
+// As regras de negócio ficam nas classes de domínio (src/domain); aqui ficam apenas as tabelas.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Perfil {
+  ADMINISTRADOR
+  GESTOR
+  TECNICO
+  SOLICITANTE
+}
+
+enum StatusEquipamento {
+  ATIVO
+  EM_MANUTENCAO
+  INATIVO
+}
+
+enum StatusChamado {
+  ABERTO
+  EM_ATENDIMENTO
+  ENCERRADO
+  CANCELADO
+}
+
+enum StatusOS {
+  ABERTA
+  ATRIBUIDA
+  EM_EXECUCAO
+  CONCLUIDA
+  CANCELADA
+}
+
+enum Prioridade {
+  BAIXA
+  MEDIA
+  ALTA
+  CRITICA
+}
+
+enum TipoManutencao {
+  CORRETIVA
+  PREVENTIVA
+}
+
+// Usuario é abstrato no domínio; no banco, uma tabela única com a coluna "perfil"
+// define qual subclasse (Administrador, Gestor, Tecnico, Solicitante) é criada.
+model Usuario {
+  id               String    @id @default(uuid())
+  nome             String
+  email            String    @unique
+  senhaHash        String    @map("senha_hash")
+  perfil           Perfil
+  ativo            Boolean   @default(true)
+  especialidades   String[]  @default([])
+  tentativasFalhas Int       @default(0) @map("tentativas_falhas")
+  bloqueadoAte     DateTime? @map("bloqueado_ate")
+  criadoEm         DateTime  @default(now()) @map("criado_em")
+
+  chamadosAbertos  Chamado[]      @relation("SolicitanteChamados")
+  ordensAtribuidas OrdemServico[] @relation("TecnicoOrdens")
+  manutencoes      Manutencao[]
+
+  @@map("usuarios")
+}
+
+model Equipamento {
+  id            String            @id @default(uuid())
+  codigo        String            @unique
+  nome          String
+  tipo          String
+  localizacao   String
+  fabricante    String?
+  modelo        String?
+  dataAquisicao DateTime?         @map("data_aquisicao")
+  status        StatusEquipamento @default(ATIVO)
+  criadoEm      DateTime          @default(now()) @map("criado_em")
+
+  chamados    Chamado[]
+  planos      PlanoPreventivo[]
+  ordens      OrdemServico[]
+  manutencoes Manutencao[]
+
+  @@map("equipamentos")
+}
+
+model Chamado {
+  id            String        @id @default(uuid())
+  numero        Int           @unique @default(autoincrement())
+  descricao     String
+  urgencia      Prioridade
+  status        StatusChamado @default(ABERTO)
+  abertoEm      DateTime      @default(now()) @map("aberto_em")
+  solicitanteId String        @map("solicitante_id")
+  equipamentoId String        @map("equipamento_id")
+
+  solicitante  Usuario       @relation("SolicitanteChamados", fields: [solicitanteId], references: [id])
+  equipamento  Equipamento   @relation(fields: [equipamentoId], references: [id])
+  ordemServico OrdemServico?
+
+  @@map("chamados")
+}
+
+model PlanoPreventivo {
+  id                String   @id @default(uuid())
+  descricao         String
+  periodicidadeDias Int      @map("periodicidade_dias")
+  ultimaExecucao    DateTime @map("ultima_execucao")
+  ativo             Boolean  @default(true)
+  equipamentoId     String   @map("equipamento_id")
+
+  equipamento Equipamento    @relation(fields: [equipamentoId], references: [id])
+  ordens      OrdemServico[]
+  manutencoes Manutencao[]
+
+  @@map("planos_preventivos")
+}
+
+// Toda OS tem exatamente uma origem: chamadoId OU planoId (garantido no domínio).
+model OrdemServico {
+  id                 String     @id @default(uuid())
+  numero             Int        @unique @default(autoincrement())
+  prioridade         Prioridade
+  status             StatusOS   @default(ABERTA)
+  dataPrevista       DateTime?  @map("data_prevista")
+  motivoCancelamento String?    @map("motivo_cancelamento")
+  criadaEm           DateTime   @default(now()) @map("criada_em")
+  equipamentoId      String     @map("equipamento_id")
+  tecnicoId          String?    @map("tecnico_id")
+  chamadoId          String?    @unique @map("chamado_id")
+  planoId            String?    @map("plano_id")
+
+  equipamento Equipamento      @relation(fields: [equipamentoId], references: [id])
+  tecnico     Usuario?         @relation("TecnicoOrdens", fields: [tecnicoId], references: [id])
+  chamado     Chamado?         @relation(fields: [chamadoId], references: [id])
+  plano       PlanoPreventivo? @relation(fields: [planoId], references: [id])
+  manutencao  Manutencao?
+
+  @@map("ordens_servico")
+}
+
+// Manutencao é abstrata no domínio; a coluna "tipo" define a subclasse.
+model Manutencao {
+  id               String         @id @default(uuid())
+  tipo             TipoManutencao
+  descricaoServico String         @map("descricao_servico")
+  tempoGastoMin    Int            @map("tempo_gasto_min")
+  realizadaEm      DateTime       @map("realizada_em")
+  ordemServicoId   String         @unique @map("ordem_servico_id")
+  equipamentoId    String         @map("equipamento_id")
+  tecnicoId        String         @map("tecnico_id")
+  planoId          String?        @map("plano_id")
+
+  ordemServico OrdemServico     @relation(fields: [ordemServicoId], references: [id])
+  equipamento  Equipamento      @relation(fields: [equipamentoId], references: [id])
+  tecnico      Usuario          @relation(fields: [tecnicoId], references: [id])
+  plano        PlanoPreventivo? @relation(fields: [planoId], references: [id])
+
+  @@map("manutencoes")
+}

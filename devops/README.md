@@ -21,8 +21,8 @@ Código -> Commit -> Pull Request -> GitHub Actions (build + testes) -> Revisão
 
 | Pasta | Conteúdo |
 |---|---|
-| [docker](docker) | Dockerfiles e `docker-compose.yml` |
-| [ci-cd](ci-cd) | Documentação do pipeline |
+| [docker](docker) | Dockerfiles, `docker-compose.yml` — implementados |
+| [ci-cd](ci-cd) | Pipeline do GitHub Actions — implementado |
 | [infraestrutura](infraestrutura) | Descrição dos ambientes |
 
-> Para o GitHub Actions executar, os arquivos do pipeline devem ficar em `.github/workflows/`. Esta pasta mantém a documentação.
+> O pipeline fica em [`.github/workflows/ci.yml`](../.github/workflows/ci.yml), que é onde o GitHub Actions procura. Esta pasta mantém a documentação.

@@ -37,7 +37,7 @@ Unidade de trabalho rastreável. Modelos disponíveis em `.github/ISSUE_TEMPLATE
 
 | Tipo | Prefixo do título | Exemplo |
 |---|---|---|
-| Bug | `[BUG]` | [BUG] API retorna 500 ao cadastrar ativo |
+| Bug | `[BUG]` | [BUG] API retorna 500 ao cadastrar equipamento |
 | Tarefa | `[TAREFA]` | [TAREFA] Criar entidade OrdemDeServico |
 | Melhoria | `[MELHORIA]` | [MELHORIA] Filtro por status na listagem |
 | Dúvida | `[DUVIDA]` | [DUVIDA] Regra de prioridade das ordens |
