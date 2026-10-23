@@ -21,9 +21,11 @@ Os dados são atualizados e o usuário passa a ver as funcionalidades do novo pe
 
 ## Resultado obtido
 
-Usuário de teste criado como Técnico foi editado para nome "Tecnico QA Editado" e perfil Gestor (200). Ao entrar com ele, `/auth/me` mostrou o novo nome e perfil, e ele passou a conseguir cadastrar equipamentos (201), permissão de Gestor.
+**Execução manual na interface (José Arraes):** como Administrador, o usuário "Técnico de Campo" (`tecnico@operix.local`, perfil Técnico) foi editado para o nome "Técnico Editado" e o perfil Gestor. A lista de usuários passou a mostrar o nome e o perfil novos, com situação Ativo.
 
-> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
+**Execução pela API (com apoio de IA):** um usuário de teste editado de Técnico para Gestor passou a ter, após novo login, o nome e o perfil novos em `/auth/me` e a permissão de cadastrar equipamentos (201).
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · execução manual na interface por José Arraes; verificação complementar pela API com apoio de IA.
 
 ## Status
 
@@ -31,4 +33,6 @@ Aprovado
 
 ## Evidência
 
-Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.
+- `tester/evidencias/CT-009-01-edicao.png`: tela de edição antes da alteração
+- `tester/evidencias/CT-009-02-lista-editada.png`: lista com "Técnico Editado" e perfil Gestor
+- `tester/evidencias/execucao-api-2026-10-23.md`: verificação pela API

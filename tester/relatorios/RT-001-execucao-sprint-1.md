@@ -3,7 +3,7 @@
 | Item | Valor |
 |---|---|
 | Data da execução | 23/10/2026 |
-| Executado por | José Arraes — Tester / QA (CT-005 manual); demais casos pela API com apoio de IA (Claude), acompanhados por José Arraes |
+| Executado por | José Arraes — Tester / QA: CT-005, CT-009 e CT-014 manualmente na interface; demais casos pela API com apoio de IA (Claude), acompanhados por José Arraes |
 | Versão testada | Branch `feature/sprint-1-backend-telas-nextjs` (PR #5), commit `64fc4bb` |
 | Ambiente | Windows, Node.js 24, API NestJS local em `PERSISTENCIA=memoria`, front-end Next.js em `localhost:3001` |
 | Escopo | UH01 Autenticação · UH02 Usuários e perfis · UH03 Equipamentos |
@@ -25,7 +25,7 @@ Todos os critérios de aceite de UH01 a UH03 foram atendidos. O defeito de sever
 1. Testes automatizados do PR #5 rodados localmente: `npm test` e `npm run test:e2e` na pasta `backend`.
 2. API iniciada com `npm run start:dev` e front-end com `npm run dev`.
 3. Casos CT-001 a CT-017 executados pela API (as mesmas rotas usadas pelas telas), com os usuários de exemplo `*@operix.local` e usuários de teste criados durante a execução. Detalhes em [`execucao-api-2026-10-23.md`](../evidencias/execucao-api-2026-10-23.md).
-4. CT-005 (logout) executado **manualmente** na interface, com prints.
+4. CT-005 (logout), CT-009 (editar usuário) e CT-014 (dados opcionais) executados **manualmente** na interface por José Arraes, com prints.
 
 Os dados criados durante a execução existem só na memória da API e somem ao reiniciá-la.
 
@@ -41,12 +41,12 @@ Os dados criados durante a execução existem só na memória da API e somem ao 
 | CT-006 Cadastro de usuário — obrigatórios | UH02 CA01 | Aprovado |
 | CT-007 E-mail duplicado | UH02 CA02 | Aprovado |
 | CT-008 Senha protegida | UH02 CA03 | Aprovado (parcial: hash no banco não verificado) |
-| CT-009 Editar nome e perfil | UH02 CA04 | Aprovado |
+| CT-009 Editar nome e perfil | UH02 CA04 | Aprovado (manual + API) |
 | CT-010 Inativar usuário | UH02 CA05 | Aprovado |
 | CT-011 Acesso restrito ao Administrador | UH02 CA06 | Aprovado (API) |
 | CT-012 Cadastro de equipamento — obrigatórios | UH03 CA01 | Aprovado com observações (DEF-02, DEF-03) |
 | CT-013 Código de equipamento duplicado | UH03 CA02 | Aprovado |
-| CT-014 Dados opcionais | UH03 CA03 | Aprovado com observação (DEF-04) |
+| CT-014 Dados opcionais | UH03 CA03 | Aprovado (manual + API), com observação (DEF-04) |
 | CT-015 Edição de equipamento | UH03 CA04 | Aprovado (parcial) |
 | CT-016 Status do equipamento | UH03 CA05 | Aprovado |
 | CT-017 Pesquisa | UH03 CA06 | Aprovado com observação (DEF-05) |
@@ -63,7 +63,7 @@ Os dados criados durante a execução existem só na memória da API e somem ao 
 
 ## 5. Pendências para a próxima rodada
 
-- Verificar na interface o menu de cada perfil (CT-011) e as telas de edição (CT-009, CT-015);
+- Verificar na interface o menu de cada perfil (CT-011) e a edição de equipamento (CT-015);
 - Verificar o hash de senha com o banco PostgreSQL (CT-008);
 - Verificar o desbloqueio do login quando o tempo for definido (CT-004);
 - Repetir a execução após a correção do DEF-01.
@@ -73,5 +73,7 @@ Os dados criados durante a execução existem só na memória da API e somem ao 
 - [Saída da execução pela API](../evidencias/execucao-api-2026-10-23.md)
 - [CT-005: usuário logado](../evidencias/CT-005-01-logado.png)
 - [CT-005: após clicar em Sair](../evidencias/CT-005-02-apos-sair.png)
+- [CT-009: tela de edição](../evidencias/CT-009-01-edicao.png) · [lista após editar](../evidencias/CT-009-02-lista-editada.png)
+- [CT-014: lista antes](../evidencias/CT-014-01-lista-antes.png) · [cadastro com opcionais](../evidencias/CT-014-02-cadastro-com-opcionais.png) · [lista depois](../evidencias/CT-014-03-lista-depois.png)
 
 > Execução apoiada por IA (Claude) e acompanhada e revisada por José Arraes, conforme `docs/07-compliance/integridade-academica-e-conduta.md`.
