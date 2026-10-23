@@ -23,12 +23,14 @@ O equipamento nasce Ativo; só aceita Ativo, Em manutenção e Inativo.
 
 ## Resultado obtido
 
-—
+Equipamento nasce ATIVO; após inativar, fica INATIVO (200). O status EM_MANUTENCAO é definido pela execução da ordem de serviço (UH06), fora do escopo desta rodada.
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-016-evidencia.png` na execução.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.

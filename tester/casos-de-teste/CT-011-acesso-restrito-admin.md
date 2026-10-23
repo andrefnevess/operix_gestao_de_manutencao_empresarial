@@ -21,12 +21,14 @@ Só o Administrador vê e acessa a gestão de usuários; os demais recebem acess
 
 ## Resultado obtido
 
-—
+`GET /api/usuarios` retornou 403 para Técnico, Solicitante e Gestor, e 401 sem login. A verificação do menu na interface fica para a próxima rodada.
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado (API)
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-011-evidencia.png` na execução.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.

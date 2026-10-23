@@ -21,12 +21,14 @@ O acesso é negado, mesmo com a senha correta.
 
 ## Resultado obtido
 
-—
+Usuário de teste inativado pelo administrador: o login com a senha correta retornou 401. O token emitido antes da inativação também deixou de valer (401 em `/auth/me`).
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-003-evidencia.png` na execução.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.

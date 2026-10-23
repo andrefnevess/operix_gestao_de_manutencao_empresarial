@@ -23,12 +23,14 @@ Após a 5ª falha o acesso fica bloqueado, inclusive com a senha correta; depois
 
 ## Resultado obtido
 
-—
+Após 5 tentativas erradas, a 6ª com a senha correta foi recusada: "Acesso bloqueado temporariamente após várias tentativas. Tente novamente em alguns minutos." O passo 3 (desbloqueio após o tempo) não foi executado, pois o tempo de bloqueio ainda não está definido.
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado (parcial)
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-004-evidencia.png` na execução.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.

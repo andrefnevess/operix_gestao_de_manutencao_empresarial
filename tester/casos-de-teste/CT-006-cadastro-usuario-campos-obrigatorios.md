@@ -22,12 +22,14 @@ Os passos 2 e 3 são recusados, indicando os campos obrigatórios; o passo 4 cad
 
 ## Resultado obtido
 
-—
+Cadastro vazio e cadastro só com nome foram recusados (400) indicando os campos obrigatórios; cadastro completo criou o usuário (201). Extras: perfil inexistente recusado ("Perfil inválido.") e senha com menos de 8 caracteres recusada.
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-006-evidencia.png` na execução.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.

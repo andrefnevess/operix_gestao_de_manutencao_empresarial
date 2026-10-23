@@ -21,12 +21,14 @@ A sessão é encerrada e as páginas internas exigem novo login.
 
 ## Resultado obtido
 
-—
+Execução **manual** na interface: após clicar em **Sair**, o sistema voltou para a tela de login; o acesso direto a `/equipamentos` não abriu a tela interna; o botão Voltar do navegador não exibiu nenhuma tela interna.
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · execução manual na interface por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-005-evidencia.png` na execução.
+Prints em `tester/evidencias/CT-005-01-logado.png` e `CT-005-02-apos-sair.png`.

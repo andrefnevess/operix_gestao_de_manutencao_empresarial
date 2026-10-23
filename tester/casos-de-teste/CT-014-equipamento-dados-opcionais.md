@@ -23,12 +23,16 @@ Os dois são salvos; o primeiro mostra os dados opcionais informados.
 
 ## Resultado obtido
 
-—
+Equipamento com fabricante, modelo e data de aquisição salvo com os dados (201); equipamento sem os opcionais também salvo (201).
+
+Observação: data de aquisição no futuro (`2099-01-01`) é aceita; data inválida (`abc`) é recusada.
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-014-evidencia.png` na execução.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.

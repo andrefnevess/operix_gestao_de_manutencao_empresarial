@@ -20,12 +20,14 @@ O passo 1 é recusado; o passo 2 é aceito (só o código precisa ser único).
 
 ## Resultado obtido
 
-**Executado no nível do banco de dados** em 11/10/2026, pelo Prisma Studio, sobre a migração `init`: o código repetido foi recusado e o código diferente com o mesmo nome foi aceito. Falta repetir pela API e pela tela quando estiverem prontas.
+Pela API: código repetido recusado com 409 ("Já existe um equipamento com o código ARC-003."), inclusive escrito em minúsculas (`arc-003`). Execução anterior, em 11/10/2026, no nível do banco (PR #2), também aprovada.
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Aprovado (banco de dados) · Não executado (API e interface)
+Aprovado
 
 ## Evidência
 
-Prints do Prisma Studio a anexar em `tester/evidencias/CT-013-evidencia.png`.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.

@@ -23,12 +23,14 @@ O acesso é negado nos dois cenários, com a **mesma** mensagem genérica (ex.: 
 
 ## Resultado obtido
 
-—
+Cenário A (senha errada) e cenário B (e-mail inexistente) retornaram 401 com a **mesma** mensagem: "E-mail ou senha inválidos."
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-002-evidencia.png` na execução.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.

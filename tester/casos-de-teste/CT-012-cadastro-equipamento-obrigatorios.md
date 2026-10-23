@@ -23,12 +23,16 @@ O passo 2 é recusado indicando os campos obrigatórios; o passo 3 cadastra o eq
 
 ## Resultado obtido
 
-—
+Cadastro vazio recusado (400) e nome só com espaços recusado ("O nome é obrigatório."). O schema do PR #5 já tem o campo `tipo` (divergência anterior resolvida).
+
+Observações: as mensagens misturam inglês e português ("codigo must be a string" junto de "O código é obrigatório.") e incluem mensagens sem sentido para campo vazio ("must be shorter than or equal to 30 characters"); campo vazio retorna 400 e nome só com espaços retorna 422.
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado com observações
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-012-evidencia.png` na execução.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.

@@ -21,12 +21,14 @@ O sistema autentica o usuário e exibe a tela inicial do perfil Gestor.
 
 ## Resultado obtido
 
-—
+Login com `gestor@operix.local` retornou 200, token e perfil GESTOR (API). Na interface, o usuário entrou e viu a tela de Equipamentos (evidência CT-005-01).
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-001-evidencia.png` na execução.
+Prints em `tester/evidencias/CT-005-01-logado.png` e `CT-005-02-apos-sair.png`.

@@ -21,12 +21,14 @@ A senha não aparece na tela nem na API; no banco existe apenas um hash, nunca o
 
 ## Resultado obtido
 
-—
+A API de usuários não retorna senha nem hash (campos: id, nome, email, perfil, ativo, especialidades). A verificação do hash no banco não foi feita, porque a execução usou o modo sem banco (`PERSISTENCIA=memoria`).
+
+> Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
 ## Status
 
-Não executado
+Aprovado (parcial)
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-008-evidencia.png` na execução.
+Saída da execução em `tester/evidencias/execucao-api-2026-10-23.md`.
