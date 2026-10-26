@@ -1,6 +1,6 @@
 # Plano de Teste — v1
 
-> Versão 1 · 18/10/2026 · Escopo: Entregas 1 e 2 (UH01 a UH03). Itens marcados com `[A definir]` dependem de decisão da equipe.
+> Versão 1.1 · 26/10/2026 (v1 de 18/10/2026) · Escopo: Entregas 1 e 2 (UH01 a UH03). Itens marcados com `[A definir]` dependem de decisão da equipe.
 
 | Item | Descrição |
 |---|---|
@@ -79,8 +79,8 @@ Todo defeito vira uma Issue do tipo `[BUG]` (modelo em `.github/ISSUE_TEMPLATE/b
 | Risco | Impacto | Resposta |
 |---|---|---|
 | APIs de UH01 a UH03 não ficarem prontas até 20/10 | Testes de API atrasam | Começar pelos testes unitários das classes de domínio |
-| Divergências entre o schema e o backlog (ex.: falta o campo `tipo` do equipamento) | Casos falham por requisito, não por defeito | Registrar como Issue e alinhar com PO e Back-end |
-| Regras ainda indefinidas (tempo de bloqueio do login, algoritmo de hash) | Casos CT-004 e CT-008 ficam incompletos | Levar ao PO e ao Tech Lead para decisão |
+| Divergências entre o código e o backlog | Casos falham por requisito, não por defeito | Registrar como Issue e alinhar com PO e Back-end (as divergências do schema inicial foram resolvidas no PR #5) |
+| Regras ainda indefinidas em histórias futuras (UH04 a UH08) | Casos ficam incompletos | Levar ao PO e ao Tech Lead para decisão (tempo de bloqueio de 15 minutos e hash bcrypt já definidos no PR #5) |
 | Ambiente de teste indisponível | Execução bloqueada | Banco de teste temporário recriado pelas migrations |
 
 ## 10. Execuções já realizadas

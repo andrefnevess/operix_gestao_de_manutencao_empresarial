@@ -17,11 +17,13 @@
 
 ## Resultado esperado
 
-A senha não aparece na tela nem na API; no banco existe apenas um hash, nunca o texto `Teste@123`.
+A senha não aparece na tela nem na API; no banco existe apenas um hash **bcrypt** (RNF01), nunca o texto `Teste@123`.
 
 ## Resultado obtido
 
 A API de usuários não retorna senha nem hash (campos: id, nome, email, perfil, ativo, especialidades). A verificação do hash no banco não foi feita, porque a execução usou o modo sem banco (`PERSISTENCIA=memoria`).
+
+Revisão do código (PR #5): a senha é guardada com **bcrypt** (biblioteca `bcryptjs`, custo 10) em `backend/src/auth/senha.service.ts`, atendendo ao RNF01.
 
 > Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 

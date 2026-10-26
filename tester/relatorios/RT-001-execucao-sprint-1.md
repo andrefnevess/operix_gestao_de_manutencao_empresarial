@@ -65,7 +65,7 @@ Os dados criados durante a execução existem só na memória da API e somem ao 
 
 - Verificar na interface o menu de cada perfil (CT-011) e a edição de equipamento (CT-015);
 - Verificar o hash de senha com o banco PostgreSQL (CT-008);
-- Verificar o desbloqueio do login quando o tempo for definido (CT-004);
+- Verificar o desbloqueio do login após 15 minutos (CT-004);
 - Repetir a execução após a correção do DEF-01.
 
 ## 6. Evidências

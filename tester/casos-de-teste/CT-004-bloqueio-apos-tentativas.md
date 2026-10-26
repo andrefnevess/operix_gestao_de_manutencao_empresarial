@@ -13,17 +13,17 @@
 
 1. Tentar o login com a senha errada 5 vezes seguidas.
 2. Na 6ª tentativa, informar a senha **correta**.
-3. Aguardar o tempo de bloqueio [A DEFINIR] e tentar de novo com a senha correta.
+3. Aguardar o tempo de bloqueio (15 minutos) e tentar de novo com a senha correta.
 
 ## Resultado esperado
 
-Após a 5ª falha o acesso fica bloqueado, inclusive com a senha correta; depois do tempo de bloqueio o login volta a funcionar.
+Após a 5ª falha o acesso fica bloqueado, inclusive com a senha correta; depois de 15 minutos o login volta a funcionar.
 
-> Pendência: o tempo de bloqueio não está definido no backlog nem nas regras de negócio.
+> Tempo de bloqueio: 15 minutos, conforme o domínio do PR #5 (`Usuario.MINUTOS_BLOQUEIO = 15`, UH01-CA05).
 
 ## Resultado obtido
 
-Após 5 tentativas erradas, a 6ª com a senha correta foi recusada: "Acesso bloqueado temporariamente após várias tentativas. Tente novamente em alguns minutos." O passo 3 (desbloqueio após o tempo) não foi executado, pois o tempo de bloqueio ainda não está definido.
+Após 5 tentativas erradas, a 6ª com a senha correta foi recusada: "Acesso bloqueado temporariamente após várias tentativas. Tente novamente em alguns minutos." O passo 3 (desbloqueio após 15 minutos) não foi executado nesta rodada.
 
 > Execução: 23/10/2026 · branch `feature/sprint-1-backend-telas-nextjs` (PR #5, commit 64fc4bb) · API em `PERSISTENCIA=memoria` · execução pela API conduzida com apoio de IA (Claude) e acompanhada por José Arraes.
 
