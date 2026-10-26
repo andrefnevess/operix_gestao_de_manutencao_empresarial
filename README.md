@@ -141,7 +141,7 @@ cd backend && npm install && cp .env.example .env && npm run start:dev
 cd frontend && npm install && npm run dev
 ```
 
-Front-end em http://localhost:3001. Usuários de exemplo: `admin@`, `gestor@`, `tecnico@` e `solicitante@operix.local`, com a senha definida em `SENHA_EXEMPLO` (veja [backend/README.md](backend/README.md)).
+O front-end oficial é o do PR #8 (Luíza). A API já usa a porta 3000, então rode o front-end em outra porta: `npm run dev -- -p 3001`. Para testar a API direto, use o Swagger com os usuários de exemplo `admin@`, `gestor@`, `tecnico@` e `solicitante@operix.local` e a senha definida em `SENHA_EXEMPLO` (veja [backend/README.md](backend/README.md)).
 
 ## Status do Projeto
 
@@ -150,7 +150,7 @@ Front-end em http://localhost:3001. Usuários de exemplo: `admin@`, `gestor@`, `
 | Estrutura do repositório e documentação de projeto | Concluída |
 | Definição da equipe e das tecnologias | Concluída |
 | Modelo de domínio (diagramas, regras e classes) | Concluído — [modelo de domínio](docs/03-arquitetura/modelo-de-dominio.md) |
-| UH01 a UH03 (login, usuários, equipamentos): API, telas e testes | Concluídas, em revisão |
+| UH01 a UH03 (login, usuários, equipamentos): API e testes | Concluídas, em revisão (telas no PR #8) |
 | Ambiente Docker e pipeline de CI | Concluídos |
 | UH04 a UH07 (MVP integrado — 04/11) | Em andamento |
 | UH08 e F3 (11/11) | Planejada |
