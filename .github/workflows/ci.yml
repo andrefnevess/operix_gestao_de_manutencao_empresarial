@@ -9,10 +9,11 @@ on:
   push:
     branches: [main]
 
-# Cancela execuções antigas da mesma branch quando chega um commit novo.
+# Em Pull Requests, cancela execuções antigas da mesma branch quando chega um commit novo.
+# Na main não cancela, para que dois merges seguidos não interrompam a publicação das imagens.
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
