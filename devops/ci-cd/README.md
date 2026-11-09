@@ -11,7 +11,9 @@ Ferramenta: **GitHub Actions**. O pipeline está em [`.github/workflows/ci.yml`]
 
 Os testes de API rodam com `PERSISTENCIA=memoria`; o job **Ambiente completo** é o que valida a API com o PostgreSQL de verdade, via Prisma.
 
-Um Pull Request só deve ser integrado com o pipeline aprovado (Definition of Done). A branch `main` é protegida e exige os checks **Back-end**, **Front-end** e **Ambiente completo**.
+Em Pull Requests, um commit novo cancela a execução anterior da mesma branch (`concurrency`). Na `main` isso não acontece, para que dois merges seguidos não interrompam a publicação das imagens.
+
+Um Pull Request só deve ser integrado com o pipeline aprovado (Definition of Done): os checks **Back-end**, **Front-end** e **Ambiente completo** precisam estar verdes antes do merge. A proteção automática da `main` (regra de branch exigindo esses checks) está planejada, mas não está ativa: em repositório privado de conta pessoal no plano gratuito, o GitHub não aplica regras de proteção. Por isso a conferência é feita na revisão do PR.
 
 ## Próximas etapas
 
@@ -19,5 +21,6 @@ Um Pull Request só deve ser integrado com o pipeline aprovado (Definition of Do
 |---|---|
 | Build e testes | Implementado |
 | Teste do ambiente completo com Docker Compose | Implementado |
+| Proteção da `main` exigindo os checks | Planejado — hoje vale a Definition of Done |
 | Publicação das imagens Docker (`ghcr.io`) | Implementado |
 | Publicação no ambiente de demonstração | Planejado — hospedagem [A DEFINIR] |
