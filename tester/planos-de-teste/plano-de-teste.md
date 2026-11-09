@@ -1,19 +1,19 @@
-# Plano de Teste — v1
+# Plano de Teste — v1.2
 
-> Versão 1.1 · 26/10/2026 (v1 de 18/10/2026) · Escopo: Entregas 1 e 2 (UH01 a UH03). Itens marcados com `[A definir]` dependem de decisão da equipe.
+> Versão 1.2 · 09/11/2026 (v1.1 de 26/10/2026, v1 de 18/10/2026) · Escopo: UH01 a UH07. Itens marcados com `[A definir]` dependem de decisão da equipe.
 
 | Item | Descrição |
 |---|---|
 | Projeto | Operix — Gestão de Manutenção Empresarial |
 | Responsável | José Arraes — Tester / QA |
-| Escopo desta versão | UH01 Autenticação · UH02 Usuários e perfis · UH03 Equipamentos |
-| Fora do escopo desta versão | UH04 a UH08 (previstas para a Entrega 3, MVP de 04/11) |
+| Escopo desta versão | UH01 Autenticação · UH02 Usuários e perfis · UH03 Equipamentos · UH04 Chamados · UH05 Geração e atribuição de OS · UH06 Execução da OS · UH07 Manutenção preventiva |
+| Fora do escopo desta versão | UH08 Indicadores |
 | Ambiente | Local (Docker Compose com PostgreSQL) e demonstração `[A definir]` |
 | Ferramentas | Jest (unitários), Supertest (API), Swagger (testes exploratórios da API), Prisma Studio (conferência dos dados), GitHub Actions (execução automática) |
 
 ## 1. Objetivo
 
-Verificar se as funcionalidades de autenticação, gestão de usuários e cadastro de equipamentos atendem aos critérios de aceite do backlog, às regras de negócio (RN01, RN02) e aos requisitos não funcionais de segurança (RNF01, RNF02).
+Verificar se as funcionalidades de autenticação, gestão de usuários, cadastro de equipamentos, chamados, ordens de serviço e manutenção preventiva atendem aos critérios de aceite do backlog, às regras de negócio (RN01 a RN06 e RN10) e aos requisitos não funcionais de segurança (RNF01, RNF02).
 
 ## 2. Níveis e tipos de teste
 
@@ -31,6 +31,10 @@ Verificar se as funcionalidades de autenticação, gestão de usuários e cadast
 | UH01 — Autenticação | CA01 a CA06 | CT-001 a CT-005 |
 | UH02 — Usuários e perfis | CA01 a CA06 | CT-006 a CT-011 |
 | UH03 — Equipamentos | CA01 a CA06 | CT-012 a CT-017 |
+| UH04 — Abertura de chamado | CA01 a CA06 | CT-018 a CT-023 |
+| UH05 — Geração e atribuição de OS | CA01 a CA06 | CT-024 a CT-029 |
+| UH06 — Execução e encerramento da OS | CA01 a CA06 | CT-030 a CT-034 |
+| UH07 — Manutenção preventiva | CA01 a CA06 | CT-035 a CT-039 |
 
 Índice completo em [`tester/casos-de-teste/README.md`](../casos-de-teste/README.md).
 
@@ -70,7 +74,7 @@ Todo defeito vira uma Issue do tipo `[BUG]` (modelo em `.github/ISSUE_TEMPLATE/b
 |---|---|
 | 18/10 | Plano de teste v1 e casos de teste UH01 a UH03 |
 | 20/10 | Testes Jest/Supertest de UH01 a UH03 e execução dos casos de teste |
-| 31/10 | Testes de UH04 a UH07 |
+| 31/10 | Casos de teste de UH04 a UH07 (CT-018 a CT-039) e execução quando as APIs forem entregues |
 | 04/11 | Teste de regressão do MVP e relatório de bugs |
 | 09/11 | Execução completa dos testes e relatório final |
 
