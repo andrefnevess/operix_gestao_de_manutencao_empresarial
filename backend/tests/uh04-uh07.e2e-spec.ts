@@ -8,7 +8,7 @@ import { configurarApp } from '../src/configurar-app';
  * Testes de API das histórias UH04 a UH07 (chamados, ordens de serviço, execução e preventiva).
  * Cada teste referencia o caso de teste (tester/casos-de-teste/CT-0NN) que ele automatiza.
  *
- * Testes marcados com `it.failing` documentam defeitos conhecidos (DEF-NN do relatório RT-002):
+ * Testes marcados com `it.failing` documentam defeitos conhecidos (DEF-NN dos relatórios RT-002 e RT-003):
  * eles descrevem o comportamento ESPERADO e passam enquanto o defeito existir.
  * Quando o defeito for corrigido, o Jest avisa e basta trocar `it.failing` por `it`.
  */
@@ -142,20 +142,24 @@ describe('API Operix (UH04, UH05, UH06, UH07)', () => {
       expect(lista.map((c: { id: string }) => c.id)).not.toContain(chamado.id);
     });
 
-    it('CT-023: técnico e administrador não abrem chamado; gestor abre', async () => {
+    it('CT-023: técnico e administrador não abrem chamado (403); gestor abre', async () => {
       const equipamentoId = await criarEquipamento('QA-023');
-      const tecnico = await abrirChamado(equipamentoId, 'tecnico');
-      const admin = await abrirChamado(equipamentoId, 'admin');
-      expect(tecnico.status).toBeGreaterThanOrEqual(400);
-      expect(admin.status).toBeGreaterThanOrEqual(400);
+      await abrirChamado(equipamentoId, 'tecnico').expect(403);
+      await abrirChamado(equipamentoId, 'admin').expect(403);
       await abrirChamado(equipamentoId, 'gestor').expect(201);
     });
 
-    it.failing('DEF-07: técnico ou outro solicitante não devem cancelar o chamado de alguém', async () => {
+    it('DEF-07 (corrigido no PR #13): só quem abriu o chamado ou o gestor pode cancelar', async () => {
       const equipamentoId = await criarEquipamento('QA-023B');
       const chamado = (await abrirChamado(equipamentoId).expect(201)).body;
       await api().patch(`/api/chamados/${chamado.id}/cancelar`).set(auth('tecnico')).expect(403);
       await api().patch(`/api/chamados/${chamado.id}/cancelar`).set(auth('solicitante2')).expect(403);
+      const proprio = await api().patch(`/api/chamados/${chamado.id}/cancelar`).set(auth('solicitante')).expect(200);
+      expect(proprio.body.status).toBe('CANCELADO');
+
+      const outro = (await abrirChamado(equipamentoId).expect(201)).body;
+      const peloGestor = await api().patch(`/api/chamados/${outro.id}/cancelar`).set(auth('gestor')).expect(200);
+      expect(peloGestor.body.status).toBe('CANCELADO');
     });
 
     it('rotas de chamados exigem login', async () => {
