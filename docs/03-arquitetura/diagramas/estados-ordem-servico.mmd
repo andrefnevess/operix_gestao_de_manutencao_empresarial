@@ -1,0 +1,11 @@
+stateDiagram-v2
+direction LR
+[*] --> ABERTA : aPartirDeChamado() ou aPartirDePlano()
+ABERTA --> ATRIBUIDA : atribuir() pelo Gestor
+ATRIBUIDA --> ATRIBUIDA : atribuir() reatribuição
+ATRIBUIDA --> EM_EXECUCAO : iniciar() pelo técnico atribuído
+EM_EXECUCAO --> CONCLUIDA : concluir() com descrição do serviço
+ABERTA --> CANCELADA : cancelar()
+ATRIBUIDA --> CANCELADA : cancelar()
+CONCLUIDA --> [*]
+CANCELADA --> [*]

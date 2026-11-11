@@ -14,7 +14,7 @@
 | Scrum Master | Luíza Quintanilha |
 | Equipe | Ver seção 9 |
 | Data de início | 29/09/2026 |
-| Previsão de término | [A definir] |
+| Previsão de término | 25/11/2026 |
 
 ## 2. Justificativa
 
@@ -22,11 +22,11 @@ A gestão de manutenção em muitas empresas ainda depende de planilhas e comuni
 
 ## 3. Problema
 
-Ausência de um controle centralizado de ativos, ordens de serviço e manutenções preventivas, resultando em baixa rastreabilidade, atrasos e dificuldade de tomada de decisão.
+Ausência de um controle centralizado de equipamentos, chamados, ordens de serviço e manutenções preventivas, resultando em baixa rastreabilidade, atrasos e dificuldade de tomada de decisão.
 
 ## 4. Objetivo geral
 
-Desenvolver uma aplicação web para gestão de manutenção empresarial, com cadastro de ativos, controle de ordens de serviço e planejamento de manutenções preventivas.
+Desenvolver uma aplicação web para gestão de manutenção empresarial, com cadastro de equipamentos, chamados, controle de ordens de serviço e planejamento de manutenções preventivas.
 
 ## 5. Objetivos específicos
 
@@ -42,11 +42,11 @@ Desenvolver uma aplicação web para gestão de manutenção empresarial, com ca
 ## 6. Escopo inicial
 
 - Autenticação e perfis de acesso;
-- Cadastro de ativos;
-- Cadastro de técnicos;
+- Cadastro de equipamentos;
+- Abertura e acompanhamento de chamados;
 - Abertura, atribuição, execução e encerramento de ordens de serviço;
 - Planos de manutenção preventiva;
-- Histórico de manutenções por ativo;
+- Histórico de manutenções por equipamento;
 - Relatórios básicos.
 
 ## 7. Fora do escopo

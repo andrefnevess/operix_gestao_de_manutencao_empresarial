@@ -49,4 +49,4 @@ Classes identificadas na [ATA-001](../05-reunioes/atas/ATA-001-reuniao-inicial.m
 | Polimorfismo | Ex.: comportamento específico de cada tipo de manutenção (prazos, alertas) |
 | Abstração | Classes abstratas e interfaces para os serviços do domínio |
 
-A modelagem detalhada será feita no diagrama de classes ([diagramas](diagramas)).
+A modelagem completa (classes, relacionamentos, estados e regras) está no [modelo de domínio](modelo-de-dominio.md).

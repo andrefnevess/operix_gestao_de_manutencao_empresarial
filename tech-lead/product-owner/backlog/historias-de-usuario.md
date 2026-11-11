@@ -13,9 +13,9 @@ Formato: *Como* **[perfil]**, *quero* **[ação]**, *para* **[benefício]**.
 | [UH03](#uh03--cadastro-de-equipamentos) | Cadastro de equipamentos | Gestor | Alta | Sprint 1 |
 | [UH04](#uh04--abertura-de-chamado) | Abertura de chamado | Solicitante | Alta | Sprint 2 |
 | [UH05](#uh05--geração-e-atribuição-de-ordem-de-serviço) | Geração e atribuição de ordem de serviço | Gestor | Alta | Sprint 2 |
-| [UH06](#uh06--execução-e-encerramento-da-ordem-de-serviço) | Execução e encerramento da ordem de serviço | Técnico | Alta | Sprint 3 |
-| [UH07](#uh07--planejamento-de-manutenção-preventiva) | Planejamento de manutenção preventiva | Gestor | Média | Sprint 3 |
-| [UH08](#uh08--histórico-e-indicadores-de-manutenção) | Histórico e indicadores de manutenção | Gestor | Média | Sprint 4 |
+| [UH06](#uh06--execução-e-encerramento-da-ordem-de-serviço) | Execução e encerramento da ordem de serviço | Técnico | Alta | Sprint 2 |
+| [UH07](#uh07--planejamento-de-manutenção-preventiva) | Planejamento de manutenção preventiva | Gestor | Média | Sprint 2 |
+| [UH08](#uh08--histórico-e-indicadores-de-manutenção) | Histórico e indicadores de manutenção | Gestor | Média | Sprint 3 |
 
 ## UH01 — Autenticação no sistema
 
@@ -108,7 +108,7 @@ Formato: *Como* **[perfil]**, *quero* **[ação]**, *para* **[benefício]**.
 
 | Prioridade | Sprint prevista |
 |---|---|
-| Alta | Sprint 3 |
+| Alta | Sprint 2 |
 
 **Critérios de aceite**
 
@@ -125,7 +125,7 @@ Formato: *Como* **[perfil]**, *quero* **[ação]**, *para* **[benefício]**.
 
 | Prioridade | Sprint prevista |
 |---|---|
-| Média | Sprint 3 |
+| Média | Sprint 2 |
 
 **Critérios de aceite**
 
@@ -142,7 +142,7 @@ Formato: *Como* **[perfil]**, *quero* **[ação]**, *para* **[benefício]**.
 
 | Prioridade | Sprint prevista |
 |---|---|
-| Média | Sprint 4 |
+| Média | Sprint 3 |
 
 **Critérios de aceite**
 

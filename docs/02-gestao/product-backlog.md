@@ -10,14 +10,14 @@ Mantido pelo Product Owner. A versão operacional fica no GitHub Projects; este 
 
 | ID | História | Prioridade | Status | Sprint |
 |---|---|---|---|---|
-| UH01 | Como usuário, quero acessar o sistema com e-mail e senha, para utilizar as funcionalidades permitidas ao meu perfil | Alta | To Do | Sprint 1 |
-| UH02 | Como administrador, quero cadastrar, editar e inativar usuários, definindo seus perfis, para controlar quem acessa o sistema e o que cada pessoa pode fazer | Alta | To Do | Sprint 1 |
-| UH03 | Como gestor, quero cadastrar e manter os equipamentos da empresa, para ter o inventário de tudo o que precisa de manutenção | Alta | To Do | Sprint 1 |
+| UH01 | Como usuário, quero acessar o sistema com e-mail e senha, para utilizar as funcionalidades permitidas ao meu perfil | Alta | Review | Sprint 1 |
+| UH02 | Como administrador, quero cadastrar, editar e inativar usuários, definindo seus perfis, para controlar quem acessa o sistema e o que cada pessoa pode fazer | Alta | Review | Sprint 1 |
+| UH03 | Como gestor, quero cadastrar e manter os equipamentos da empresa, para ter o inventário de tudo o que precisa de manutenção | Alta | Review | Sprint 1 |
 | UH04 | Como solicitante, quero abrir um chamado informando o problema de um equipamento, para que a equipe de manutenção seja avisada e resolva o problema | Alta | To Do | Sprint 2 |
 | UH05 | Como gestor, quero gerar uma ordem de serviço a partir de um chamado e atribuí-la a um técnico, para organizar e distribuir o trabalho da equipe de manutenção | Alta | To Do | Sprint 2 |
-| UH06 | Como técnico, quero registrar a execução da manutenção e encerrar a ordem de serviço, para documentar o serviço realizado e manter o histórico do equipamento | Alta | Backlog | Sprint 3 |
-| UH07 | Como gestor, quero criar planos de manutenção preventiva com periodicidade e receber alertas, para evitar falhas e paradas inesperadas dos equipamentos | Média | Backlog | Sprint 3 |
-| UH08 | Como gestor, quero consultar o histórico de manutenções de cada equipamento e indicadores gerais, para tomar decisões sobre reparo, substituição e prioridades | Média | Backlog | Sprint 4 |
+| UH06 | Como técnico, quero registrar a execução da manutenção e encerrar a ordem de serviço, para documentar o serviço realizado e manter o histórico do equipamento | Alta | To Do | Sprint 2 |
+| UH07 | Como gestor, quero criar planos de manutenção preventiva com periodicidade e receber alertas, para evitar falhas e paradas inesperadas dos equipamentos | Média | To Do | Sprint 2 |
+| UH08 | Como gestor, quero consultar o histórico de manutenções de cada equipamento e indicadores gerais, para tomar decisões sobre reparo, substituição e prioridades | Média | Backlog | Sprint 3 |
 
 ## Critérios de aceitação
 

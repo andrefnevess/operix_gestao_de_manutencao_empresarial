@@ -40,7 +40,7 @@ Aplica-se a todos os integrantes da equipe, ao repositório no GitHub, aos ambie
 | Risco (OWASP Top 10) | Controle adotado |
 |---|---|
 | Quebra de controle de acesso | Autorização por perfil verificada no back-end em cada endpoint |
-| Falhas criptográficas | Senhas armazenadas apenas como hash seguro (algoritmo [A DEFINIR]); comunicação criptografada no ambiente de demonstração |
+| Falhas criptográficas | Senhas armazenadas apenas como hash bcrypt; comunicação criptografada no ambiente de demonstração |
 | Injeção (SQL e outras) | Acesso ao banco pelo Prisma (consultas parametrizadas) e validação das entradas nos DTOs do NestJS |
 | Design inseguro | Regras de negócio revisadas pelo Tech Lead e documentadas |
 | Configuração incorreta | Perfis de configuração separados por ambiente; mensagens de erro sem detalhes internos |

@@ -9,7 +9,7 @@ O projeto é conduzido com **Scrumban**, que combina a estrutura do Scrum (papé
 
 ## Sprint
 
-- Duração: [A definir] semanas;
+- Duração: 2 semanas, alinhadas às entregas da disciplina;
 - Cada sprint gera um incremento potencialmente utilizável;
 - O planejamento das sprints está em [plano-de-sprints.md](plano-de-sprints.md).
 

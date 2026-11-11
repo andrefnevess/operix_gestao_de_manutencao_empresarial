@@ -1,0 +1,22 @@
+sequenceDiagram
+autonumber
+actor S as Solicitante
+actor G as Gestor
+actor T as Técnico
+participant C as Chamado
+participant OS as OrdemServico
+participant E as Equipamento
+participant M as Manutencao
+
+S->>C: abrir(equipamento, descrição, urgência)
+C->>E: estaAtivo()
+E-->>C: sim
+G->>OS: aPartirDeChamado(chamado)
+OS->>C: iniciarAtendimento()
+G->>OS: atribuir(gestor, técnico, dataPrevista)
+T->>OS: iniciar(técnico)
+OS->>E: colocarEmManutencao()
+T->>OS: concluir(descrição, tempo gasto)
+OS->>M: cria ManutencaoCorretiva
+OS->>E: liberar()
+OS->>C: encerrar()

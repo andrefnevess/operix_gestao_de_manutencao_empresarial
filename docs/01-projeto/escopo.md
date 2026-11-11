@@ -1,18 +1,18 @@
 # Escopo
 
-> Status: em elaboração. Campos marcados com `[A definir]` devem ser preenchidos pela equipe.
+> Status: versão 1.0 — alinhada às histórias UH01–UH08.
 
 ## Dentro do escopo
 
-| Módulo | Entregas |
-|---|---|
-| Autenticação | Login, logout e perfis (Administrador, Gestor, Técnico, Solicitante) |
-| Ativos | Cadastro, edição, consulta e inativação de equipamentos |
-| Técnicos | Cadastro e especialidades |
-| Ordens de Serviço | Abertura, priorização, atribuição, execução e encerramento |
-| Manutenção Preventiva | Planos com periodicidade e geração de ordens |
-| Histórico | Consulta das intervenções por ativo |
-| Relatórios | Ordens por status, atrasadas e concluídas no período |
+| Módulo | Entregas | História |
+|---|---|---|
+| Autenticação | Login, logout e bloqueio após tentativas sem sucesso | UH01 |
+| Usuários e perfis | Cadastro, edição e inativação; perfis Administrador, Gestor, Técnico e Solicitante | UH02 |
+| Equipamentos | Cadastro, edição, consulta e status (Ativo, Em manutenção, Inativo) | UH03 |
+| Chamados | Abertura e acompanhamento pelo solicitante | UH04 |
+| Ordens de serviço | Geração a partir de chamados, atribuição, execução e encerramento | UH05, UH06 |
+| Manutenção preventiva | Planos com periodicidade, alertas e geração de ordens | UH07 |
+| Histórico e indicadores | Histórico por equipamento e painel gerencial | UH08 |
 
 ## Fora do escopo
 
@@ -24,7 +24,7 @@
 
 ## Critérios de aceitação do escopo
 
-Uma funcionalidade é considerada entregue quando atende à Definition of Done descrita em [scrum.md](../02-gestao/scrum.md).
+Uma funcionalidade é considerada entregue quando atende à Definition of Done descrita em [scrum.md](../02-gestao/scrum.md) e aos critérios de aceite da história correspondente.
 
 ## Controle de mudanças
 

@@ -1,0 +1,26 @@
+Execução: 22/10/2026 16:40 (UTC) — comando: npm run test:e2e
+PASS tests/api.e2e-spec.ts (6.408 s)
+  API Operix (UH01, UH02, UH03)
+    ✓ documentação Swagger disponível (4 ms)
+    UH01 — Autenticação
+      ✓ CT-001: login com credenciais válidas retorna token e perfil (142 ms)
+      ✓ CT-002: credenciais inválidas retornam mensagem genérica (105 ms)
+      ✓ CT-004: bloqueia após 5 tentativas sem sucesso (664 ms)
+      ✓ rotas protegidas exigem login (7 ms)
+    UH02 — Usuários e perfis
+      ✓ CT-005: administrador cadastra técnico com especialidades (260 ms)
+      ✓ CT-006: não permite e-mail duplicado (132 ms)
+      ✓ CT-007: usuário inativado não consegue entrar (UH01-CA04, UH02-CA05) (184 ms)
+      ✓ CT-008: somente administradores acessam a gestão de usuários (UH02-CA06) (90 ms)
+    UH03 — Equipamentos
+      ✓ CT-009: gestor cadastra equipamento, que nasce ativo (94 ms)
+      ✓ CT-010: campos obrigatórios são validados (UH03-CA01) (94 ms)
+      ✓ CT-011: código duplicado é recusado (RN01 / UH03-CA02) (92 ms)
+      ✓ CT-012: edição, inativação e busca (UH03-CA04 a CA06) (107 ms)
+      ✓ CT-013: solicitante consulta, mas não cadastra equipamentos (95 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       14 passed, 14 total
+Snapshots:   0 total
+Time:        6.509 s, estimated 8 s
+Ran all test suites.
