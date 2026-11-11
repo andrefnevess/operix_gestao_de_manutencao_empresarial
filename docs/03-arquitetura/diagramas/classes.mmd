@@ -1,0 +1,123 @@
+classDiagram
+direction TB
+
+class Usuario {
+  <<abstract>>
+  -id: string
+  -nome: string
+  -email: string
+  -senhaHash: string
+  -ativo: boolean
+  -tentativasFalhas: number
+  -bloqueadoAte: Date
+  +autenticar(senha, verificador, agora) boolean
+  +estaBloqueado(agora) boolean
+  +podeGerenciarUsuarios() boolean
+  +podeGerenciarEquipamentos() boolean
+  +podeAbrirChamado() boolean
+  +inativar() void
+  +estaAtivo() boolean
+  +getPerfil() Perfil*
+}
+class Administrador {
+  +getPerfil() Perfil
+  +podeGerenciarUsuarios() boolean
+}
+class Gestor {
+  +getPerfil() Perfil
+  +podeGerenciarEquipamentos() boolean
+  +podeAbrirChamado() boolean
+}
+class Tecnico {
+  -especialidades: string[]
+  +getPerfil() Perfil
+}
+class Solicitante {
+  +getPerfil() Perfil
+  +podeAbrirChamado() boolean
+}
+
+class Equipamento {
+  -id: string
+  -codigo: string
+  -nome: string
+  -tipo: string
+  -localizacao: string
+  -fabricante: string
+  -status: StatusEquipamento
+  +estaAtivo() boolean
+  +colocarEmManutencao() void
+  +liberar() void
+  +inativar() void
+}
+
+class Chamado {
+  -id: string
+  -numero: number
+  -descricao: string
+  -urgencia: Prioridade
+  -status: StatusChamado
+  -abertoEm: Date
+  +iniciarAtendimento() void
+  +encerrar() void
+  +cancelar() void
+}
+
+class OrdemServico {
+  -id: string
+  -numero: number
+  -prioridade: Prioridade
+  -status: StatusOS
+  -dataPrevista: Date
+  +aPartirDeChamado(id, chamado)$ OrdemServico
+  +aPartirDePlano(id, plano)$ OrdemServico
+  +atribuir(gestor, tecnico, dataPrevista) void
+  +iniciar(tecnico) void
+  +concluir(tecnico, descricaoServico, tempoGastoMin, agora) Manutencao
+  +cancelar(gestor, motivo) void
+  +estaAtrasada(hoje) boolean
+}
+
+class PlanoPreventivo {
+  -id: string
+  -descricao: string
+  -periodicidadeDias: number
+  -ultimaExecucao: Date
+  -ativo: boolean
+  +proximaData() Date
+  +venceEmAte(dias, hoje) boolean
+  +estaAtrasado(hoje) boolean
+  +registrarExecucao(data) void
+}
+
+class Manutencao {
+  <<abstract>>
+  -id: string
+  -descricaoServico: string
+  -tempoGastoMin: number
+  -realizadaEm: Date
+  +getTipo() TipoManutencao*
+}
+class ManutencaoCorretiva {
+  +getTipo() TipoManutencao
+}
+class ManutencaoPreventiva {
+  +getTipo() TipoManutencao
+}
+
+Usuario <|-- Administrador
+Usuario <|-- Gestor
+Usuario <|-- Tecnico
+Usuario <|-- Solicitante
+Manutencao <|-- ManutencaoCorretiva
+Manutencao <|-- ManutencaoPreventiva
+
+Solicitante "1" --> "0..*" Chamado : abre
+Chamado "0..*" --> "1" Equipamento : sobre
+Chamado "1" --> "0..1" OrdemServico : origina
+PlanoPreventivo "1" --> "0..*" OrdemServico : gera
+Equipamento "1" --> "0..*" PlanoPreventivo : possui
+Tecnico "1" --> "0..*" OrdemServico : executa
+OrdemServico "1" *-- "0..1" Manutencao : registra
+Equipamento "1" o-- "0..*" Manutencao : histórico
+ManutencaoPreventiva "0..*" --> "1" PlanoPreventivo : cumpre

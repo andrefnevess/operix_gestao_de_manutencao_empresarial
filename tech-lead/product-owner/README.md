@@ -16,5 +16,6 @@
 |---|---|
 | [backlog](backlog) | Histórias de usuário detalhadas e priorização |
 | [documentos](documentos) | Personas, feedback do cliente e validações |
+| [documentos/coleta](documentos/coleta) | Roteiro, questionário, termo de consentimento e consolidação da coleta com usuários (F1) |
 
 O backlog consolidado fica em [docs/02-gestao/product-backlog.md](../../docs/02-gestao/product-backlog.md).

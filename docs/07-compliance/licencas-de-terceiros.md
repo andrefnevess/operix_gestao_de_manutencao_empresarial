@@ -6,18 +6,22 @@ Inventário das bibliotecas e ferramentas utilizadas. Atualizar sempre que uma d
 
 | Componente | Uso no projeto | Licença | Situação |
 |---|---|---|---|
-| Node.js | Plataforma de execução | MIT | Definido |
-| TypeScript | Linguagem | Apache 2.0 | Definido |
-| NestJS | Framework do back-end | MIT | Definido |
-| React | Interface web | MIT | Definido |
-| Tailwind CSS | Estilização | MIT | Definido |
-| PostgreSQL | Banco de dados | PostgreSQL License | Definido |
-| Prisma | ORM | Apache 2.0 | Definido |
-| Jest | Testes unitários | MIT | Definido |
-| Supertest | Testes de API | MIT | Definido |
-| Swagger UI / @nestjs/swagger | Documentação da API | Apache 2.0 / MIT | Definido |
-| Docker Engine | Containers | Apache 2.0 | Definido |
-| GitHub Actions | CI/CD | Termos de serviço do GitHub | Definido |
+| Node.js | Plataforma de execução | MIT | Em uso |
+| TypeScript | Linguagem | Apache 2.0 | Em uso |
+| NestJS | Framework do back-end | MIT | Em uso |
+| React | Interface web | MIT | Em uso |
+| Tailwind CSS | Estilização | MIT | Em uso |
+| PostgreSQL | Banco de dados | PostgreSQL License | Em uso |
+| Prisma | ORM | Apache 2.0 | Em uso |
+| Jest | Testes unitários | MIT | Em uso |
+| Supertest | Testes de API | MIT | Em uso |
+| Swagger UI / @nestjs/swagger | Documentação da API | Apache 2.0 / MIT | Em uso |
+| Docker Engine | Containers | Apache 2.0 | Em uso |
+| @nestjs/jwt (jsonwebtoken) | Tokens de login | MIT | Em uso |
+| bcryptjs | Hash de senhas | MIT | Em uso |
+| class-validator / class-transformer | Validação dos dados de entrada | MIT | Em uso |
+| Next.js | Framework do front-end (rotas, build e servidor) | MIT | Em uso |
+| GitHub Actions | CI/CD | Termos de serviço do GitHub | Em uso |
 | Git | Controle de versão | GPL v2 (ferramenta, não incorporada ao produto) | Em uso |
 | GitHub | Repositório e gestão | Termos de serviço do GitHub | Em uso |
 

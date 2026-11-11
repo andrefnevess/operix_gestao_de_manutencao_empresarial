@@ -11,7 +11,7 @@ Estratégia, planejamento, execução e evidências de testes.
 
 ## Tipos de teste
 
-- Unitários (Jest);
+- Unitários (Jest) — `backend/src/domain`;
 - Integração e API (Supertest; consulta aos endpoints pelo Swagger);
 - Funcionais / sistema (manuais, baseados nos casos de teste);
 - Aceitação (validação dos critérios das histórias com o PO).

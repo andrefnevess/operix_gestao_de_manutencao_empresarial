@@ -1,13 +1,18 @@
 # CI/CD
 
-Ferramenta: **GitHub Actions** (arquivos em `.github/workflows/`).
+Ferramenta: **GitHub Actions**. O pipeline está em [`.github/workflows/ci.yml`](../../.github/workflows/ci.yml) e roda a cada Pull Request e a cada integração na `main`.
 
-## Etapas previstas
+| Job | Etapas |
+|---|---|
+| Back-end | `npm ci` → `prisma generate` → build → testes unitários do domínio (Jest) → testes de API (Jest + Supertest) |
+| Front-end | `npm ci` → build (TypeScript + Next.js) |
 
-| Etapa | Gatilho | Ação |
-|---|---|---|
-| Instalação | Pull Request e integração na `main` | `npm ci` no back-end e no front-end |
-| Build | Pull Request e integração na `main` | Compilar o back-end (NestJS) e o front-end (React) |
-| Testes | Pull Request e integração na `main` | Executar Jest (unitários) e Supertest (API), com PostgreSQL em container |
-| Imagens | Integração na `main` | Gerar as imagens Docker |
-| Entrega | Integração na `main` | Publicação em ambiente de demonstração [A DEFINIR] |
+Um Pull Request só deve ser integrado com o pipeline aprovado (Definition of Done).
+
+## Próximas etapas
+
+| Etapa | Situação |
+|---|---|
+| Build e testes | Implementado |
+| Geração das imagens Docker | Planejado (Sprint 2) |
+| Publicação no ambiente de demonstração | Planejado — hospedagem [A DEFINIR] |

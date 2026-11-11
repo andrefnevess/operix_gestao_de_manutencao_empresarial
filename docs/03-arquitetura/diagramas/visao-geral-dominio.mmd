@@ -1,0 +1,31 @@
+classDiagram
+direction LR
+class Usuario
+class Solicitante
+class Gestor
+class Tecnico
+class Administrador
+class Equipamento
+class Chamado
+class OrdemServico
+class PlanoPreventivo
+class Manutencao
+class ManutencaoCorretiva
+class ManutencaoPreventiva
+
+Usuario <|-- Administrador
+Usuario <|-- Gestor
+Usuario <|-- Tecnico
+Usuario <|-- Solicitante
+Manutencao <|-- ManutencaoCorretiva
+Manutencao <|-- ManutencaoPreventiva
+
+Solicitante "1" --> "0..*" Chamado : abre
+Chamado "0..*" --> "1" Equipamento : relata problema em
+Chamado "1" --> "0..1" OrdemServico : origina
+Equipamento "1" --> "0..*" PlanoPreventivo : possui
+PlanoPreventivo "1" --> "0..*" OrdemServico : gera
+Gestor "1" --> "0..*" OrdemServico : atribui
+Tecnico "1" --> "0..*" OrdemServico : executa
+OrdemServico "1" *-- "0..1" Manutencao : registra
+Equipamento "1" o-- "0..*" Manutencao : histórico

@@ -4,7 +4,7 @@
 
 | ID | Categoria | Descrição |
 |---|---|---|
-| RNF01 | Segurança | Senhas armazenadas com algoritmo de hash seguro (algoritmo [A DEFINIR]) |
+| RNF01 | Segurança | Senhas armazenadas com hash bcrypt |
 | RNF02 | Segurança | Acesso às funcionalidades restrito por perfil |
 | RNF03 | Usabilidade | Interface responsiva, utilizável em desktop e dispositivos móveis |
 | RNF04 | Desempenho | Operações comuns respondem em até 2 segundos em condições normais |

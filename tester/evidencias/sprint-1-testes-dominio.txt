@@ -1,0 +1,36 @@
+Execução: 22/10/2026 16:40 (UTC) — comando: npm test
+PASS src/domain/dominio.spec.ts
+  Usuario (UH01 e UH02)
+    ✓ cria a subclasse correta a partir do perfil (polimorfismo) (2 ms)
+    ✓ cada perfil responde às permissões do seu jeito (2 ms)
+    ✓ autentica com a senha correta e zera as tentativas (UH01-CA01)
+    ✓ recusa usuário inativo mesmo com a senha correta (RN02 / UH01-CA04)
+    ✓ bloqueia por 15 minutos após 5 tentativas sem sucesso (UH01-CA05) (1 ms)
+    ✓ valida nome e e-mail (22 ms)
+    ✓ inativa em vez de excluir (UH02-CA05)
+  Equipamento (UH03)
+    ✓ nasce ativo e com o código normalizado (1 ms)
+    ✓ exige código, nome, tipo e localização (UH03-CA01) (3 ms)
+    ✓ não inativa equipamento em manutenção (13 ms)
+    ✓ busca por código, nome, tipo ou localização (UH03-CA06) (1 ms)
+  Chamado (UH04)
+    ✓ não abre chamado para equipamento inativo (RN03) (2 ms)
+    ✓ técnico não abre chamado (1 ms)
+    ✓ abre com status ABERTO
+  OrdemServico (UH05 e UH06)
+    ✓ herda equipamento e urgência e põe o chamado em atendimento (UH05-CA02 e CA05)
+    ✓ não executa sem estar atribuída (RN04) (5 ms)
+    ✓ só o técnico atribuído inicia (RN10) (1 ms)
+    ✓ percorre o ciclo completo e registra manutenção corretiva (1 ms)
+    ✓ exige a descrição do serviço para concluir (RN06) (1 ms)
+    ✓ OS concluída não muda mais (RN05) (1 ms)
+    ✓ identifica OS atrasada
+  PlanoPreventivo e manutenção preventiva (UH07)
+    ✓ calcula a próxima data e os alertas (1 ms)
+    ✓ OS de plano gera manutenção preventiva e atualiza a última execução
+
+Test Suites: 1 passed, 1 total
+Tests:       23 passed, 23 total
+Snapshots:   0 total
+Time:        3.132 s
+Ran all test suites.
