@@ -22,12 +22,16 @@ O chamado é salvo com número único e status **Aberto**, exibidos ao solicitan
 
 ## Resultado obtido
 
-Regra coberta por teste unitário de domínio no PR #5 (`backend/src/domain/dominio.spec.ts`, teste "abre com status ABERTO"), executado em 23/10/2026 com `npm test` (23/23 aprovados, ver RT-001). A execução pela API e pela interface fica para quando UH04 a UH07 forem implementadas.
+Execução **manual** por José Arraes pelo Swagger (`/api/docs`) em 11/11/2026: login como solicitante (200), chamado aberto para `CMP-001` com urgência ALTA retornou 201, com id único e status `ABERTO`.
+
+Teste automatizado `CT-018` em `backend/tests/uh04-uh07.e2e-spec.ts`: aprovado na execução de José Arraes em 11/11/2026 (`npm run test:e2e`, 40/40).
+
+> Execução: 11/11/2026 · branch `api-chamados` (PR #11, commit `88fe83e`) · API em `PERSISTENCIA=memoria`.
 
 ## Status
 
-Não executado (API e interface) · regra de domínio aprovada em teste unitário
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-018-evidencia.png` na execução.
+Prints da execução manual: [`CT-018-00-login-solicitante.png`](../evidencias/CT-018-00-login-solicitante.png), [`CT-018-01-abrir-chamado.png`](../evidencias/CT-018-01-abrir-chamado.png). Saída dos testes automatizados no relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md).

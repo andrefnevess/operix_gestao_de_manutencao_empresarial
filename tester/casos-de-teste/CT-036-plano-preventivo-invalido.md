@@ -21,12 +21,14 @@ Todos os cadastros são recusados com mensagem clara.
 
 ## Resultado obtido
 
-—
+Teste automatizado `CT-036` em `backend/tests/uh04-uh07.e2e-spec.ts`: aprovado na execução de José Arraes em 11/11/2026 (`npm run test:e2e`, 40/40). Equipamento inativo: 422; periodicidade 0 e negativa: 400; descrição vazia: 400.
+
+> Execução: 11/11/2026 · branch `api-chamados` (PR #11, commit `88fe83e`) · API em `PERSISTENCIA=memoria`.
 
 ## Status
 
-Não executado (API e interface)
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-036-evidencia.png` na execução.
+Saída dos testes automatizados no relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md).

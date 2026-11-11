@@ -21,12 +21,16 @@ A OS é gerada como preventiva; após a conclusão, a manutenção preventiva ap
 
 ## Resultado obtido
 
-Regra coberta por teste unitário de domínio no PR #5 (`backend/src/domain/dominio.spec.ts`, teste "OS de plano gera manutenção preventiva e atualiza a última execução"), executado em 23/10/2026 com `npm test` (23/23 aprovados, ver RT-001). A execução pela API e pela interface fica para quando UH04 a UH07 forem implementadas.
+Teste automatizado `CT-039` em `backend/tests/uh04-uh07.e2e-spec.ts`: aprovado na execução de José Arraes em 11/11/2026 (`npm run test:e2e`, 40/40). A OS preventiva foi gerada a partir do plano (201, sem chamado); após a conclusão, a última execução foi atualizada e a próxima data recalculada.
+
+Observação: o mesmo plano permite gerar várias OS em sequência (DEF-10).
+
+> Execução: 11/11/2026 · branch `api-chamados` (PR #11, commit `88fe83e`) · API em `PERSISTENCIA=memoria`.
 
 ## Status
 
-Não executado (API e interface) · regra de domínio aprovada em teste unitário
+Aprovado com observação
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-039-evidencia.png` na execução.
+Saída dos testes automatizados no relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md).

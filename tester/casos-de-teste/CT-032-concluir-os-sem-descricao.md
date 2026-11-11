@@ -19,12 +19,16 @@ A conclusão é recusada, indicando que a descrição é obrigatória; a OS cont
 
 ## Resultado obtido
 
-Regra coberta por teste unitário de domínio no PR #5 (`backend/src/domain/dominio.spec.ts`, teste "exige a descrição do serviço para concluir (RN06)"), executado em 23/10/2026 com `npm test` (23/23 aprovados, ver RT-001). A execução pela API e pela interface fica para quando UH04 a UH07 forem implementadas.
+Execução **manual** por José Arraes pelo Swagger (`/api/docs`) em 11/11/2026: concluir com `descricaoServico` vazia retornou 400 ("descricaoServico should not be empty").
+
+Teste automatizado `CT-032` em `backend/tests/uh04-uh07.e2e-spec.ts`: aprovado na execução de José Arraes em 11/11/2026 (`npm run test:e2e`, 40/40). Descrição só com espaços: 422; tempo gasto 0: 400; a OS continuou `EM_EXECUCAO`.
+
+> Execução: 11/11/2026 · branch `api-chamados` (PR #11, commit `88fe83e`) · API em `PERSISTENCIA=memoria`.
 
 ## Status
 
-Não executado (API e interface) · regra de domínio aprovada em teste unitário
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-032-evidencia.png` na execução.
+Prints da execução manual: [`CT-032-01-concluir-sem-descricao.png`](../evidencias/CT-032-01-concluir-sem-descricao.png). Saída dos testes automatizados no relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md).

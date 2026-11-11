@@ -93,3 +93,5 @@ Todo defeito vira uma Issue do tipo `[BUG]` (modelo em `.github/ISSUE_TEMPLATE/b
 |---|---|---|
 | 11/10/2026 | Migração `init` do schema Prisma (PR #2) | Tabelas criadas sem erro |
 | 11/10/2026 | CT-013 no nível do banco: código de equipamento duplicado | Aprovado: o banco recusou o código repetido (RN01) |
+| 23/10/2026 | CT-001 a CT-017 (UH01 a UH03) pela API e pela interface, sobre o PR #5 | 17 aprovados, 5 defeitos (relatório [RT-001](../relatorios/RT-001-execucao-sprint-1.md)) |
+| 11/11/2026 | CT-018 a CT-039 (UH04 a UH07) com testes automatizados e execução manual pelo Swagger, sobre o PR #11 | 21 aprovados, 1 reprovado, 6 defeitos (relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md)) |

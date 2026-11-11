@@ -21,12 +21,18 @@ A OS passa para **Atribuída**, com técnico e data prevista; o chamado passa pa
 
 ## Resultado obtido
 
-—
+Execução **manual** por José Arraes pelo Swagger (`/api/docs`) em 11/11/2026: a OS foi atribuída a `tecnico@operix.local` com data prevista 12/11/2026 e retornou 200, status `ATRIBUIDA`.
+
+Teste automatizado `CT-026` em `backend/tests/uh04-uh07.e2e-spec.ts`: aprovado na execução de José Arraes em 11/11/2026 (`npm run test:e2e`, 40/40).
+
+Observação: a API aceita data prevista no passado (DEF-11).
+
+> Execução: 11/11/2026 · branch `api-chamados` (PR #11, commit `88fe83e`) · API em `PERSISTENCIA=memoria`.
 
 ## Status
 
-Não executado (API e interface)
+Aprovado com observação
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-026-evidencia.png` na execução.
+Prints da execução manual: [`CT-026-01-atribuir-os.png`](../evidencias/CT-026-01-atribuir-os.png). Saída dos testes automatizados no relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md).

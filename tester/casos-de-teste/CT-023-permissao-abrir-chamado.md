@@ -19,12 +19,16 @@ Solicitante (e gestor, se a regra permitir) abre chamado; o técnico não abre c
 
 ## Resultado obtido
 
-Regra coberta por teste unitário de domínio no PR #5 (`backend/src/domain/dominio.spec.ts`, teste "técnico não abre chamado"), executado em 23/10/2026 com `npm test` (23/23 aprovados, ver RT-001). A execução pela API e pela interface fica para quando UH04 a UH07 forem implementadas.
+Teste automatizado `CT-023` em `backend/tests/uh04-uh07.e2e-spec.ts`: aprovado na execução de José Arraes em 11/11/2026 (`npm run test:e2e`, 40/40). Técnico e administrador não conseguem abrir chamado; gestor consegue (201).
+
+Observação: a recusa por perfil volta como 422 ("Este perfil não pode abrir chamados.") e não como 403 (DEF-09).
+
+> Execução: 11/11/2026 · branch `api-chamados` (PR #11, commit `88fe83e`) · API em `PERSISTENCIA=memoria`.
 
 ## Status
 
-Não executado (API e interface) · regra de domínio aprovada em teste unitário
+Aprovado com observação
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-023-evidencia.png` na execução.
+Saída dos testes automatizados no relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md).

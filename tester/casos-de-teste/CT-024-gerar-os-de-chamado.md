@@ -21,12 +21,18 @@ A OS é criada com o mesmo equipamento, descrição e urgência do chamado, com 
 
 ## Resultado obtido
 
-Regra coberta por teste unitário de domínio no PR #5 (`backend/src/domain/dominio.spec.ts`, teste "herda equipamento e urgência e põe o chamado em atendimento (UH05-CA02 e CA05)"), executado em 23/10/2026 com `npm test` (23/23 aprovados, ver RT-001). A execução pela API e pela interface fica para quando UH04 a UH07 forem implementadas.
+Execução **manual** por José Arraes pelo Swagger (`/api/docs`) em 11/11/2026: como gestor, a OS gerada a partir do chamado do CT-018 retornou 201 com status `ABERTA`, prioridade `ALTA` e o mesmo `equipamentoId` do chamado.
+
+Teste automatizado `CT-024` em `backend/tests/uh04-uh07.e2e-spec.ts`: aprovado na execução de José Arraes em 11/11/2026 (`npm run test:e2e`, 40/40).
+
+Observação: o chamado passa para `EM_ATENDIMENTO` já na geração da OS (o backlog, UH05-CA05, cita a atribuição).
+
+> Execução: 11/11/2026 · branch `api-chamados` (PR #11, commit `88fe83e`) · API em `PERSISTENCIA=memoria`.
 
 ## Status
 
-Não executado (API e interface) · regra de domínio aprovada em teste unitário
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-024-evidencia.png` na execução.
+Prints da execução manual: [`CT-024-01-gerar-os.png`](../evidencias/CT-024-01-gerar-os.png). Saída dos testes automatizados no relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md).

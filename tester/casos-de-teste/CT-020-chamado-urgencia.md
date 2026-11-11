@@ -20,12 +20,14 @@ As quatro urgências válidas são aceitas; o valor inválido é recusado.
 
 ## Resultado obtido
 
-—
+Teste automatizado `CT-020` em `backend/tests/uh04-uh07.e2e-spec.ts`: aprovado na execução de José Arraes em 11/11/2026 (`npm run test:e2e`, 40/40). As quatro urgências foram aceitas e `URGENTE` foi recusada com 400.
+
+> Execução: 11/11/2026 · branch `api-chamados` (PR #11, commit `88fe83e`) · API em `PERSISTENCIA=memoria`.
 
 ## Status
 
-Não executado (API e interface)
+Aprovado
 
 ## Evidência
 
-A anexar em `tester/evidencias/CT-020-evidencia.png` na execução.
+Saída dos testes automatizados no relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md).
