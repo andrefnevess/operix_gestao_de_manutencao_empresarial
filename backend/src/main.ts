@@ -1,3 +1,5 @@
+// Precisa ser o primeiro import: carrega o backend/.env antes do restante da API (issue #7).
+import './load-env';
 import 'reflect-metadata';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
