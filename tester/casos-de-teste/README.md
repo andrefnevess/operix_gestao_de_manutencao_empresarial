@@ -43,7 +43,7 @@ Casos de teste manuais derivados dos critérios de aceite das histórias de usu�
 | [CT-020](CT-020-chamado-urgencia.md) | Urgência do chamado | RF04 / UH04 / CA03 | Média | Aprovado |
 | [CT-021](CT-021-chamado-equipamento-inativo.md) | Abertura de chamado para equipamento inativo | RF04 / UH04 / CA04 · RN03 | Alta | Aprovado |
 | [CT-022](CT-022-acompanhar-chamados.md) | Acompanhamento dos próprios chamados | RF04 / UH04 / CA06 | Média | Reprovado (DEF-06) |
-| [CT-023](CT-023-permissao-abrir-chamado.md) | Permissão para abrir chamado | UH04 · RNF02 | Média | Aprovado com observação |
+| [CT-023](CT-023-permissao-abrir-chamado.md) | Permissão para abrir chamado | UH04 · RNF02 | Média | Aprovado |
 
 ## UH05 — Geração e atribuição de OS
 
@@ -78,9 +78,20 @@ Casos de teste manuais derivados dos critérios de aceite das histórias de usu�
 
 > Casos UH04 a UH07 executados em 11/11/2026 sobre a API do PR #11, pelos testes automatizados `backend/tests/uh04-uh07.e2e-spec.ts` e, nos casos CT-018, CT-024, CT-026, CT-030, CT-032 e CT-033, também manualmente pelo Swagger. Resultado completo no [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md). A verificação na interface fica para quando as telas existirem.
 
-## Próximos casos
+## UH08 — Histórico e indicadores
 
-UH08 (indicadores): prevista para a Entrega 3.
+| ID | Título | Referência | Prioridade | Status |
+|---|---|---|---|---|
+| [CT-040](CT-040-historico-cronologico.md) | Histórico do equipamento em ordem cronológica | UH08 / CA01 | Alta | Aprovado |
+| [CT-041](CT-041-historico-dados-registro.md) | Dados de cada registro do histórico | UH08 / CA02 | Alta | Aprovado |
+| [CT-042](CT-042-historico-filtro-tipo.md) | Filtro do histórico por tipo de manutenção | UH08 / CA03 | Média | Aprovado com observação |
+| [CT-043](CT-043-historico-filtro-periodo.md) | Filtro do histórico por período | UH08 / CA03 | Média | Reprovado (DEF-12) |
+| [CT-044](CT-044-indicadores-ordens-status.md) | Indicador de ordens por status | UH08 / CA04 | Alta | Aprovado |
+| [CT-045](CT-045-indicadores-atrasadas.md) | Indicador de ordens e preventivas atrasadas | UH08 / CA05 | Alta | Aprovado |
+| [CT-046](CT-046-indicadores-mais-corretivas.md) | Equipamentos com mais manutenções corretivas | UH08 / CA06 | Média | Aprovado com observação |
+| [CT-047](CT-047-historico-indicadores-acesso.md) | Histórico e indicadores restritos ao gestor | UH08 · RNF02 | Alta | Aprovado |
+
+> Casos da UH08 executados em 11/11/2026 pelos testes automatizados `backend/tests/uh08.e2e-spec.ts`, na regressão final (main + PR #13 + PR #14). Resultado no [RT-003](../relatorios/RT-003-regressao-final.md).
 
 ## Dados de teste
 
