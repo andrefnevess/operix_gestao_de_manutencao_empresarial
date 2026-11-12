@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BORDA_PRIORIDADE, CabecalhoPagina } from "@/components/ui";
+import { BORDA_PRIORIDADE, CabecalhoPagina, Vazio } from "@/components/ui";
 import { formatarDataLonga, plural } from "@/lib/formatar";
 import { ROTULO_STATUS_ORDEM, type StatusOrdem } from "@/lib/tipos";
 import { obterPainel } from "@/services/operix";
@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Painel" };
 export const dynamic = "force-dynamic";
 
 const COR_STATUS: Record<StatusOrdem, string> = {
-  ABERTA: "bg-tinta", ATRIBUIDA: "bg-prio-media", EM_ANDAMENTO: "bg-prio-alta", CONCLUIDA: "bg-[#3f7d58]", CANCELADA: "bg-prio-baixa",
+  ABERTA: "bg-tinta", ATRIBUIDA: "bg-prio-media", EM_EXECUCAO: "bg-prio-alta", CONCLUIDA: "bg-[#3f7d58]", CANCELADA: "bg-prio-baixa",
 };
 
 export default async function Painel() {
@@ -23,6 +23,7 @@ export default async function Painel() {
           <h2 id="atencao" className="mb-3 font-condensada text-xl font-semibold">
             Precisa de atenção <span className="text-mudo">({p.atencao.length})</span>
           </h2>
+          {p.atencao.length === 0 && <Vazio titulo="Nada pendente" dica="Ordens urgentes ou atrasadas e preventivas a vencer aparecem aqui." />}
           <ul className="space-y-2">
             {p.atencao.map((i) => (
               <li key={i.chave} className={`flex items-start justify-between gap-4 rounded-sm border-l-4 bg-papel px-4 py-3 ${BORDA_PRIORIDADE[i.prioridade]}`}>
@@ -44,7 +45,7 @@ export default async function Painel() {
             <h2 id="status" className="mb-3 font-condensada text-xl font-semibold">Ordens por status</h2>
             <div className="flex h-3 overflow-hidden rounded-full bg-linha" role="img"
               aria-label={status.map((s) => `${ROTULO_STATUS_ORDEM[s]}: ${p.porStatus[s]}`).join(", ")}>
-              {status.map((s) => p.porStatus[s] > 0 && (
+              {p.totalOrdens > 0 && status.map((s) => p.porStatus[s] > 0 && (
                 <span key={s} className={COR_STATUS[s]} style={{ width: `${(p.porStatus[s] / p.totalOrdens) * 100}%` }} />
               ))}
             </div>

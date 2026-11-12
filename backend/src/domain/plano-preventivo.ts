@@ -28,6 +28,20 @@ export class PlanoPreventivo {
     return new PlanoPreventivo(id, equipamento, texto(descricao), periodicidadeDias, inicio);
   }
 
+  /** Reconstitui um plano a partir dos dados do banco, sem aplicar regras. */
+  static reconstituir(dados: {
+    id: string;
+    equipamento: Equipamento;
+    descricao: string;
+    periodicidadeDias: number;
+    ultimaExecucao: Date;
+    ativo: boolean;
+  }): PlanoPreventivo {
+    const p = new PlanoPreventivo(dados.id, dados.equipamento, dados.descricao, dados.periodicidadeDias, dados.ultimaExecucao);
+    p.ativo = dados.ativo;
+    return p;
+  }
+
   /** Próxima data = última execução + periodicidade (RN07 / UH07-CA03). */
   proximaData(): Date {
     return new Date(this.ultimaExecucao.getTime() + this.periodicidadeDias * DIA_MS);

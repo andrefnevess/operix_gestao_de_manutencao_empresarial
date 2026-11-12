@@ -1,23 +1,18 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useState, type FormEvent } from "react";
+import type { FormEvent } from "react";
+import { entrar } from "@/app/acoes";
 import { BOTAO, CAMPO, Marca } from "@/components/ui";
-import { autenticar } from "@/services/operix";
+import { useAcao } from "@/components/usar-acao";
 
 export default function Login() {
-  const router = useRouter();
-  const [erro, setErro] = useState("");
-  const [enviando, setEnviando] = useState(false);
+  const { enviando, erro, rodar } = useAcao();
 
-  async function entrar(e: FormEvent<HTMLFormElement>) {
+  // Em caso de sucesso, a própria ação grava o cookie da sessão e leva ao painel.
+  function enviar(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
-    setEnviando(true);
-    const ok = await autenticar(String(f.get("email")), String(f.get("senha")));
-    if (ok) return router.push("/painel");
-    setErro("E-mail ou senha incorretos.");
-    setEnviando(false);
+    rodar(() => entrar(String(f.get("email")), String(f.get("senha"))));
   }
 
   return (
@@ -31,7 +26,7 @@ export default function Login() {
       </section>
 
       <main className="flex items-center px-6 py-12 md:px-12">
-        <form onSubmit={entrar} className="w-full">
+        <form onSubmit={enviar} className="w-full">
           <div className="mb-8 rounded-md bg-petroleo-fundo p-4 md:hidden">
             <Marca className="h-9 w-auto" />
           </div>
@@ -49,7 +44,7 @@ export default function Login() {
           </button>
 
           <p className="mt-6 rounded-sm bg-papel px-3 py-2 text-sm text-mudo">
-            Modo demonstração, sem back-end ainda: gestor@operix.com e senha operix123.
+            Contas de exemplo: admin, gestor, tecnico e solicitante, todas @operix.local. A senha é a definida em SENHA_EXEMPLO na API.
           </p>
         </form>
       </main>

@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Param, ParseUUIDPipe, Patch, Post, Put } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Permite } from '../auth/permissao.decorator';
+import { Tecnico } from '../domain';
 import { AtualizarUsuarioDto, CriarUsuarioDto, UsuarioResposta } from './dto/usuario.dto';
 import { UsuariosService } from './usuarios.service';
 
@@ -22,6 +23,14 @@ export class UsuariosController {
   @ApiOperation({ summary: 'Listar usuários' })
   async listar(): Promise<UsuarioResposta[]> {
     return (await this.servico.listar()).map((u) => UsuarioResposta.de(u));
+  }
+
+  /** O gestor precisa escolher um técnico ao atribuir uma ordem (UH05-CA03), então também pode consultar esta lista. */
+  @Get('tecnicos')
+  @Permite((u) => u.podeGerenciarUsuarios() || u.podeGerenciarOrdens())
+  @ApiOperation({ summary: 'Listar técnicos ativos (administrador ou gestor)' })
+  async tecnicos(): Promise<UsuarioResposta[]> {
+    return (await this.servico.listar()).filter((u) => u instanceof Tecnico && u.estaAtivo()).map((u) => UsuarioResposta.de(u));
   }
 
   @Get(':id')

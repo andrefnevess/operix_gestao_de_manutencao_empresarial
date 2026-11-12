@@ -30,6 +30,21 @@ export class Chamado {
     return new Chamado(id, solicitante, equipamento, texto(descricao), urgencia, agora);
   }
 
+  /** Reconstitui um chamado a partir dos dados do banco, sem aplicar regras. */
+  static reconstituir(dados: {
+    id: string;
+    solicitante: Usuario;
+    equipamento: Equipamento;
+    descricao: string;
+    urgencia: Prioridade;
+    status: StatusChamado;
+    abertoEm: Date;
+  }): Chamado {
+    const c = new Chamado(dados.id, dados.solicitante, dados.equipamento, dados.descricao, dados.urgencia, dados.abertoEm);
+    c.status = dados.status;
+    return c;
+  }
+
   iniciarAtendimento(): void {
     exigir(this.status === StatusChamado.ABERTO, 'Só um chamado aberto pode entrar em atendimento.');
     this.status = StatusChamado.EM_ATENDIMENTO;

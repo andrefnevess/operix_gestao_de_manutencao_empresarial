@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import type { Prioridade, StatusAtivo, StatusOrdem } from "@/lib/tipos";
-import { ROTULO_PRIORIDADE, ROTULO_STATUS_ATIVO, ROTULO_STATUS_ORDEM } from "@/lib/tipos";
+import type { Prioridade, StatusAtivo, StatusChamado, StatusOrdem } from "@/lib/tipos";
+import { ROTULO_PRIORIDADE, ROTULO_STATUS_ATIVO, ROTULO_STATUS_CHAMADO, ROTULO_STATUS_ORDEM } from "@/lib/tipos";
 
 // Classes escritas por extenso para o Tailwind enxergá-las
 export const BORDA_PRIORIDADE: Record<Prioridade, string> = {
@@ -28,16 +28,18 @@ const TONS = {
   cinza: "bg-[#e3e5e2] text-mudo",
 } as const;
 
-function Pilula({ tom, children }: { tom: keyof typeof TONS; children: React.ReactNode }) {
+export function Pilula({ tom, children }: { tom: keyof typeof TONS; children: React.ReactNode }) {
   return <span className={`inline-block whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium ${TONS[tom]}`}>{children}</span>;
 }
 
 const TOM_ORDEM: Record<StatusOrdem, keyof typeof TONS> = {
-  ABERTA: "neutro", ATRIBUIDA: "azul", EM_ANDAMENTO: "ambar", CONCLUIDA: "verde", CANCELADA: "cinza",
+  ABERTA: "neutro", ATRIBUIDA: "azul", EM_EXECUCAO: "ambar", CONCLUIDA: "verde", CANCELADA: "cinza",
 };
-const TOM_ATIVO: Record<StatusAtivo, keyof typeof TONS> = { DISPONIVEL: "verde", EM_MANUTENCAO: "ambar", INATIVO: "cinza" };
+const TOM_CHAMADO: Record<StatusChamado, keyof typeof TONS> = { ABERTO: "neutro", EM_ATENDIMENTO: "ambar", ENCERRADO: "verde", CANCELADO: "cinza" };
+const TOM_ATIVO: Record<StatusAtivo, keyof typeof TONS> = { ATIVO: "verde", EM_MANUTENCAO: "ambar", INATIVO: "cinza" };
 
 export const PilulaOrdem = ({ status }: { status: StatusOrdem }) => <Pilula tom={TOM_ORDEM[status]}>{ROTULO_STATUS_ORDEM[status]}</Pilula>;
+export const PilulaChamado = ({ status }: { status: StatusChamado }) => <Pilula tom={TOM_CHAMADO[status]}>{ROTULO_STATUS_CHAMADO[status]}</Pilula>;
 export const PilulaAtivo = ({ status }: { status: StatusAtivo }) => <Pilula tom={TOM_ATIVO[status]}>{ROTULO_STATUS_ATIVO[status]}</Pilula>;
 
 export function Marca({ comSlogan = false, className = "h-7 w-auto" }: { comSlogan?: boolean; className?: string }) {
@@ -67,3 +69,18 @@ export function CabecalhoPagina({ titulo, descricao, children }: { titulo: strin
 
 export const CAMPO = "w-full rounded-md border border-linha bg-papel px-3 py-2 text-sm placeholder:text-mudo/80";
 export const BOTAO = "rounded-md bg-petroleo px-4 py-2 text-sm font-medium text-white hover:bg-petroleo-fundo disabled:opacity-60";
+export const BOTAO_SECUNDARIO = "rounded-md border border-linha bg-papel px-3 py-1.5 text-sm font-medium hover:border-petroleo disabled:opacity-60";
+export const ROTULO = "mb-1 block text-sm font-medium";
+
+export function MensagemErro({ children }: { children: React.ReactNode }) {
+  return children ? <p role="alert" className="text-sm font-medium text-ferrugem">{children}</p> : null;
+}
+
+export function Vazio({ titulo, dica }: { titulo: string; dica: string }) {
+  return (
+    <div className="rounded-sm bg-papel px-4 py-10 text-center">
+      <p className="font-medium">{titulo}</p>
+      <p className="mt-1 text-sm text-mudo">{dica}</p>
+    </div>
+  );
+}
