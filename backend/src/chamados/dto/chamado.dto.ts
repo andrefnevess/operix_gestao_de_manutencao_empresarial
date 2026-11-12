@@ -1,11 +1,15 @@
-import { ApiPaymentRequiredResponse, ApiProperty } from '@nestjs/swagger';
-import { IsEnum,  IsNotEmpty, IsString, IsUUID } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+import { Transform } from 'class-transformer';
+import { IsEnum, IsNotEmpty, IsString, IsUUID } from 'class-validator';
 import { Chamado } from '../../domain'
 import { Prioridade } from '../../domain/enums';
 
 export class AbrirChamadoDto {
     @ApiProperty ({ example:  'Esteira parou de girar'})
     @IsString()
+    // Sem o trim, "   " passa pelo IsNotEmpty e só o domínio recusa, devolvendo 422
+    // enquanto a descrição vazia devolve 400 — os dois casos viram 400 (DEF-09).
+    @Transform(({ value }) => (typeof value === 'string' ? value.trim() : value))
     @IsNotEmpty ()
     descricao!: string;
 
