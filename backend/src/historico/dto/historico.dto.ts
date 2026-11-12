@@ -1,5 +1,24 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { Manutencao } from '../../domain';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { IsEnum, IsISO8601, IsOptional } from 'class-validator';
+import { Manutencao, TipoManutencao } from '../../domain';
+
+/** Filtros do histórico (UH08-CA02 e CA03). Valor inválido devolve 400, não lista vazia. */
+export class FiltroHistoricoQuery {
+  @ApiPropertyOptional({ enum: TipoManutencao })
+  @IsOptional()
+  @IsEnum(TipoManutencao, { message: 'tipo deve ser CORRETIVA ou PREVENTIVA' })
+  tipo?: TipoManutencao;
+
+  @ApiPropertyOptional({ example: '2026-11-01' })
+  @IsOptional()
+  @IsISO8601({}, { message: 'de deve ser uma data no formato AAAA-MM-DD' })
+  de?: string;
+
+  @ApiPropertyOptional({ example: '2026-11-30' })
+  @IsOptional()
+  @IsISO8601({}, { message: 'ate deve ser uma data no formato AAAA-MM-DD' })
+  ate?: string;
+}
 
 export class ManutencaoResposta {
   @ApiProperty() ordemId!: string;

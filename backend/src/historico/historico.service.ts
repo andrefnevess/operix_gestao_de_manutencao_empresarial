@@ -18,8 +18,11 @@ export class HistoricoService {
   /** Histórico do equipamento em ordem cronológica, com filtros (UH08-CA01 a CA03). */
   async historico(equipamentoId: string, tipo?: TipoManutencao, de?: string, ate?: string): Promise<ManutencaoResposta[]> {
     await this.equipamentos.buscar(equipamentoId);
+    // "ate=2026-11-11" sem hora significa o dia inteiro: sem isso o filtro vira 00:00
+    // e descarta as manutenções do próprio dia 11 (DEF-12).
+    const soData = (valor: string): boolean => /^\d{4}-\d{2}-\d{2}$/.test(valor);
     const inicio = de ? new Date(de).getTime() : null;
-    const fim = ate ? new Date(ate).getTime() : null;
+    const fim = ate ? new Date(soData(ate) ? `${ate}T23:59:59.999Z` : ate).getTime() : null;
 
     return (await this.ordens.listar())
       .filter((o) => o.getEquipamento().getId() === equipamentoId && o.getManutencao() !== null)

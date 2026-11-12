@@ -1,8 +1,7 @@
 import { Controller, Get, Param, ParseUUIDPipe, Query } from '@nestjs/common';
-import { ApiBearerAuth, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { Permite } from '../auth/permissao.decorator';
-import { TipoManutencao } from '../domain';
-import { IndicadoresResposta, ManutencaoResposta } from './dto/historico.dto';
+import { FiltroHistoricoQuery, IndicadoresResposta, ManutencaoResposta } from './dto/historico.dto';
 import { HistoricoService } from './historico.service';
 
 /** Histórico e indicadores (UH08). Somente o gestor. */
@@ -15,16 +14,11 @@ export class HistoricoController {
 
   @Get('equipamentos/:id/historico')
   @ApiOperation({ summary: 'Histórico de manutenções do equipamento' })
-  @ApiQuery({ name: 'tipo', required: false, enum: TipoManutencao })
-  @ApiQuery({ name: 'de', required: false, example: '2026-11-01' })
-  @ApiQuery({ name: 'ate', required: false, example: '2026-11-30' })
   historico(
     @Param('id', ParseUUIDPipe) id: string,
-    @Query('tipo') tipo?: TipoManutencao,
-    @Query('de') de?: string,
-    @Query('ate') ate?: string,
+    @Query() filtros: FiltroHistoricoQuery,
   ): Promise<ManutencaoResposta[]> {
-    return this.servico.historico(id, tipo, de, ate);
+    return this.servico.historico(id, filtros.tipo, filtros.de, filtros.ate);
   }
 
   @Get('indicadores')
