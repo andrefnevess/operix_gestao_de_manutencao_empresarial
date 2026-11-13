@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Sans_Condensed } from "next/font/google";
+// Fontes locais (IBM Plex, licença OFL em ../fonts/OFL.txt): o build não depende do Google Fonts,
+// que falhava de vez em quando no CI e no Docker.
+import localFont from "next/font/local";
 import "./globals.css";
 
-const plex = IBM_Plex_Sans({ variable: "--font-plex", subsets: ["latin"], weight: ["400", "500", "600"] });
-const plexCondensada = IBM_Plex_Sans_Condensed({ variable: "--font-plex-cond", subsets: ["latin"], weight: ["500", "600", "700"] });
+const plex = localFont({
+  variable: "--font-plex",
+  src: [
+    { path: "../fonts/ibm-plex-sans-latin-400-normal.woff2", weight: "400" },
+    { path: "../fonts/ibm-plex-sans-latin-500-normal.woff2", weight: "500" },
+    { path: "../fonts/ibm-plex-sans-latin-600-normal.woff2", weight: "600" },
+  ],
+});
+const plexCondensada = localFont({
+  variable: "--font-plex-cond",
+  src: [
+    { path: "../fonts/ibm-plex-sans-condensed-latin-500-normal.woff2", weight: "500" },
+    { path: "../fonts/ibm-plex-sans-condensed-latin-600-normal.woff2", weight: "600" },
+    { path: "../fonts/ibm-plex-sans-condensed-latin-700-normal.woff2", weight: "700" },
+  ],
+});
 
 export const metadata: Metadata = {
   title: { default: "Operix", template: "%s · Operix" },
