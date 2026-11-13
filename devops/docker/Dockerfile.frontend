@@ -1,7 +1,7 @@
 # Imagem do front-end (Next.js em modo standalone). Contexto de build: pasta frontend/.
 FROM node:20-alpine AS build
 WORKDIR /app
-# Endereço da API usado pelos rewrites de /api (lido no build).
+# Endereço da API durante o build. Em execução, vale a variável API_URL do container (veja docker-compose.yml).
 ARG API_URL=http://api:3000
 ENV API_URL=$API_URL
 ENV NEXT_TELEMETRY_DISABLED=1

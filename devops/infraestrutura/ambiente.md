@@ -16,6 +16,6 @@
 | `SENHA_EXEMPLO` | API | Senha dos usuários de exemplo (somente desenvolvimento) |
 | `PORT` | API | Porta da API (padrão 3000) |
 | `CORS_ORIGIN` | API | Origens autorizadas a chamar a API |
-| `API_URL` | Front-end | Endereço da API para onde o Next.js encaminha `/api` (padrão `http://localhost:3000`, lido no build) |
+| `API_URL` | Front-end | Endereço da API que o servidor do Next.js chama (padrão `http://localhost:3000`; no Docker Compose, `http://api:3000`) |
 
 Modelos: [`backend/.env.example`](../../backend/.env.example) e [`frontend/.env.example`](../../frontend/.env.example). Os arquivos `.env` reais nunca são versionados.

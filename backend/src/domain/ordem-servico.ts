@@ -16,6 +16,7 @@ export class OrdemServico {
   private dataPrevista: Date | null = null;
   private manutencao: Manutencao | null = null;
   private motivoCancelamento: string | null = null;
+  private criadaEm: Date = new Date();
 
   // Construtor privado: toda OS tem exatamente uma origem, um chamado ou um plano (RN11).
   private constructor(
@@ -35,6 +36,30 @@ export class OrdemServico {
   static aPartirDePlano(id: string, plano: PlanoPreventivo, prioridade: Prioridade = Prioridade.MEDIA): OrdemServico {
     exigir(plano.estaAtivo(), 'O plano preventivo está desativado.');
     return new OrdemServico(id, plano.getEquipamento(), prioridade, null, plano);
+  }
+
+  /** Reconstitui uma OS a partir dos dados do banco, sem aplicar regras. */
+  static reconstituir(dados: {
+    id: string;
+    equipamento: Equipamento;
+    prioridade: Prioridade;
+    chamado: Chamado | null;
+    plano: PlanoPreventivo | null;
+    status: StatusOS;
+    tecnico: Tecnico | null;
+    dataPrevista: Date | null;
+    manutencao: Manutencao | null;
+    motivoCancelamento: string | null;
+    criadaEm: Date;
+  }): OrdemServico {
+    const os = new OrdemServico(dados.id, dados.equipamento, dados.prioridade, dados.chamado, dados.plano);
+    os.status = dados.status;
+    os.tecnico = dados.tecnico;
+    os.dataPrevista = dados.dataPrevista;
+    os.manutencao = dados.manutencao;
+    os.motivoCancelamento = dados.motivoCancelamento;
+    os.criadaEm = dados.criadaEm;
+    return os;
   }
 
   /** Só um gestor atribui (RN08), e somente a um técnico ativo (UH05-CA03). */
@@ -117,6 +142,9 @@ export class OrdemServico {
   }
   getMotivoCancelamento(): string | null {
     return this.motivoCancelamento;
+  }
+  getCriadaEm(): Date {
+    return this.criadaEm;
   }
 
   // Concluída ou cancelada não muda mais (RN05).

@@ -40,6 +40,22 @@ export abstract class Manutencao {
   getRealizadaEm(): Date {
     return this.realizadaEm;
   }
+
+  /** Reconstitui uma manutenção a partir dos dados do banco. */
+  static reconstituir(dados: {
+    tipo: TipoManutencao;
+    equipamento: Equipamento;
+    tecnico: Tecnico;
+    descricaoServico: string;
+    tempoGastoMin: number;
+    realizadaEm: Date;
+    plano?: PlanoPreventivo | null;
+  }): Manutencao {
+    if (dados.tipo === TipoManutencao.PREVENTIVA && dados.plano) {
+      return ManutencaoPreventiva.reconstituirPreventiva(dados.equipamento, dados.tecnico, dados.descricaoServico, dados.tempoGastoMin, dados.realizadaEm, dados.plano);
+    }
+    return ManutencaoCorretiva.reconstituirCorretiva(dados.equipamento, dados.tecnico, dados.descricaoServico, dados.tempoGastoMin, dados.realizadaEm);
+  }
 }
 
 export class ManutencaoCorretiva extends Manutencao {
@@ -48,6 +64,11 @@ export class ManutencaoCorretiva extends Manutencao {
   }
   getTipo(): TipoManutencao {
     return TipoManutencao.CORRETIVA;
+  }
+  /** Reconstitui sem validação (dados já foram validados na criação). */
+  static reconstituirCorretiva(equipamento: Equipamento, tecnico: Tecnico, descricaoServico: string, tempoGastoMin: number, realizadaEm: Date): ManutencaoCorretiva {
+    // Chama o construtor normalmente — os dados do banco já passaram pela validação na criação
+    return new ManutencaoCorretiva(equipamento, tecnico, descricaoServico, tempoGastoMin, realizadaEm);
   }
 }
 
@@ -67,5 +88,9 @@ export class ManutencaoPreventiva extends Manutencao {
   }
   getPlano(): PlanoPreventivo {
     return this.plano;
+  }
+  /** Reconstitui sem validação (dados já foram validados na criação). */
+  static reconstituirPreventiva(equipamento: Equipamento, tecnico: Tecnico, descricaoServico: string, tempoGastoMin: number, realizadaEm: Date, plano: PlanoPreventivo): ManutencaoPreventiva {
+    return new ManutencaoPreventiva(equipamento, tecnico, descricaoServico, tempoGastoMin, realizadaEm, plano);
   }
 }

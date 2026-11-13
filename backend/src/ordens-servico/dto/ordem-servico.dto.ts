@@ -37,24 +37,53 @@ export class CancelarOrdemDto {
   motivo!: string;
 }
 
+export class ManutencaoDaOrdem {
+  @ApiProperty() tipo!: string;
+  @ApiProperty() descricaoServico!: string;
+  @ApiProperty() tempoGastoMin!: number;
+  @ApiProperty() realizadaEm!: Date;
+}
+
+/** Já traz os nomes do equipamento e do técnico, para as telas não precisarem de outras consultas. */
 export class OrdemResposta {
-  id!: string;
-  status!: string;
-  equipamentoId!: string;
-  prioridade!: string;
-  tecnicoId!: string | null;
-  dataPrevista!: Date | null;
-  chamadoId!: string | null;
+  @ApiProperty() id!: string;
+  @ApiProperty() status!: string;
+  @ApiProperty({ description: 'CORRETIVA (veio de um chamado) ou PREVENTIVA (veio de um plano)' }) tipo!: string;
+  @ApiProperty({ description: 'Descrição do chamado ou do plano de origem' }) descricao!: string;
+  @ApiProperty() prioridade!: string;
+  @ApiProperty() equipamentoId!: string;
+  @ApiProperty() equipamentoCodigo!: string;
+  @ApiProperty() equipamentoNome!: string;
+  @ApiProperty({ nullable: true, type: String }) tecnicoId!: string | null;
+  @ApiProperty({ nullable: true, type: String }) tecnicoNome!: string | null;
+  @ApiProperty({ nullable: true, type: Date }) dataPrevista!: Date | null;
+  @ApiProperty() criadaEm!: Date;
+  @ApiProperty({ nullable: true, type: String }) chamadoId!: string | null;
+  @ApiProperty({ nullable: true, type: String }) planoId!: string | null;
+  @ApiProperty({ nullable: true, type: String }) motivoCancelamento!: string | null;
+  @ApiProperty({ nullable: true, type: ManutencaoDaOrdem }) manutencao!: ManutencaoDaOrdem | null;
 
   static de(o: OrdemServico): OrdemResposta {
+    const m = o.getManutencao();
     return {
       id: o.getId(),
       status: o.getStatus(),
-      equipamentoId: o.getEquipamento().getId(),
+      tipo: o.getPlano() ? 'PREVENTIVA' : 'CORRETIVA',
+      descricao: o.getChamado()?.getDescricao() ?? o.getPlano()?.getDescricao() ?? '',
       prioridade: o.getPrioridade(),
+      equipamentoId: o.getEquipamento().getId(),
+      equipamentoCodigo: o.getEquipamento().getCodigo(),
+      equipamentoNome: o.getEquipamento().getNome(),
       tecnicoId: o.getTecnico()?.getId() ?? null,
+      tecnicoNome: o.getTecnico()?.getNome() ?? null,
       dataPrevista: o.getDataPrevista(),
+      criadaEm: o.getCriadaEm(),
       chamadoId: o.getChamado()?.getId() ?? null,
+      planoId: o.getPlano()?.getId() ?? null,
+      motivoCancelamento: o.getMotivoCancelamento(),
+      manutencao: m
+        ? { tipo: m.getTipo(), descricaoServico: m.getDescricaoServico(), tempoGastoMin: m.getTempoGastoMin(), realizadaEm: m.getRealizadaEm() }
+        : null,
     };
   }
 }

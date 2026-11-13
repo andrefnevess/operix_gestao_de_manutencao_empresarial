@@ -23,18 +23,22 @@ export class CriarPlanoDto {
 }
 
 export class PlanoResposta {
-  id!: string;
-  equipamentoId!: string;
-  descricao!: string;
-  periodicidadeDias!: number;
-  ultimaExecucao!: Date;
-  proximaData!: Date;
-  ativo!: boolean;
+  @ApiProperty() id!: string;
+  @ApiProperty() equipamentoId!: string;
+  @ApiProperty() equipamentoCodigo!: string;
+  @ApiProperty() equipamentoNome!: string;
+  @ApiProperty() descricao!: string;
+  @ApiProperty() periodicidadeDias!: number;
+  @ApiProperty() ultimaExecucao!: Date;
+  @ApiProperty() proximaData!: Date;
+  @ApiProperty() ativo!: boolean;
 
   static de(p: PlanoPreventivo): PlanoResposta {
     return {
       id: p.getId(),
       equipamentoId: p.getEquipamento().getId(),
+      equipamentoCodigo: p.getEquipamento().getCodigo(),
+      equipamentoNome: p.getEquipamento().getNome(),
       descricao: p.getDescricao(),
       periodicidadeDias: p.getPeriodicidadeDias(),
       ultimaExecucao: p.getUltimaExecucao(),
