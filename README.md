@@ -2,7 +2,7 @@
 
 Sistema para planejamento, execução e acompanhamento de manutenções em ambientes empresariais, desenvolvido como projeto da disciplina de Programação Orientada a Objetos (POO) do Centro Universitário Dom Bosco — UNDB, sob orientação do professor Rondineli Seba.
 
-> Status do projeto: **Sprint 0 — Iniciação e planejamento**
+> Status do projeto: **Encerrado em 13/11/2026** — UH01 a UH08 entregues. Ver o [Termo de Encerramento (TEP)](docs/06-encerramento/TEP.md).
 
 ## Sobre o Projeto
 
@@ -80,10 +80,10 @@ O cronograma de entregas da disciplina e as tarefas de cada área estão no quad
 | Entrega | Data |
 |---|---|
 | Apresentação + Imersão | 30/09 (concluída) |
-| Modelo de domínio | 07/10 e 14/10 |
-| Board + Incubators | 21/10 |
-| MVP integrado | 04/11 |
-| F3 — Projeto e Resultados | 11/11 |
+| Modelo de domínio | 07/10 e 14/10 (concluída) |
+| Board + Incubators | 21/10 (concluída) |
+| MVP integrado | 04/11 (concluída) |
+| F3 — Projeto e Resultados | 11/11 (concluída) |
 | Paper final + Prova S1 | 18 a 25/11 |
 
 ## Equipe
@@ -141,7 +141,7 @@ cd backend && npm install && cp .env.example .env && npm run start:dev
 cd frontend && npm install && npm run dev
 ```
 
-O front-end oficial é o do PR #8 (Luíza). A API já usa a porta 3000, então rode o front-end em outra porta: `npm run dev -- -p 3001`. Para testar a API direto, use o Swagger com os usuários de exemplo `admin@`, `gestor@`, `tecnico@` e `solicitante@operix.local` e a senha definida em `SENHA_EXEMPLO` (veja [backend/README.md](backend/README.md)).
+O front-end (PR #8) está integrado à API desde o PR #20. Como a API usa a porta 3000, rode o front-end em outra porta: `npm run dev -- -p 3001`. Para testar a API direto, use o Swagger com os usuários de exemplo `admin@`, `gestor@`, `tecnico@` e `solicitante@operix.local` e a senha definida em `SENHA_EXEMPLO` (veja [backend/README.md](backend/README.md)).
 
 ## Status do Projeto
 
@@ -150,11 +150,15 @@ O front-end oficial é o do PR #8 (Luíza). A API já usa a porta 3000, então r
 | Estrutura do repositório e documentação de projeto | Concluída |
 | Definição da equipe e das tecnologias | Concluída |
 | Modelo de domínio (diagramas, regras e classes) | Concluído — [modelo de domínio](docs/03-arquitetura/modelo-de-dominio.md) |
-| UH01 a UH03 (login, usuários, equipamentos): API e testes | Concluídas, em revisão (telas no PR #8) |
+| UH01 a UH03 (login, usuários, equipamentos) | Concluídas — PR #5 |
 | Ambiente Docker e pipeline de CI | Concluídos |
-| UH04 a UH07 (MVP integrado — 04/11) | Em andamento |
-| UH08 e F3 (11/11) | Planejada |
-| Termo de Encerramento (TEP) | Não iniciado |
+| UH04 a UH07 (chamados, OS, execução e preventiva) | Concluídas — PR #11 |
+| UH08 (histórico e indicadores) | Concluída — PR #14 |
+| Front-end integrado à API e persistência com Prisma | Concluídos — PR #20 |
+| Testes automatizados (50 de API e 23 de domínio) | Aprovados no pipeline |
+| Reuniões quinzenais e registro de decisões | [Atas](docs/05-reunioes/atas) e [decisões](docs/05-reunioes/decisoes) |
+| Termo de Encerramento (TEP) | Emitido em 13/11/2026 — [TEP](docs/06-encerramento/TEP.md) |
+| Paper final e Prova S1 (18 a 25/11) | Pendentes |
 
 ## Roadmap
 
