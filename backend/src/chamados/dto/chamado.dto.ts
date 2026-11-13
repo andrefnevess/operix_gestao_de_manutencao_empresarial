@@ -1,10 +1,10 @@
-import { ApiPaymentRequiredResponse, ApiProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum,  IsNotEmpty, IsString, IsUUID } from 'class-validator';
 import { Chamado } from '../../domain'
 import { Prioridade } from '../../domain/enums';
 
 export class AbrirChamadoDto {
-    @ApiProperty ({ example:  'Esteia parou de girar'})
+    @ApiProperty ({ example:  'Esteira parou de girar'})
     @IsString()
     @IsNotEmpty ()
     descricao!: string;

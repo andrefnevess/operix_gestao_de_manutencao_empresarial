@@ -7,10 +7,10 @@ import { ChamadosModule } from './chamados/chamados.module';
 import { OrdensServicoModule } from './ordens-servico/ordens-servico.module';
 import { DadosExemplo } from './infra/dados-exemplo';
 import { UsuariosModule } from './usuarios/usuarios.module';
-
+import { HistoricoModule } from './historico/historico.module';
 
 @Module({
-  imports: [CommonModule, UsuariosModule, AuthModule, EquipamentosModule, ChamadosModule, OrdensServicoModule, PlanosModule],
+  imports: [CommonModule, UsuariosModule, AuthModule, EquipamentosModule, ChamadosModule, OrdensServicoModule, PlanosModule, HistoricoModule],
   providers: [DadosExemplo],
 })
 export class AppModule {}
