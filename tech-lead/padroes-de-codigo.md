@@ -1,6 +1,6 @@
 # Padrões de Código
 
-> Status: em elaboração pelo Tech Lead.
+> Status: versão 1.0, vigente desde a Sprint 1 e aplicada nas revisões de Pull Request (DEC-013: revisão em até 48h).
 
 ## TypeScript (back-end e, se adotado, front-end)
 
@@ -17,7 +17,7 @@
 - Endpoints documentados com os decorators do Swagger;
 - Acesso ao banco somente por meio do Prisma.
 
-## React (front-end)
+## Next.js / React (front-end)
 
 - Componentes em `PascalCase`, um componente por arquivo;
 - Estilização com classes do Tailwind CSS;
