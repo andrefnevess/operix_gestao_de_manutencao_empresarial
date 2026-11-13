@@ -1,6 +1,6 @@
 # Termo de Abertura do Projeto (TAP)
 
-> Status: em elaboração. Campos marcados com `[A definir]` devem ser preenchidos pela equipe.
+> Status: projeto encerrado em 13/11/2026 — ver o [Termo de Encerramento (TEP)](../06-encerramento/TEP.md).
 
 ## 1. Identificação
 
