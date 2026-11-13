@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, ParseUUIDPipe, Patch, Post } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { UsuarioAtual } from '../auth/permissao.decorator';
+import { Permite, UsuarioAtual } from '../auth/permissao.decorator';
 import { Usuario } from '../domain';
 import { ChamadosService } from './chamados.service';
 import { AbrirChamadoDto, ChamadoResposta } from './dto/chamado.dto';
@@ -13,7 +13,8 @@ export class ChamadosController {
 constructor(private readonly servico: ChamadosService) {}
 
 @Post()
-@ApiOperation({ summary: 'Abrir chamado' })
+@Permite((u) => u.podeAbrirChamado())
+@ApiOperation({ summary: 'Abrir chamado (solicitante ou gestor)' })
 async abrir(@UsuarioAtual() usuario: Usuario, @Body() dto: AbrirChamadoDto): Promise<ChamadoResposta> {
 return ChamadoResposta.de(await this.servico.abrir(usuario, dto));
 }
@@ -31,8 +32,8 @@ return ChamadoResposta.de(await this.servico.buscar(id));
 }
 
 @Patch(':id/cancelar')
-@ApiOperation({ summary: 'Cancelar chamado aberto' })
-async cancelar(@Param('id', ParseUUIDPipe) id: string): Promise<ChamadoResposta> {
-return ChamadoResposta.de(await this.servico.cancelar(id));
+@ApiOperation({ summary: 'Cancelar chamado aberto (quem abriu ou o gestor)' })
+async cancelar(@UsuarioAtual() usuario: Usuario, @Param('id', ParseUUIDPipe) id: string): Promise<ChamadoResposta> {
+return ChamadoResposta.de(await this.servico.cancelar(usuario, id));
 }
 }
