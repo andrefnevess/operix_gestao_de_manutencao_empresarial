@@ -4,6 +4,7 @@ import request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { configurarApp } from '../src/configurar-app';
 
+// Os títulos seguem a numeração dos casos de teste em tester/casos-de-teste (CT-001 a CT-017).
 const SENHA = 'senha-de-teste';
 
 describe('API Operix (UH01, UH02, UH03)', () => {
@@ -61,7 +62,7 @@ describe('API Operix (UH01, UH02, UH03)', () => {
   });
 
   describe('UH02 — Usuários e perfis', () => {
-    it('CT-005: administrador cadastra técnico com especialidades', async () => {
+    it('CT-006: administrador cadastra técnico com especialidades', async () => {
       const admin = await tokenDe('admin@operix.local');
       const res = await request(app.getHttpServer())
         .post('/api/usuarios')
@@ -72,7 +73,7 @@ describe('API Operix (UH01, UH02, UH03)', () => {
       expect(res.body.senha).toBeUndefined();
     });
 
-    it('CT-006: não permite e-mail duplicado', async () => {
+    it('CT-007: não permite e-mail duplicado', async () => {
       const admin = await tokenDe('admin@operix.local');
       await request(app.getHttpServer())
         .post('/api/usuarios')
@@ -81,7 +82,7 @@ describe('API Operix (UH01, UH02, UH03)', () => {
         .expect(409);
     });
 
-    it('CT-007: usuário inativado não consegue entrar (UH01-CA04, UH02-CA05)', async () => {
+    it('CT-003 / CT-010: usuário inativado não consegue entrar (UH01-CA04, UH02-CA05)', async () => {
       const admin = await tokenDe('admin@operix.local');
       const criado = await request(app.getHttpServer())
         .post('/api/usuarios')
@@ -92,14 +93,14 @@ describe('API Operix (UH01, UH02, UH03)', () => {
       await request(app.getHttpServer()).post('/api/auth/login').send({ email: 'temporario@operix.local', senha: 'SenhaForte123' }).expect(401);
     });
 
-    it('CT-008: somente administradores acessam a gestão de usuários (UH02-CA06)', async () => {
+    it('CT-011: somente administradores acessam a gestão de usuários (UH02-CA06)', async () => {
       const gestor = await tokenDe('gestor@operix.local');
       await request(app.getHttpServer()).get('/api/usuarios').set('Authorization', `Bearer ${gestor}`).expect(403);
     });
   });
 
   describe('UH03 — Equipamentos', () => {
-    it('CT-009: gestor cadastra equipamento, que nasce ativo', async () => {
+    it('CT-014 / CT-016: gestor cadastra equipamento, que nasce ativo', async () => {
       const gestor = await tokenDe('gestor@operix.local');
       const res = await request(app.getHttpServer())
         .post('/api/equipamentos')
@@ -109,7 +110,7 @@ describe('API Operix (UH01, UH02, UH03)', () => {
       expect(res.body).toMatchObject({ codigo: 'BMB-010', status: 'ATIVO', fabricante: null });
     });
 
-    it('CT-010: campos obrigatórios são validados (UH03-CA01)', async () => {
+    it('CT-012: campos obrigatórios são validados (UH03-CA01)', async () => {
       const gestor = await tokenDe('gestor@operix.local');
       const res = await request(app.getHttpServer())
         .post('/api/equipamentos')
@@ -119,7 +120,7 @@ describe('API Operix (UH01, UH02, UH03)', () => {
       expect(JSON.stringify(res.body.message)).toContain('tipo');
     });
 
-    it('CT-011: código duplicado é recusado (RN01 / UH03-CA02)', async () => {
+    it('CT-013: código duplicado é recusado (RN01 / UH03-CA02)', async () => {
       const gestor = await tokenDe('gestor@operix.local');
       await request(app.getHttpServer())
         .post('/api/equipamentos')
@@ -128,7 +129,7 @@ describe('API Operix (UH01, UH02, UH03)', () => {
         .expect(409);
     });
 
-    it('CT-012: edição, inativação e busca (UH03-CA04 a CA06)', async () => {
+    it('CT-015 / CT-016 / CT-017: edição, inativação e busca (UH03-CA04 a CA06)', async () => {
       const gestor = await tokenDe('gestor@operix.local');
       const lista = await request(app.getHttpServer()).get('/api/equipamentos?busca=expedi').set('Authorization', `Bearer ${gestor}`).expect(200);
       expect(lista.body).toHaveLength(1);
@@ -143,7 +144,7 @@ describe('API Operix (UH01, UH02, UH03)', () => {
       expect(inativo.body.status).toBe('INATIVO');
     });
 
-    it('CT-013: solicitante consulta, mas não cadastra equipamentos', async () => {
+    it('CT-013 (permissão): solicitante consulta, mas não cadastra equipamentos', async () => {
       const solicitante = await tokenDe('solicitante@operix.local');
       await request(app.getHttpServer()).get('/api/equipamentos').set('Authorization', `Bearer ${solicitante}`).expect(200);
       await request(app.getHttpServer())
