@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { NaoEncontradoError } from '../common/erros';
+import { AcessoNegadoError, NaoEncontradoError } from '../common/erros';
 import { Relogio, novoId } from '../common/relogio';
 import { Chamado, Usuario } from '../domain';
 import { EquipamentosService } from '../equipamentos/equipamentos.service';
@@ -39,8 +39,13 @@ export class ChamadosService {
     return chamado;
   }
 
-  async cancelar(id: string): Promise<Chamado> {
+  /** Só quem abriu o chamado ou o gestor pode cancelar (UH04). */
+  async cancelar(usuario: Usuario, id: string): Promise<Chamado> {
     const chamado = await this.buscar(id);
+    const ehDono = chamado.getSolicitante().getId() === usuario.getId();
+    if (!ehDono && !usuario.podeGerenciarOrdens()) {
+      throw new AcessoNegadoError('Só quem abriu o chamado ou o gestor pode cancelá-lo.');
+    }
     chamado.cancelar();
     await this.repositorio.salvar(chamado);
     return chamado;
