@@ -1,19 +1,19 @@
-# Plano de Teste — v1.2
+# Plano de Teste — v1.3
 
-> Versão 1.2 · 09/11/2026 (v1.1 de 26/10/2026, v1 de 18/10/2026) · Escopo: UH01 a UH07. Itens marcados com `[A definir]` dependem de decisão da equipe.
+> Versão 1.3 · 11/11/2026 (v1.2 de 09/11/2026, v1.1 de 26/10/2026, v1 de 18/10/2026) · Escopo: UH01 a UH08. Itens marcados com `[A definir]` dependem de decisão da equipe.
 
 | Item | Descrição |
 |---|---|
 | Projeto | Operix — Gestão de Manutenção Empresarial |
 | Responsável | José Arraes — Tester / QA |
-| Escopo desta versão | UH01 Autenticação · UH02 Usuários e perfis · UH03 Equipamentos · UH04 Chamados · UH05 Geração e atribuição de OS · UH06 Execução da OS · UH07 Manutenção preventiva |
-| Fora do escopo desta versão | UH08 Indicadores |
+| Escopo desta versão | UH01 Autenticação · UH02 Usuários e perfis · UH03 Equipamentos · UH04 Chamados · UH05 Geração e atribuição de OS · UH06 Execução da OS · UH07 Manutenção preventiva · UH08 Histórico e indicadores |
+| Fora do escopo desta versão | Verificação na interface de UH04 a UH08 (telas ainda em integração) |
 | Ambiente | Local (Docker Compose com PostgreSQL) e demonstração `[A definir]` |
 | Ferramentas | Jest (unitários), Supertest (API), Swagger (testes exploratórios da API), Prisma Studio (conferência dos dados), GitHub Actions (execução automática) |
 
 ## 1. Objetivo
 
-Verificar se as funcionalidades de autenticação, gestão de usuários, cadastro de equipamentos, chamados, ordens de serviço e manutenção preventiva atendem aos critérios de aceite do backlog, às regras de negócio (RN01 a RN06 e RN10) e aos requisitos não funcionais de segurança (RNF01, RNF02).
+Verificar se as funcionalidades de autenticação, gestão de usuários, cadastro de equipamentos, chamados, ordens de serviço, manutenção preventiva, histórico e indicadores atendem aos critérios de aceite do backlog, às regras de negócio (RN01 a RN06 e RN10) e aos requisitos não funcionais de segurança (RNF01, RNF02).
 
 ## 2. Níveis e tipos de teste
 
@@ -35,6 +35,7 @@ Verificar se as funcionalidades de autenticação, gestão de usuários, cadastr
 | UH05 — Geração e atribuição de OS | CA01 a CA06 | CT-024 a CT-029 |
 | UH06 — Execução e encerramento da OS | CA01 a CA06 | CT-030 a CT-034 |
 | UH07 — Manutenção preventiva | CA01 a CA06 | CT-035 a CT-039 |
+| UH08 — Histórico e indicadores | CA01 a CA06 | CT-040 a CT-047 |
 
 Índice completo em [`tester/casos-de-teste/README.md`](../casos-de-teste/README.md).
 
@@ -95,3 +96,4 @@ Todo defeito vira uma Issue do tipo `[BUG]` (modelo em `.github/ISSUE_TEMPLATE/b
 | 11/10/2026 | CT-013 no nível do banco: código de equipamento duplicado | Aprovado: o banco recusou o código repetido (RN01) |
 | 23/10/2026 | CT-001 a CT-017 (UH01 a UH03) pela API e pela interface, sobre o PR #5 | 17 aprovados, 5 defeitos (relatório [RT-001](../relatorios/RT-001-execucao-sprint-1.md)) |
 | 11/11/2026 | CT-018 a CT-039 (UH04 a UH07) com testes automatizados e execução manual pelo Swagger, sobre o PR #11 | 21 aprovados, 1 reprovado, 6 defeitos (relatório [RT-002](../relatorios/RT-002-execucao-uh04-uh07.md)) |
+| 11/11/2026 | Regressão final: UH01 a UH08 (main + PR #13 + PR #14), 50 testes de API e 23 de domínio | 50/50 e 23/23 aprovados; DEF-07 corrigido; 3 defeitos novos na UH08 (relatório [RT-003](../relatorios/RT-003-regressao-final.md)) |
