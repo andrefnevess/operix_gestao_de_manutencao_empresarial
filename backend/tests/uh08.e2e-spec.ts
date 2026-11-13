@@ -148,7 +148,7 @@ describe('API Operix (UH08)', () => {
       expect((await historico(equipamentoId, `?ate=${ontem}`).expect(200)).body).toHaveLength(0);
     });
 
-    it.failing('CT-043 / DEF-12: filtro "ate" só com a data (AAAA-MM-DD) deve incluir o próprio dia', async () => {
+    it('CT-043 / DEF-12: filtro "ate" só com a data (AAAA-MM-DD) deve incluir o próprio dia', async () => {
       const equipamentoId = await criarEquipamento('QA-043B');
       await corretivaConcluida(equipamentoId, 'Reparo');
       const hoje = new Date().toISOString().slice(0, 10);
